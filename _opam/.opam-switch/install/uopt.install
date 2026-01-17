@@ -1,0 +1,17 @@
+opam-version: "2.0"
+lib: [
+  "_build/install/default/lib/uopt/META"
+  "_build/install/default/lib/uopt/dune-package"
+  "_build/install/default/lib/uopt/opam"
+  "_build/install/default/lib/uopt/uopt.a"
+  "_build/install/default/lib/uopt/uopt.cma"
+  "_build/install/default/lib/uopt/uopt.cmi"
+  "_build/install/default/lib/uopt/uopt.cmt"
+  "_build/install/default/lib/uopt/uopt.cmti"
+  "_build/install/default/lib/uopt/uopt.cmx"
+  "_build/install/default/lib/uopt/uopt.cmxa"
+  "_build/install/default/lib/uopt/uopt.ml"
+  "_build/install/default/lib/uopt/uopt.mli"
+]
+doc: "_build/install/default/doc/uopt/LICENSE.md"
+libexec: "_build/install/default/lib/uopt/uopt.cmxs"

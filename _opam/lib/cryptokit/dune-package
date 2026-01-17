@@ -1,0 +1,99 @@
+(lang dune 3.21)
+(name cryptokit)
+(sections
+ (lib .)
+ (libexec .)
+ (doc ../../doc/cryptokit)
+ (stublibs ../stublibs))
+(files
+ (lib
+  (META
+   cryptokit.a
+   cryptokit.cma
+   cryptokit.cmi
+   cryptokit.cmt
+   cryptokit.cmti
+   cryptokit.cmx
+   cryptokit.cmxa
+   cryptokit.ml
+   cryptokit.mli
+   cryptokitBignum.ml
+   cryptokitBignum.mli
+   cryptokit__.cmi
+   cryptokit__.cmt
+   cryptokit__.cmx
+   cryptokit__.ml
+   cryptokit__CryptokitBignum.cmi
+   cryptokit__CryptokitBignum.cmt
+   cryptokit__CryptokitBignum.cmti
+   cryptokit__CryptokitBignum.cmx
+   dune-package
+   libcryptokit_stubs.a
+   opam))
+ (libexec (cryptokit.cmxs))
+ (doc (LICENSE README.md))
+ (stublibs (dllcryptokit_stubs.so)))
+(library
+ (name cryptokit)
+ (kind normal)
+ (archives (byte cryptokit.cma) (native cryptokit.cmxa))
+ (plugins (byte cryptokit.cma) (native cryptokit.cmxs))
+ (foreign_objects
+  aesni.o
+  arcfour.o
+  blake2.o
+  blowfish.o
+  chacha20.o
+  d3des.o
+  keccak.o
+  rijndael-alg-fst.o
+  ripemd160.o
+  sha1.o
+  sha256.o
+  sha512.o
+  stubs-aes.o
+  stubs-arcfour.o
+  stubs-blake2.o
+  stubs-blowfish.o
+  stubs-chacha20.o
+  stubs-des.o
+  stubs-md5.o
+  stubs-misc.o
+  stubs-ripemd160.o
+  stubs-rng.o
+  stubs-sha1.o
+  stubs-sha256.o
+  stubs-sha3.o
+  stubs-sha512.o
+  stubs-zlib.o)
+ (foreign_archives (archives (for all) (files libcryptokit_stubs.a)))
+ (foreign_dll_files ../stublibs/dllcryptokit_stubs.so)
+ (native_archives cryptokit.a)
+ (requires unix zarith)
+ (main_module_name Cryptokit)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name cryptokit__)
+     (visibility public)
+     (kind alias)
+     (source (path Cryptokit__) (impl (path cryptokit__.ml-gen))))
+    (name Cryptokit)
+    (modules
+     (module
+      (obj_name cryptokit)
+      (visibility public)
+      (source
+       (path Cryptokit)
+       (intf (path cryptokit.mli))
+       (impl (path cryptokit.ml))))
+     (module
+      (obj_name cryptokit__CryptokitBignum)
+      (visibility public)
+      (source
+       (path CryptokitBignum)
+       (intf (path cryptokitBignum.mli))
+       (impl (path cryptokitBignum.ml))))))
+   (wrapped true))))

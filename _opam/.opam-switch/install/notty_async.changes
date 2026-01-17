@@ -1,0 +1,20 @@
+opam-version: "2.0"
+added: [
+  "doc/notty_async" {"D"}
+  "doc/notty_async/LICENSE.md" {"F:S1126T1768614633.32"}
+  "doc/notty_async/README.org" {"F:S352T1768614633.32"}
+  "lib/notty_async" {"D"}
+  "lib/notty_async/META" {"F:S690T1768614633.32"}
+  "lib/notty_async/dune-package" {"F:S1360T1768614633.32"}
+  "lib/notty_async/notty_async.a" {"F:S37032T1768614633.32"}
+  "lib/notty_async/notty_async.cma" {"F:S44260T1768614633.32"}
+  "lib/notty_async/notty_async.cmi" {"F:S26026T1768614633.32"}
+  "lib/notty_async/notty_async.cmt" {"F:S53617T1768614633.32"}
+  "lib/notty_async/notty_async.cmti" {"F:S48030T1768614633.32"}
+  "lib/notty_async/notty_async.cmx" {"F:S27907T1768614633.32"}
+  "lib/notty_async/notty_async.cmxa" {"F:S26226T1768614633.32"}
+  "lib/notty_async/notty_async.cmxs" {"F:S110976T1768614633.32"}
+  "lib/notty_async/notty_async.ml" {"F:S5616T1768614633.32"}
+  "lib/notty_async/notty_async.mli" {"F:S828T1768614633.32"}
+  "lib/notty_async/opam" {"F:S896T1768614633.32"}
+]

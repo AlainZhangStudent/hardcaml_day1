@@ -1,0 +1,13 @@
+version = "v0.17.0"
+description = ""
+requires =
+"base
+ ppx_compare.runtime-lib
+ ppx_enumerate.runtime-lib
+ ppx_hash.runtime-lib
+ ppx_sexp_conv.runtime-lib
+ sexplib0"
+archive(byte) = "capitalization.cma"
+archive(native) = "capitalization.cmxa"
+plugin(byte) = "capitalization.cma"
+plugin(native) = "capitalization.cmxs"

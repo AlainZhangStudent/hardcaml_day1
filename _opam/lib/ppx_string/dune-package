@@ -1,0 +1,124 @@
+(lang dune 3.21)
+(name ppx_string)
+(version v0.17.0)
+(sections (lib .) (libexec .) (doc ../../doc/ppx_string))
+(files
+ (lib
+  (META
+   dune-package
+   opam
+   ppx_string.a
+   ppx_string.cma
+   ppx_string.cmi
+   ppx_string.cmt
+   ppx_string.cmti
+   ppx_string.cmx
+   ppx_string.cmxa
+   ppx_string.ml
+   ppx_string.mli
+   ppx_string__.cmi
+   ppx_string__.cmt
+   ppx_string__.cmx
+   ppx_string__.ml
+   ppx_string__Ppx_string_intf.cmi
+   ppx_string__Ppx_string_intf.cmt
+   ppx_string__Ppx_string_intf.cmx
+   ppx_string_intf.ml
+   runtime/ppx_string_runtime.a
+   runtime/ppx_string_runtime.cma
+   runtime/ppx_string_runtime.cmi
+   runtime/ppx_string_runtime.cmt
+   runtime/ppx_string_runtime.cmti
+   runtime/ppx_string_runtime.cmx
+   runtime/ppx_string_runtime.cmxa
+   runtime/ppx_string_runtime.ml
+   runtime/ppx_string_runtime.mli
+   runtime/ppx_string_runtime__.cmi
+   runtime/ppx_string_runtime__.cmt
+   runtime/ppx_string_runtime__.cmx
+   runtime/ppx_string_runtime__.ml
+   runtime/ppx_string_runtime__Ppx_string_runtime_intf.cmi
+   runtime/ppx_string_runtime__Ppx_string_runtime_intf.cmt
+   runtime/ppx_string_runtime__Ppx_string_runtime_intf.cmx
+   runtime/ppx_string_runtime_intf.ml))
+ (libexec (ppx.exe ppx_string.cmxs runtime/ppx_string_runtime.cmxs))
+ (doc (CHANGES.md LICENSE.md README.org)))
+(library
+ (name ppx_string)
+ (kind ppx_rewriter)
+ (archives (byte ppx_string.cma) (native ppx_string.cmxa))
+ (plugins (byte ppx_string.cma) (native ppx_string.cmxs))
+ (native_archives ppx_string.a)
+ (requires
+  base
+  compiler-libs.common
+  ppxlib.ast
+  ppxlib
+  ppx_sexp_conv.runtime-lib
+  sexplib0
+  ppx_compare.runtime-lib
+  ppx_enumerate.runtime-lib
+  ppx_hash.runtime-lib)
+ (ppx_runtime_deps ppx_string.runtime)
+ (main_module_name Ppx_string)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name ppx_string__)
+     (visibility public)
+     (kind alias)
+     (source (path Ppx_string__) (impl (path ppx_string__.ml-gen))))
+    (name Ppx_string)
+    (modules
+     (module
+      (obj_name ppx_string)
+      (visibility public)
+      (source
+       (path Ppx_string)
+       (intf (path ppx_string.mli))
+       (impl (path ppx_string.ml))))
+     (module
+      (obj_name ppx_string__Ppx_string_intf)
+      (visibility public)
+      (source (path Ppx_string_intf) (impl (path ppx_string_intf.ml))))))
+   (wrapped true))))
+(library
+ (name ppx_string.runtime)
+ (kind normal)
+ (archives
+  (byte runtime/ppx_string_runtime.cma)
+  (native runtime/ppx_string_runtime.cmxa))
+ (plugins
+  (byte runtime/ppx_string_runtime.cma)
+  (native runtime/ppx_string_runtime.cmxs))
+ (native_archives runtime/ppx_string_runtime.a)
+ (main_module_name Ppx_string_runtime)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name ppx_string_runtime__)
+     (visibility public)
+     (kind alias)
+     (source
+      (path Ppx_string_runtime__)
+      (impl (path runtime/ppx_string_runtime__.ml-gen))))
+    (name Ppx_string_runtime)
+    (modules
+     (module
+      (obj_name ppx_string_runtime)
+      (visibility public)
+      (source
+       (path Ppx_string_runtime)
+       (intf (path runtime/ppx_string_runtime.mli))
+       (impl (path runtime/ppx_string_runtime.ml))))
+     (module
+      (obj_name ppx_string_runtime__Ppx_string_runtime_intf)
+      (visibility public)
+      (source
+       (path Ppx_string_runtime_intf)
+       (impl (path runtime/ppx_string_runtime_intf.ml))))))
+   (wrapped true))))

@@ -1,0 +1,38 @@
+opam-version: "2.0"
+added: [
+  "lib/num" {"D"}
+  "lib/num-top" {"D"}
+  "lib/num-top/META" {"F:S127T1768614517.17"}
+  "lib/num-top/num_top.cma" {"F:S6861T1768614517.17"}
+  "lib/num-top/num_top.cmi" {"F:S186T1768614517.17"}
+  "lib/num-top/num_top_printers.cmi" {"F:S810T1768614517.17"}
+  "lib/num/META" {"F:S323T1768614517.16"}
+  "lib/num/arith_flags.cmx" {"F:S209T1768614517.17"}
+  "lib/num/arith_status.cmi" {"F:S682T1768614517.16"}
+  "lib/num/arith_status.cmti" {"F:S4739T1768614517.17"}
+  "lib/num/arith_status.cmx" {"F:S2938T1768614517.17"}
+  "lib/num/arith_status.mli" {"F:S3076T1768614517.16"}
+  "lib/num/big_int.cmi" {"F:S2569T1768614517.16"}
+  "lib/num/big_int.cmti" {"F:S17850T1768614517.16"}
+  "lib/num/big_int.cmx" {"F:S5944T1768614517.17"}
+  "lib/num/big_int.mli" {"F:S10609T1768614517.16"}
+  "lib/num/int_misc.cmx" {"F:S712T1768614517.17"}
+  "lib/num/libnums.a" {"F:S15360T1768614517.16"}
+  "lib/num/nat.cmi" {"F:S2945T1768614517.16"}
+  "lib/num/nat.cmti" {"F:S14729T1768614517.16"}
+  "lib/num/nat.cmx" {"F:S2010T1768614517.17"}
+  "lib/num/nat.mli" {"F:S4973T1768614517.16"}
+  "lib/num/num.cmi" {"F:S2350T1768614517.16"}
+  "lib/num/num.cmti" {"F:S14869T1768614517.16"}
+  "lib/num/num.cmx" {"F:S3974T1768614517.17"}
+  "lib/num/num.mli" {"F:S5547T1768614517.16"}
+  "lib/num/nums.a" {"F:S245336T1768614517.17"}
+  "lib/num/nums.cma" {"F:S175576T1768614517.16"}
+  "lib/num/nums.cmxa" {"F:S3301T1768614517.17"}
+  "lib/num/nums.cmxs" {"F:S225320T1768614517.17"}
+  "lib/num/ratio.cmi" {"F:S2397T1768614517.16"}
+  "lib/num/ratio.cmti" {"F:S12598T1768614517.16"}
+  "lib/num/ratio.cmx" {"F:S6667T1768614517.17"}
+  "lib/num/ratio.mli" {"F:S4132T1768614517.16"}
+  "lib/stublibs/dllnums.so" {"F:S53752T1768614517.17"}
+]

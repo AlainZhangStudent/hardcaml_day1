@@ -1,0 +1,17 @@
+version = "v0.17.0"
+description = ""
+requires(ppx_driver) = "base
+                        compiler-libs.common
+                        ppxlib
+                        ppxlib.ast
+                        ppxlib_jane"
+archive(ppx_driver,byte) = "ppx_globalize.cma"
+archive(ppx_driver,native) = "ppx_globalize.cmxa"
+plugin(ppx_driver,byte) = "ppx_globalize.cma"
+plugin(ppx_driver,native) = "ppx_globalize.cmxs"
+# This line makes things transparent for people mixing preprocessors
+# and normal dependencies
+requires(-ppx_driver) = ""
+requires(-ppx_driver,-custom_ppx) += "ppx_deriving"
+ppxopt(-ppx_driver,-custom_ppx) = "ppx_deriving,package:ppx_globalize"
+library_kind = "ppx_deriver"

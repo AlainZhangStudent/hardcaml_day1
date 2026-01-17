@@ -1,0 +1,251 @@
+(lang dune 3.21)
+(name bin_prot)
+(version v0.17.0)
+(sections (lib .) (libexec .) (doc ../../doc/bin_prot) (stublibs ../stublibs))
+(files
+ (lib
+  (META
+   bin_prot.a
+   bin_prot.cma
+   bin_prot.cmi
+   bin_prot.cmt
+   bin_prot.cmx
+   bin_prot.cmxa
+   bin_prot.ml
+   bin_prot__.cmi
+   bin_prot__.cmt
+   bin_prot__.cmx
+   bin_prot__.ml
+   bin_prot__Binable.cmi
+   bin_prot__Binable.cmt
+   bin_prot__Binable.cmx
+   bin_prot__Blob.cmi
+   bin_prot__Blob.cmt
+   bin_prot__Blob.cmti
+   bin_prot__Blob.cmx
+   bin_prot__Common.cmi
+   bin_prot__Common.cmt
+   bin_prot__Common.cmti
+   bin_prot__Common.cmx
+   bin_prot__Md5.cmi
+   bin_prot__Md5.cmt
+   bin_prot__Md5.cmti
+   bin_prot__Md5.cmx
+   bin_prot__Nat0.cmi
+   bin_prot__Nat0.cmt
+   bin_prot__Nat0.cmti
+   bin_prot__Nat0.cmx
+   bin_prot__Read.cmi
+   bin_prot__Read.cmt
+   bin_prot__Read.cmti
+   bin_prot__Read.cmx
+   bin_prot__Read_intf.cmi
+   bin_prot__Read_intf.cmt
+   bin_prot__Read_intf.cmx
+   bin_prot__Shape.cmi
+   bin_prot__Shape.cmt
+   bin_prot__Shape.cmti
+   bin_prot__Shape.cmx
+   bin_prot__Size.cmi
+   bin_prot__Size.cmt
+   bin_prot__Size.cmti
+   bin_prot__Size.cmx
+   bin_prot__Size_intf.cmi
+   bin_prot__Size_intf.cmt
+   bin_prot__Size_intf.cmx
+   bin_prot__Std.cmi
+   bin_prot__Std.cmt
+   bin_prot__Std.cmx
+   bin_prot__Type_class.cmi
+   bin_prot__Type_class.cmt
+   bin_prot__Type_class.cmti
+   bin_prot__Type_class.cmx
+   bin_prot__Type_class_intf.cmi
+   bin_prot__Type_class_intf.cmt
+   bin_prot__Type_class_intf.cmx
+   bin_prot__Utils.cmi
+   bin_prot__Utils.cmt
+   bin_prot__Utils.cmti
+   bin_prot__Utils.cmx
+   bin_prot__Utils_intf.cmi
+   bin_prot__Utils_intf.cmt
+   bin_prot__Utils_intf.cmx
+   bin_prot__Write.cmi
+   bin_prot__Write.cmt
+   bin_prot__Write.cmti
+   bin_prot__Write.cmx
+   bin_prot__Write_intf.cmi
+   bin_prot__Write_intf.cmt
+   bin_prot__Write_intf.cmx
+   binable.ml
+   blob.ml
+   blob.mli
+   common.ml
+   common.mli
+   dune-package
+   libbin_prot_stubs.a
+   md5.ml
+   md5.mli
+   nat0.ml
+   nat0.mli
+   opam
+   read.ml
+   read.mli
+   read_intf.ml
+   runtime.js
+   shape.ml
+   shape.mli
+   shape/bin_shape.a
+   shape/bin_shape.cma
+   shape/bin_shape.cmi
+   shape/bin_shape.cmt
+   shape/bin_shape.cmti
+   shape/bin_shape.cmx
+   shape/bin_shape.cmxa
+   shape/bin_shape.ml
+   shape/bin_shape.mli
+   size.ml
+   size.mli
+   size_intf.ml
+   std.ml
+   type_class.ml
+   type_class.mli
+   type_class_intf.ml
+   utils.ml
+   utils.mli
+   utils_intf.ml
+   write.ml
+   write.mli
+   write_intf.ml))
+ (libexec (bin_prot.cmxs shape/bin_shape.cmxs))
+ (doc (CHANGES.md CHANGES.txt LICENSE-Tywith.txt LICENSE.md README.md))
+ (stublibs (dllbin_prot_stubs.so)))
+(library
+ (name bin_prot)
+ (kind normal)
+ (archives (byte bin_prot.cma) (native bin_prot.cmxa))
+ (plugins (byte bin_prot.cma) (native bin_prot.cmxs))
+ (foreign_objects blit_stubs.o)
+ (foreign_archives (archives (for all) (files libbin_prot_stubs.a)))
+ (foreign_dll_files ../stublibs/dllbin_prot_stubs.so)
+ (native_archives bin_prot.a)
+ (jsoo_runtime runtime.js)
+ (requires
+  bin_prot.shape
+  base.md5
+  base
+  ppx_stable_witness.stable_witness
+  ppx_sexp_conv.runtime-lib
+  sexplib0
+  ppx_compare.runtime-lib)
+ (main_module_name Bin_prot)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name bin_prot__)
+     (visibility public)
+     (kind alias)
+     (source (path Bin_prot__) (impl (path bin_prot__.ml-gen))))
+    (name Bin_prot)
+    (modules
+     (module
+      (obj_name bin_prot)
+      (visibility public)
+      (source (path Bin_prot) (impl (path bin_prot.ml))))
+     (module
+      (obj_name bin_prot__Binable)
+      (visibility public)
+      (source (path Binable) (impl (path binable.ml))))
+     (module
+      (obj_name bin_prot__Blob)
+      (visibility public)
+      (source (path Blob) (intf (path blob.mli)) (impl (path blob.ml))))
+     (module
+      (obj_name bin_prot__Common)
+      (visibility public)
+      (source (path Common) (intf (path common.mli)) (impl (path common.ml))))
+     (module
+      (obj_name bin_prot__Md5)
+      (visibility public)
+      (source (path Md5) (intf (path md5.mli)) (impl (path md5.ml))))
+     (module
+      (obj_name bin_prot__Nat0)
+      (visibility public)
+      (source (path Nat0) (intf (path nat0.mli)) (impl (path nat0.ml))))
+     (module
+      (obj_name bin_prot__Read)
+      (visibility public)
+      (source (path Read) (intf (path read.mli)) (impl (path read.ml))))
+     (module
+      (obj_name bin_prot__Read_intf)
+      (visibility public)
+      (source (path Read_intf) (impl (path read_intf.ml))))
+     (module
+      (obj_name bin_prot__Shape)
+      (visibility public)
+      (source (path Shape) (intf (path shape.mli)) (impl (path shape.ml))))
+     (module
+      (obj_name bin_prot__Size)
+      (visibility public)
+      (source (path Size) (intf (path size.mli)) (impl (path size.ml))))
+     (module
+      (obj_name bin_prot__Size_intf)
+      (visibility public)
+      (source (path Size_intf) (impl (path size_intf.ml))))
+     (module
+      (obj_name bin_prot__Std)
+      (visibility public)
+      (source (path Std) (impl (path std.ml))))
+     (module
+      (obj_name bin_prot__Type_class)
+      (visibility public)
+      (source
+       (path Type_class)
+       (intf (path type_class.mli))
+       (impl (path type_class.ml))))
+     (module
+      (obj_name bin_prot__Type_class_intf)
+      (visibility public)
+      (source (path Type_class_intf) (impl (path type_class_intf.ml))))
+     (module
+      (obj_name bin_prot__Utils)
+      (visibility public)
+      (source (path Utils) (intf (path utils.mli)) (impl (path utils.ml))))
+     (module
+      (obj_name bin_prot__Utils_intf)
+      (visibility public)
+      (source (path Utils_intf) (impl (path utils_intf.ml))))
+     (module
+      (obj_name bin_prot__Write)
+      (visibility public)
+      (source (path Write) (intf (path write.mli)) (impl (path write.ml))))
+     (module
+      (obj_name bin_prot__Write_intf)
+      (visibility public)
+      (source (path Write_intf) (impl (path write_intf.ml))))))
+   (wrapped true))))
+(library
+ (name bin_prot.shape)
+ (kind normal)
+ (archives (byte shape/bin_shape.cma) (native shape/bin_shape.cmxa))
+ (plugins (byte shape/bin_shape.cma) (native shape/bin_shape.cmxs))
+ (native_archives shape/bin_shape.a)
+ (requires
+  base.md5
+  variantslib
+  ppx_sexp_conv.runtime-lib
+  sexplib0
+  fieldslib
+  ppx_compare.runtime-lib)
+ (main_module_name Bin_shape)
+ (modes byte native)
+ (modules
+  (singleton
+   (obj_name bin_shape)
+   (visibility public)
+   (source
+    (path Bin_shape)
+    (intf (path shape/bin_shape.mli))
+    (impl (path shape/bin_shape.ml))))))

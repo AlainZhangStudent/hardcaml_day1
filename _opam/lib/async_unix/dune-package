@@ -1,0 +1,856 @@
+(lang dune 3.21)
+(name async_unix)
+(version v0.17.0)
+(sections
+ (lib .)
+ (libexec .)
+ (doc ../../doc/async_unix)
+ (stublibs ../stublibs))
+(files
+ (lib
+  (META
+   async_print.ml
+   async_print.mli
+   async_sys.ml
+   async_sys.mli
+   async_unix.a
+   async_unix.cma
+   async_unix.cmi
+   async_unix.cmt
+   async_unix.cmx
+   async_unix.cmxa
+   async_unix.ml
+   async_unix__.cmi
+   async_unix__.cmt
+   async_unix__.cmx
+   async_unix__.ml
+   async_unix__Async_print.cmi
+   async_unix__Async_print.cmt
+   async_unix__Async_print.cmti
+   async_unix__Async_print.cmx
+   async_unix__Async_sys.cmi
+   async_unix__Async_sys.cmt
+   async_unix__Async_sys.cmti
+   async_unix__Async_sys.cmx
+   async_unix__Backing_out_channel.cmi
+   async_unix__Backing_out_channel.cmt
+   async_unix__Backing_out_channel.cmti
+   async_unix__Backing_out_channel.cmx
+   async_unix__Busy_poller.cmi
+   async_unix__Busy_poller.cmt
+   async_unix__Busy_poller.cmti
+   async_unix__Busy_poller.cmx
+   async_unix__Busy_poller_intf.cmi
+   async_unix__Busy_poller_intf.cmt
+   async_unix__Busy_poller_intf.cmx
+   async_unix__By_descr.cmi
+   async_unix__By_descr.cmt
+   async_unix__By_descr.cmti
+   async_unix__By_descr.cmx
+   async_unix__Clock.cmi
+   async_unix__Clock.cmt
+   async_unix__Clock.cmti
+   async_unix__Clock.cmx
+   async_unix__Config.cmi
+   async_unix__Config.cmt
+   async_unix__Config.cmti
+   async_unix__Config.cmx
+   async_unix__Dump_core_on_job_delay.cmi
+   async_unix__Dump_core_on_job_delay.cmt
+   async_unix__Dump_core_on_job_delay.cmti
+   async_unix__Dump_core_on_job_delay.cmx
+   async_unix__Epoll_file_descr_watcher.cmi
+   async_unix__Epoll_file_descr_watcher.cmt
+   async_unix__Epoll_file_descr_watcher.cmti
+   async_unix__Epoll_file_descr_watcher.cmx
+   async_unix__Fd.cmi
+   async_unix__Fd.cmt
+   async_unix__Fd.cmti
+   async_unix__Fd.cmx
+   async_unix__File_descr_watcher_intf.cmi
+   async_unix__File_descr_watcher_intf.cmt
+   async_unix__File_descr_watcher_intf.cmx
+   async_unix__Import.cmi
+   async_unix__Import.cmt
+   async_unix__Import.cmx
+   async_unix__In_thread.cmi
+   async_unix__In_thread.cmt
+   async_unix__In_thread.cmti
+   async_unix__In_thread.cmx
+   async_unix__Interruptor.cmi
+   async_unix__Interruptor.cmt
+   async_unix__Interruptor.cmti
+   async_unix__Interruptor.cmx
+   async_unix__Io_stats.cmi
+   async_unix__Io_stats.cmt
+   async_unix__Io_stats.cmti
+   async_unix__Io_stats.cmx
+   async_unix__Io_uring.cmi
+   async_unix__Io_uring.cmt
+   async_unix__Io_uring.cmti
+   async_unix__Io_uring.cmx
+   async_unix__Io_uring_file_descr_watcher.cmi
+   async_unix__Io_uring_file_descr_watcher.cmt
+   async_unix__Io_uring_file_descr_watcher.cmti
+   async_unix__Io_uring_file_descr_watcher.cmx
+   async_unix__Io_uring_raw.cmi
+   async_unix__Io_uring_raw.cmt
+   async_unix__Io_uring_raw.cmti
+   async_unix__Io_uring_raw.cmx
+   async_unix__Io_uring_raw_intf.cmi
+   async_unix__Io_uring_raw_intf.cmt
+   async_unix__Io_uring_raw_intf.cmx
+   async_unix__Io_uring_raw_null.cmi
+   async_unix__Io_uring_raw_null.cmt
+   async_unix__Io_uring_raw_null.cmti
+   async_unix__Io_uring_raw_null.cmx
+   async_unix__Io_uring_raw_singleton.cmi
+   async_unix__Io_uring_raw_singleton.cmt
+   async_unix__Io_uring_raw_singleton.cmti
+   async_unix__Io_uring_raw_singleton.cmx
+   async_unix__Io_uring_types_intf.cmi
+   async_unix__Io_uring_types_intf.cmt
+   async_unix__Io_uring_types_intf.cmx
+   async_unix__Process.cmi
+   async_unix__Process.cmt
+   async_unix__Process.cmti
+   async_unix__Process.cmx
+   async_unix__Raw_fd.cmi
+   async_unix__Raw_fd.cmt
+   async_unix__Raw_fd.cmx
+   async_unix__Raw_scheduler.cmi
+   async_unix__Raw_scheduler.cmt
+   async_unix__Raw_scheduler.cmx
+   async_unix__Raw_signal_manager.cmi
+   async_unix__Raw_signal_manager.cmt
+   async_unix__Raw_signal_manager.cmti
+   async_unix__Raw_signal_manager.cmx
+   async_unix__Reader.cmi
+   async_unix__Reader.cmt
+   async_unix__Reader.cmti
+   async_unix__Reader.cmx
+   async_unix__Reader0.cmi
+   async_unix__Reader0.cmt
+   async_unix__Reader0.cmx
+   async_unix__Require_explicit_time_source.cmi
+   async_unix__Require_explicit_time_source.cmt
+   async_unix__Require_explicit_time_source.cmti
+   async_unix__Require_explicit_time_source.cmx
+   async_unix__Require_explicit_time_source_intf.cmi
+   async_unix__Require_explicit_time_source_intf.cmt
+   async_unix__Require_explicit_time_source_intf.cmx
+   async_unix__Scheduler.cmi
+   async_unix__Scheduler.cmt
+   async_unix__Scheduler.cmti
+   async_unix__Scheduler.cmx
+   async_unix__Select_file_descr_watcher.cmi
+   async_unix__Select_file_descr_watcher.cmt
+   async_unix__Select_file_descr_watcher.cmti
+   async_unix__Select_file_descr_watcher.cmx
+   async_unix__Shutdown.cmi
+   async_unix__Shutdown.cmt
+   async_unix__Shutdown.cmti
+   async_unix__Shutdown.cmx
+   async_unix__Signal.cmi
+   async_unix__Signal.cmt
+   async_unix__Signal.cmti
+   async_unix__Signal.cmx
+   async_unix__Signal_manager.cmi
+   async_unix__Signal_manager.cmt
+   async_unix__Signal_manager.cmti
+   async_unix__Signal_manager.cmx
+   async_unix__Syscall.cmi
+   async_unix__Syscall.cmt
+   async_unix__Syscall.cmti
+   async_unix__Syscall.cmx
+   async_unix__Tcp.cmi
+   async_unix__Tcp.cmt
+   async_unix__Tcp.cmti
+   async_unix__Tcp.cmx
+   async_unix__Thread_safe.cmi
+   async_unix__Thread_safe.cmt
+   async_unix__Thread_safe.cmti
+   async_unix__Thread_safe.cmx
+   async_unix__Time_source_tests.cmi
+   async_unix__Time_source_tests.cmt
+   async_unix__Time_source_tests.cmti
+   async_unix__Time_source_tests.cmx
+   async_unix__Unix_syscalls.cmi
+   async_unix__Unix_syscalls.cmt
+   async_unix__Unix_syscalls.cmti
+   async_unix__Unix_syscalls.cmx
+   async_unix__Unused.cmi
+   async_unix__Unused.cmt
+   async_unix__Unused.cmx
+   async_unix__Writer.cmi
+   async_unix__Writer.cmt
+   async_unix__Writer.cmti
+   async_unix__Writer.cmx
+   async_unix__Writer0.cmi
+   async_unix__Writer0.cmt
+   async_unix__Writer0.cmti
+   async_unix__Writer0.cmx
+   async_unix__Writer_intf.cmi
+   async_unix__Writer_intf.cmt
+   async_unix__Writer_intf.cmx
+   backing_out_channel.ml
+   backing_out_channel.mli
+   busy_poller.ml
+   busy_poller.mli
+   busy_poller_intf.ml
+   by_descr.ml
+   by_descr.mli
+   clock.ml
+   clock.mli
+   config.ml
+   config.mli
+   dump_core_on_job_delay.ml
+   dump_core_on_job_delay.mli
+   dune-package
+   epoll_file_descr_watcher.ml
+   epoll_file_descr_watcher.mli
+   fd.ml
+   fd.mli
+   file_descr_watcher_intf.ml
+   import.ml
+   in_thread.ml
+   in_thread.mli
+   interruptor.ml
+   interruptor.mli
+   io_stats.ml
+   io_stats.mli
+   io_uring.ml
+   io_uring.mli
+   io_uring_file_descr_watcher.ml
+   io_uring_file_descr_watcher.mli
+   io_uring_raw.ml
+   io_uring_raw.mli
+   io_uring_raw_intf.ml
+   io_uring_raw_null.ml
+   io_uring_raw_null.mli
+   io_uring_raw_singleton.ml
+   io_uring_raw_singleton.mli
+   io_uring_types_intf.ml
+   libasync_unix_stubs.a
+   opam
+   process.ml
+   process.mli
+   raw_fd.ml
+   raw_scheduler.ml
+   raw_signal_manager.ml
+   raw_signal_manager.mli
+   reader.ml
+   reader.mli
+   reader0.ml
+   require_explicit_time_source.ml
+   require_explicit_time_source.mli
+   require_explicit_time_source_intf.ml
+   scheduler.ml
+   scheduler.mli
+   select_file_descr_watcher.ml
+   select_file_descr_watcher.mli
+   shutdown.ml
+   shutdown.mli
+   signal.ml
+   signal.mli
+   signal_manager.ml
+   signal_manager.mli
+   syscall.ml
+   syscall.mli
+   tcp.ml
+   tcp.mli
+   thread_pool/import.ml
+   thread_pool/thread_pool.a
+   thread_pool/thread_pool.cma
+   thread_pool/thread_pool.cmi
+   thread_pool/thread_pool.cmt
+   thread_pool/thread_pool.cmti
+   thread_pool/thread_pool.cmx
+   thread_pool/thread_pool.cmxa
+   thread_pool/thread_pool.ml
+   thread_pool/thread_pool.mli
+   thread_pool/thread_pool__.cmi
+   thread_pool/thread_pool__.cmt
+   thread_pool/thread_pool__.cmx
+   thread_pool/thread_pool__.ml
+   thread_pool/thread_pool__Import.cmi
+   thread_pool/thread_pool__Import.cmt
+   thread_pool/thread_pool__Import.cmx
+   thread_safe.ml
+   thread_safe.mli
+   thread_safe_ivar/import.ml
+   thread_safe_ivar/thread_safe_ivar.a
+   thread_safe_ivar/thread_safe_ivar.cma
+   thread_safe_ivar/thread_safe_ivar.cmi
+   thread_safe_ivar/thread_safe_ivar.cmt
+   thread_safe_ivar/thread_safe_ivar.cmti
+   thread_safe_ivar/thread_safe_ivar.cmx
+   thread_safe_ivar/thread_safe_ivar.cmxa
+   thread_safe_ivar/thread_safe_ivar.ml
+   thread_safe_ivar/thread_safe_ivar.mli
+   thread_safe_ivar/thread_safe_ivar__.cmi
+   thread_safe_ivar/thread_safe_ivar__.cmt
+   thread_safe_ivar/thread_safe_ivar__.cmx
+   thread_safe_ivar/thread_safe_ivar__.ml
+   thread_safe_ivar/thread_safe_ivar__Import.cmi
+   thread_safe_ivar/thread_safe_ivar__Import.cmt
+   thread_safe_ivar/thread_safe_ivar__Import.cmx
+   thread_safe_pipe/import.ml
+   thread_safe_pipe/thread_safe_pipe.a
+   thread_safe_pipe/thread_safe_pipe.cma
+   thread_safe_pipe/thread_safe_pipe.cmi
+   thread_safe_pipe/thread_safe_pipe.cmt
+   thread_safe_pipe/thread_safe_pipe.cmti
+   thread_safe_pipe/thread_safe_pipe.cmx
+   thread_safe_pipe/thread_safe_pipe.cmxa
+   thread_safe_pipe/thread_safe_pipe.ml
+   thread_safe_pipe/thread_safe_pipe.mli
+   thread_safe_pipe/thread_safe_pipe__.cmi
+   thread_safe_pipe/thread_safe_pipe__.cmt
+   thread_safe_pipe/thread_safe_pipe__.cmx
+   thread_safe_pipe/thread_safe_pipe__.ml
+   thread_safe_pipe/thread_safe_pipe__Import.cmi
+   thread_safe_pipe/thread_safe_pipe__Import.cmt
+   thread_safe_pipe/thread_safe_pipe__Import.cmx
+   time_source_tests.ml
+   time_source_tests.mli
+   unix_syscalls.ml
+   unix_syscalls.mli
+   unused.ml
+   writer.ml
+   writer.mli
+   writer0.ml
+   writer0.mli
+   writer_intf.ml))
+ (libexec
+  (async_unix.cmxs
+   thread_pool/thread_pool.cmxs
+   thread_safe_ivar/thread_safe_ivar.cmxs
+   thread_safe_pipe/thread_safe_pipe.cmxs))
+ (doc (CHANGES.md LICENSE.md README.md))
+ (stublibs (dllasync_unix_stubs.so)))
+(library
+ (name async_unix)
+ (kind normal)
+ (archives (byte async_unix.cma) (native async_unix.cmxa))
+ (plugins (byte async_unix.cma) (native async_unix.cmxs))
+ (foreign_objects dump_core_on_job_delay_stubs.o magic_trace_stubs.o)
+ (foreign_archives (archives (for all) (files libasync_unix_stubs.a)))
+ (foreign_dll_files ../stublibs/dllasync_unix_stubs.so)
+ (native_archives async_unix.a)
+ (requires
+  async_kernel
+  core_unix.bigstring_unix
+  core_kernel.bounded_int_table
+  core
+  cstruct
+  async_kernel.eager_deferred
+  core_unix.filename_unix
+  core_unix.iobuf_unix
+  core_unix.nano_mutex
+  async_kernel.read_write_pair
+  core_unix.squeue
+  core_unix.sys_unix
+  async_unix.thread_pool
+  async_unix.thread_safe_ivar
+  core_unix.time_ns_unix
+  core_unix.time_stamp_counter
+  ppx_sexp_conv.runtime-lib
+  sexplib0
+  ppx_compare.runtime-lib
+  ppx_enumerate.runtime-lib
+  ppx_hash.runtime-lib
+  ppx_here.runtime-lib
+  ppx_assert.runtime-lib
+  ppx_bench.runtime-lib
+  bin_prot
+  fieldslib
+  ppx_inline_test.config
+  ppx_inline_test.runtime-lib
+  ppx_module_timer.runtime
+  ppx_stable_witness.runtime
+  ppx_string.runtime
+  base
+  typerep
+  variantslib
+  ppx_expect.runtime
+  ppx_expect.config
+  ppx_log.types
+  ppx_log.syntax
+  base_quickcheck.ppx_quickcheck.runtime
+  base_quickcheck)
+ (main_module_name Async_unix)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name async_unix__)
+     (visibility public)
+     (kind alias)
+     (source (path Async_unix__) (impl (path async_unix__.ml-gen))))
+    (name Async_unix)
+    (modules
+     (module
+      (obj_name async_unix__Async_print)
+      (visibility public)
+      (source
+       (path Async_print)
+       (intf (path async_print.mli))
+       (impl (path async_print.ml))))
+     (module
+      (obj_name async_unix__Async_sys)
+      (visibility public)
+      (source
+       (path Async_sys)
+       (intf (path async_sys.mli))
+       (impl (path async_sys.ml))))
+     (module
+      (obj_name async_unix)
+      (visibility public)
+      (source (path Async_unix) (impl (path async_unix.ml))))
+     (module
+      (obj_name async_unix__Backing_out_channel)
+      (visibility public)
+      (source
+       (path Backing_out_channel)
+       (intf (path backing_out_channel.mli))
+       (impl (path backing_out_channel.ml))))
+     (module
+      (obj_name async_unix__Busy_poller)
+      (visibility public)
+      (source
+       (path Busy_poller)
+       (intf (path busy_poller.mli))
+       (impl (path busy_poller.ml))))
+     (module
+      (obj_name async_unix__Busy_poller_intf)
+      (visibility public)
+      (source (path Busy_poller_intf) (impl (path busy_poller_intf.ml))))
+     (module
+      (obj_name async_unix__By_descr)
+      (visibility public)
+      (source
+       (path By_descr)
+       (intf (path by_descr.mli))
+       (impl (path by_descr.ml))))
+     (module
+      (obj_name async_unix__Clock)
+      (visibility public)
+      (source (path Clock) (intf (path clock.mli)) (impl (path clock.ml))))
+     (module
+      (obj_name async_unix__Config)
+      (visibility public)
+      (source (path Config) (intf (path config.mli)) (impl (path config.ml))))
+     (module
+      (obj_name async_unix__Dump_core_on_job_delay)
+      (visibility public)
+      (source
+       (path Dump_core_on_job_delay)
+       (intf (path dump_core_on_job_delay.mli))
+       (impl (path dump_core_on_job_delay.ml))))
+     (module
+      (obj_name async_unix__Epoll_file_descr_watcher)
+      (visibility public)
+      (source
+       (path Epoll_file_descr_watcher)
+       (intf (path epoll_file_descr_watcher.mli))
+       (impl (path epoll_file_descr_watcher.ml))))
+     (module
+      (obj_name async_unix__Fd)
+      (visibility public)
+      (source (path Fd) (intf (path fd.mli)) (impl (path fd.ml))))
+     (module
+      (obj_name async_unix__File_descr_watcher_intf)
+      (visibility public)
+      (source
+       (path File_descr_watcher_intf)
+       (impl (path file_descr_watcher_intf.ml))))
+     (module
+      (obj_name async_unix__Import)
+      (visibility public)
+      (source (path Import) (impl (path import.ml))))
+     (module
+      (obj_name async_unix__In_thread)
+      (visibility public)
+      (source
+       (path In_thread)
+       (intf (path in_thread.mli))
+       (impl (path in_thread.ml))))
+     (module
+      (obj_name async_unix__Interruptor)
+      (visibility public)
+      (source
+       (path Interruptor)
+       (intf (path interruptor.mli))
+       (impl (path interruptor.ml))))
+     (module
+      (obj_name async_unix__Io_stats)
+      (visibility public)
+      (source
+       (path Io_stats)
+       (intf (path io_stats.mli))
+       (impl (path io_stats.ml))))
+     (module
+      (obj_name async_unix__Io_uring)
+      (visibility public)
+      (source
+       (path Io_uring)
+       (intf (path io_uring.mli))
+       (impl (path io_uring.ml))))
+     (module
+      (obj_name async_unix__Io_uring_file_descr_watcher)
+      (visibility public)
+      (source
+       (path Io_uring_file_descr_watcher)
+       (intf (path io_uring_file_descr_watcher.mli))
+       (impl (path io_uring_file_descr_watcher.ml))))
+     (module
+      (obj_name async_unix__Io_uring_raw)
+      (visibility public)
+      (source
+       (path Io_uring_raw)
+       (intf (path io_uring_raw.mli))
+       (impl (path io_uring_raw.ml))))
+     (module
+      (obj_name async_unix__Io_uring_raw_intf)
+      (visibility public)
+      (source (path Io_uring_raw_intf) (impl (path io_uring_raw_intf.ml))))
+     (module
+      (obj_name async_unix__Io_uring_raw_null)
+      (visibility public)
+      (source
+       (path Io_uring_raw_null)
+       (intf (path io_uring_raw_null.mli))
+       (impl (path io_uring_raw_null.ml))))
+     (module
+      (obj_name async_unix__Io_uring_raw_singleton)
+      (visibility public)
+      (source
+       (path Io_uring_raw_singleton)
+       (intf (path io_uring_raw_singleton.mli))
+       (impl (path io_uring_raw_singleton.ml))))
+     (module
+      (obj_name async_unix__Io_uring_types_intf)
+      (visibility public)
+      (source (path Io_uring_types_intf) (impl (path io_uring_types_intf.ml))))
+     (module
+      (obj_name async_unix__Process)
+      (visibility public)
+      (source
+       (path Process)
+       (intf (path process.mli))
+       (impl (path process.ml))))
+     (module
+      (obj_name async_unix__Raw_fd)
+      (visibility public)
+      (source (path Raw_fd) (impl (path raw_fd.ml))))
+     (module
+      (obj_name async_unix__Raw_scheduler)
+      (visibility public)
+      (source (path Raw_scheduler) (impl (path raw_scheduler.ml))))
+     (module
+      (obj_name async_unix__Raw_signal_manager)
+      (visibility public)
+      (source
+       (path Raw_signal_manager)
+       (intf (path raw_signal_manager.mli))
+       (impl (path raw_signal_manager.ml))))
+     (module
+      (obj_name async_unix__Reader)
+      (visibility public)
+      (source (path Reader) (intf (path reader.mli)) (impl (path reader.ml))))
+     (module
+      (obj_name async_unix__Reader0)
+      (visibility public)
+      (source (path Reader0) (impl (path reader0.ml))))
+     (module
+      (obj_name async_unix__Require_explicit_time_source)
+      (visibility public)
+      (source
+       (path Require_explicit_time_source)
+       (intf (path require_explicit_time_source.mli))
+       (impl (path require_explicit_time_source.ml))))
+     (module
+      (obj_name async_unix__Require_explicit_time_source_intf)
+      (visibility public)
+      (source
+       (path Require_explicit_time_source_intf)
+       (impl (path require_explicit_time_source_intf.ml))))
+     (module
+      (obj_name async_unix__Scheduler)
+      (visibility public)
+      (source
+       (path Scheduler)
+       (intf (path scheduler.mli))
+       (impl (path scheduler.ml))))
+     (module
+      (obj_name async_unix__Select_file_descr_watcher)
+      (visibility public)
+      (source
+       (path Select_file_descr_watcher)
+       (intf (path select_file_descr_watcher.mli))
+       (impl (path select_file_descr_watcher.ml))))
+     (module
+      (obj_name async_unix__Shutdown)
+      (visibility public)
+      (source
+       (path Shutdown)
+       (intf (path shutdown.mli))
+       (impl (path shutdown.ml))))
+     (module
+      (obj_name async_unix__Signal)
+      (visibility public)
+      (source (path Signal) (intf (path signal.mli)) (impl (path signal.ml))))
+     (module
+      (obj_name async_unix__Signal_manager)
+      (visibility public)
+      (source
+       (path Signal_manager)
+       (intf (path signal_manager.mli))
+       (impl (path signal_manager.ml))))
+     (module
+      (obj_name async_unix__Syscall)
+      (visibility public)
+      (source
+       (path Syscall)
+       (intf (path syscall.mli))
+       (impl (path syscall.ml))))
+     (module
+      (obj_name async_unix__Tcp)
+      (visibility public)
+      (source (path Tcp) (intf (path tcp.mli)) (impl (path tcp.ml))))
+     (module
+      (obj_name async_unix__Thread_safe)
+      (visibility public)
+      (source
+       (path Thread_safe)
+       (intf (path thread_safe.mli))
+       (impl (path thread_safe.ml))))
+     (module
+      (obj_name async_unix__Time_source_tests)
+      (visibility public)
+      (source
+       (path Time_source_tests)
+       (intf (path time_source_tests.mli))
+       (impl (path time_source_tests.ml))))
+     (module
+      (obj_name async_unix__Unix_syscalls)
+      (visibility public)
+      (source
+       (path Unix_syscalls)
+       (intf (path unix_syscalls.mli))
+       (impl (path unix_syscalls.ml))))
+     (module
+      (obj_name async_unix__Unused)
+      (visibility public)
+      (source (path Unused) (impl (path unused.ml))))
+     (module
+      (obj_name async_unix__Writer)
+      (visibility public)
+      (source (path Writer) (intf (path writer.mli)) (impl (path writer.ml))))
+     (module
+      (obj_name async_unix__Writer0)
+      (visibility public)
+      (source
+       (path Writer0)
+       (intf (path writer0.mli))
+       (impl (path writer0.ml))))
+     (module
+      (obj_name async_unix__Writer_intf)
+      (visibility public)
+      (source (path Writer_intf) (impl (path writer_intf.ml))))))
+   (wrapped true))))
+(library
+ (name async_unix.thread_pool)
+ (kind normal)
+ (archives
+  (byte thread_pool/thread_pool.cma)
+  (native thread_pool/thread_pool.cmxa))
+ (plugins
+  (byte thread_pool/thread_pool.cma)
+  (native thread_pool/thread_pool.cmxs))
+ (native_archives thread_pool/thread_pool.a)
+ (requires
+  core
+  core_unix.linux_ext
+  core_unix.nano_mutex
+  core_unix.squeue
+  core_kernel.thread_pool_cpu_affinity
+  async_unix.thread_safe_ivar
+  core_unix.time_ns_unix
+  ppx_sexp_conv.runtime-lib
+  sexplib0
+  ppx_compare.runtime-lib
+  ppx_enumerate.runtime-lib
+  ppx_hash.runtime-lib
+  ppx_here.runtime-lib
+  ppx_assert.runtime-lib
+  ppx_bench.runtime-lib
+  bin_prot
+  fieldslib
+  ppx_inline_test.config
+  ppx_inline_test.runtime-lib
+  ppx_module_timer.runtime
+  ppx_stable_witness.runtime
+  ppx_string.runtime
+  base
+  typerep
+  variantslib
+  ppx_expect.runtime
+  ppx_expect.config
+  ppx_log.types
+  ppx_log.syntax
+  base_quickcheck.ppx_quickcheck.runtime
+  base_quickcheck)
+ (main_module_name Thread_pool)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name thread_pool__)
+     (visibility public)
+     (kind alias)
+     (source
+      (path Thread_pool__)
+      (impl (path thread_pool/thread_pool__.ml-gen))))
+    (name Thread_pool)
+    (modules
+     (module
+      (obj_name thread_pool__Import)
+      (visibility public)
+      (source (path Import) (impl (path thread_pool/import.ml))))
+     (module
+      (obj_name thread_pool)
+      (visibility public)
+      (source
+       (path Thread_pool)
+       (intf (path thread_pool/thread_pool.mli))
+       (impl (path thread_pool/thread_pool.ml))))))
+   (wrapped true))))
+(library
+ (name async_unix.thread_safe_ivar)
+ (kind normal)
+ (archives
+  (byte thread_safe_ivar/thread_safe_ivar.cma)
+  (native thread_safe_ivar/thread_safe_ivar.cmxa))
+ (plugins
+  (byte thread_safe_ivar/thread_safe_ivar.cma)
+  (native thread_safe_ivar/thread_safe_ivar.cmxs))
+ (native_archives thread_safe_ivar/thread_safe_ivar.a)
+ (requires
+  core
+  core_unix.error_checking_mutex
+  ppx_sexp_conv.runtime-lib
+  sexplib0
+  ppx_compare.runtime-lib
+  ppx_enumerate.runtime-lib
+  ppx_hash.runtime-lib
+  ppx_here.runtime-lib
+  ppx_assert.runtime-lib
+  ppx_bench.runtime-lib
+  bin_prot
+  fieldslib
+  ppx_inline_test.config
+  ppx_inline_test.runtime-lib
+  ppx_module_timer.runtime
+  ppx_stable_witness.runtime
+  ppx_string.runtime
+  base
+  typerep
+  variantslib
+  ppx_expect.runtime
+  ppx_expect.config
+  ppx_log.types
+  ppx_log.syntax
+  base_quickcheck.ppx_quickcheck.runtime
+  base_quickcheck)
+ (main_module_name Thread_safe_ivar)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name thread_safe_ivar__)
+     (visibility public)
+     (kind alias)
+     (source
+      (path Thread_safe_ivar__)
+      (impl (path thread_safe_ivar/thread_safe_ivar__.ml-gen))))
+    (name Thread_safe_ivar)
+    (modules
+     (module
+      (obj_name thread_safe_ivar__Import)
+      (visibility public)
+      (source (path Import) (impl (path thread_safe_ivar/import.ml))))
+     (module
+      (obj_name thread_safe_ivar)
+      (visibility public)
+      (source
+       (path Thread_safe_ivar)
+       (intf (path thread_safe_ivar/thread_safe_ivar.mli))
+       (impl (path thread_safe_ivar/thread_safe_ivar.ml))))))
+   (wrapped true))))
+(library
+ (name async_unix.thread_safe_pipe)
+ (kind normal)
+ (archives
+  (byte thread_safe_pipe/thread_safe_pipe.cma)
+  (native thread_safe_pipe/thread_safe_pipe.cmxa))
+ (plugins
+  (byte thread_safe_pipe/thread_safe_pipe.cma)
+  (native thread_safe_pipe/thread_safe_pipe.cmxs))
+ (native_archives thread_safe_pipe/thread_safe_pipe.a)
+ (requires
+  async_unix
+  ppx_sexp_conv.runtime-lib
+  sexplib0
+  ppx_compare.runtime-lib
+  ppx_enumerate.runtime-lib
+  ppx_hash.runtime-lib
+  ppx_here.runtime-lib
+  ppx_assert.runtime-lib
+  ppx_bench.runtime-lib
+  bin_prot
+  fieldslib
+  ppx_inline_test.config
+  ppx_inline_test.runtime-lib
+  ppx_module_timer.runtime
+  ppx_stable_witness.runtime
+  ppx_string.runtime
+  base
+  typerep
+  variantslib
+  ppx_expect.runtime
+  ppx_expect.config
+  ppx_log.types
+  ppx_log.syntax
+  base_quickcheck.ppx_quickcheck.runtime
+  base_quickcheck)
+ (main_module_name Thread_safe_pipe)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name thread_safe_pipe__)
+     (visibility public)
+     (kind alias)
+     (source
+      (path Thread_safe_pipe__)
+      (impl (path thread_safe_pipe/thread_safe_pipe__.ml-gen))))
+    (name Thread_safe_pipe)
+    (modules
+     (module
+      (obj_name thread_safe_pipe__Import)
+      (visibility public)
+      (source (path Import) (impl (path thread_safe_pipe/import.ml))))
+     (module
+      (obj_name thread_safe_pipe)
+      (visibility public)
+      (source
+       (path Thread_safe_pipe)
+       (intf (path thread_safe_pipe/thread_safe_pipe.mli))
+       (impl (path thread_safe_pipe/thread_safe_pipe.ml))))))
+   (wrapped true))))

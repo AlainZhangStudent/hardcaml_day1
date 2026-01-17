@@ -1,0 +1,128 @@
+(lang dune 3.21)
+(name notty)
+(version 0.2.3)
+(sections (lib .) (libexec .) (doc ../../doc/notty) (stublibs ../stublibs))
+(files
+ (lib
+  (.private/notty_grapheme_cluster.cmi
+   .private/notty_grapheme_cluster.cmt
+   .private/notty_grapheme_cluster.cmti
+   .private/notty_uucp.cmi
+   .private/notty_uucp.cmt
+   .private/notty_uucp.cmti
+   .private/notty_uucp_data.cmi
+   .private/notty_uucp_data.cmt
+   .private/notty_uucp_data.cmti
+   META
+   dune-package
+   no-uucp/notty_grapheme_cluster.ml
+   no-uucp/notty_grapheme_cluster.mli
+   no-uucp/notty_uucp.ml
+   no-uucp/notty_uucp.mli
+   no-uucp/notty_uucp_data.ml
+   no-uucp/notty_uucp_data.mli
+   notty.a
+   notty.cma
+   notty.cmi
+   notty.cmt
+   notty.cmti
+   notty.cmx
+   notty.cmxa
+   notty.ml
+   notty.mli
+   notty_grapheme_cluster.cmx
+   notty_uucp.cmx
+   notty_uucp_data.cmx
+   opam
+   top/notty_top.a
+   top/notty_top.cma
+   top/notty_top.cmi
+   top/notty_top.cmt
+   top/notty_top.cmx
+   top/notty_top.cmxa
+   top/notty_top.ml
+   top/notty_top_init.ml
+   unix/libnotty_unix_stubs.a
+   unix/notty_unix.a
+   unix/notty_unix.cma
+   unix/notty_unix.cmi
+   unix/notty_unix.cmt
+   unix/notty_unix.cmti
+   unix/notty_unix.cmx
+   unix/notty_unix.cmxa
+   unix/notty_unix.ml
+   unix/notty_unix.mli))
+ (libexec (notty.cmxs top/notty_top.cmxs unix/notty_unix.cmxs))
+ (doc (CHANGES.md LICENSE.md README.md))
+ (stublibs (dllnotty_unix_stubs.so)))
+(library
+ (name notty)
+ (kind normal)
+ (synopsis "Declaring terminals")
+ (archives (byte notty.cma) (native notty.cmxa))
+ (plugins (byte notty.cma) (native notty.cmxs))
+ (native_archives notty.a)
+ (requires uutf)
+ (modes byte native)
+ (obj_dir (private_dir .private))
+ (modules
+  (unwrapped
+   (module
+    (obj_name notty)
+    (visibility public)
+    (source (path Notty) (intf (path notty.mli)) (impl (path notty.ml))))
+   (module
+    (obj_name notty_grapheme_cluster)
+    (visibility private)
+    (source
+     (path Notty_grapheme_cluster)
+     (intf (path no-uucp/notty_grapheme_cluster.mli))
+     (impl (path no-uucp/notty_grapheme_cluster.ml))))
+   (module
+    (obj_name notty_uucp)
+    (visibility private)
+    (source
+     (path Notty_uucp)
+     (intf (path no-uucp/notty_uucp.mli))
+     (impl (path no-uucp/notty_uucp.ml))))
+   (module
+    (obj_name notty_uucp_data)
+    (visibility private)
+    (source
+     (path Notty_uucp_data)
+     (intf (path no-uucp/notty_uucp_data.mli))
+     (impl (path no-uucp/notty_uucp_data.ml)))))))
+(library
+ (name notty.top)
+ (kind normal)
+ (synopsis "Notty toplevel support")
+ (archives (byte top/notty_top.cma) (native top/notty_top.cmxa))
+ (plugins (byte top/notty_top.cma) (native top/notty_top.cmxs))
+ (native_archives top/notty_top.a)
+ (requires notty compiler-libs.toplevel)
+ (modes byte native)
+ (modules
+  (singleton
+   (obj_name notty_top)
+   (visibility public)
+   (source (path Notty_top) (impl (path top/notty_top.ml))))))
+(library
+ (name notty.unix)
+ (kind normal)
+ (synopsis "Notty Unix IO")
+ (archives (byte unix/notty_unix.cma) (native unix/notty_unix.cmxa))
+ (plugins (byte unix/notty_unix.cma) (native unix/notty_unix.cmxs))
+ (foreign_objects unix/winsize.o)
+ (foreign_archives (archives (for all) (files unix/libnotty_unix_stubs.a)))
+ (foreign_dll_files ../stublibs/dllnotty_unix_stubs.so)
+ (native_archives unix/notty_unix.a)
+ (requires notty unix)
+ (modes byte native)
+ (modules
+  (singleton
+   (obj_name notty_unix)
+   (visibility public)
+   (source
+    (path Notty_unix)
+    (intf (path unix/notty_unix.mli))
+    (impl (path unix/notty_unix.ml))))))

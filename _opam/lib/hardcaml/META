@@ -1,0 +1,54 @@
+version = "v0.17.0"
+description = ""
+requires =
+"base
+ base_quickcheck
+ base_quickcheck.ppx_quickcheck.runtime
+ bin_prot
+ core_kernel.flags
+ fieldslib
+ ppx_assert.runtime-lib
+ ppx_bench.runtime-lib
+ ppx_compare.runtime-lib
+ ppx_enumerate.runtime-lib
+ ppx_expect.config
+ ppx_expect.runtime
+ ppx_hash.runtime-lib
+ ppx_here.runtime-lib
+ ppx_inline_test.config
+ ppx_inline_test.runtime-lib
+ ppx_log.syntax
+ ppx_log.types
+ ppx_module_timer.runtime
+ ppx_sexp_conv.runtime-lib
+ ppx_stable_witness.runtime
+ ppx_string.runtime
+ sexplib0
+ stdio
+ typerep
+ variantslib
+ zarith"
+archive(byte) = "hardcaml.cma"
+archive(native) = "hardcaml.cmxa"
+plugin(byte) = "hardcaml.cma"
+plugin(native) = "hardcaml.cmxs"
+package "ppx_hardcaml0" (
+  directory = "ppx_hardcaml0"
+  version = "v0.17.0"
+  description = ""
+  requires(ppx_driver) = "base
+                          compiler-libs.common
+                          ppx_sexp_conv
+                          ppxlib
+                          ppxlib.ast"
+  archive(ppx_driver,byte) = "ppx_hardcaml0.cma"
+  archive(ppx_driver,native) = "ppx_hardcaml0.cmxa"
+  plugin(ppx_driver,byte) = "ppx_hardcaml0.cma"
+  plugin(ppx_driver,native) = "ppx_hardcaml0.cmxs"
+  # This line makes things transparent for people mixing preprocessors
+  # and normal dependencies
+  requires(-ppx_driver) = "ppx_sexp_conv.runtime-lib sexplib0"
+  requires(-ppx_driver,-custom_ppx) += "ppx_deriving"
+  ppxopt(-ppx_driver,-custom_ppx) = "ppx_deriving,package:hardcaml.ppx_hardcaml0"
+  library_kind = "ppx_deriver"
+)

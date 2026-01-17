@@ -1,0 +1,45 @@
+(lang dune 3.21)
+(name ppx_string_conv)
+(version v0.17.0)
+(sections (lib .) (libexec .) (doc ../../doc/ppx_string_conv))
+(files
+ (lib
+  (META
+   dune-package
+   opam
+   ppx_string_conv.a
+   ppx_string_conv.cma
+   ppx_string_conv.cmi
+   ppx_string_conv.cmt
+   ppx_string_conv.cmti
+   ppx_string_conv.cmx
+   ppx_string_conv.cmxa
+   ppx_string_conv.ml
+   ppx_string_conv.mli))
+ (libexec (ppx.exe ppx_string_conv.cmxs))
+ (doc (LICENSE.md README.md)))
+(library
+ (name ppx_string_conv)
+ (kind ppx_rewriter)
+ (archives (byte ppx_string_conv.cma) (native ppx_string_conv.cmxa))
+ (plugins (byte ppx_string_conv.cma) (native ppx_string_conv.cmxs))
+ (native_archives ppx_string_conv.a)
+ (requires
+  base
+  capitalization
+  compiler-libs.common
+  ppxlib.ast
+  ppxlib
+  ppx_string.runtime
+  ppx_here.runtime-lib)
+ (ppx_runtime_deps base)
+ (main_module_name Ppx_string_conv)
+ (modes byte native)
+ (modules
+  (singleton
+   (obj_name ppx_string_conv)
+   (visibility public)
+   (source
+    (path Ppx_string_conv)
+    (intf (path ppx_string_conv.mli))
+    (impl (path ppx_string_conv.ml))))))

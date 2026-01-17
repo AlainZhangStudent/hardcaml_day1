@@ -1,0 +1,118 @@
+(lang dune 3.21)
+(name protocol_version_header)
+(version v0.17.0)
+(sections (lib .) (libexec .) (doc ../../doc/protocol_version_header))
+(files
+ (lib
+  (META
+   dune-package
+   known_protocol.ml
+   known_protocol.mli
+   list_with_max_len.ml
+   list_with_max_len.mli
+   list_with_max_len_intf.ml
+   opam
+   protocol_version_header.a
+   protocol_version_header.cma
+   protocol_version_header.cmi
+   protocol_version_header.cmt
+   protocol_version_header.cmti
+   protocol_version_header.cmx
+   protocol_version_header.cmxa
+   protocol_version_header.ml
+   protocol_version_header.mli
+   protocol_version_header__.cmi
+   protocol_version_header__.cmt
+   protocol_version_header__.cmx
+   protocol_version_header__.ml
+   protocol_version_header__Known_protocol.cmi
+   protocol_version_header__Known_protocol.cmt
+   protocol_version_header__Known_protocol.cmti
+   protocol_version_header__Known_protocol.cmx
+   protocol_version_header__List_with_max_len.cmi
+   protocol_version_header__List_with_max_len.cmt
+   protocol_version_header__List_with_max_len.cmti
+   protocol_version_header__List_with_max_len.cmx
+   protocol_version_header__List_with_max_len_intf.cmi
+   protocol_version_header__List_with_max_len_intf.cmt
+   protocol_version_header__List_with_max_len_intf.cmx))
+ (libexec (protocol_version_header.cmxs))
+ (doc (CHANGES.md LICENSE.md README.org)))
+(library
+ (name protocol_version_header)
+ (kind normal)
+ (archives
+  (byte protocol_version_header.cma)
+  (native protocol_version_header.cmxa))
+ (plugins
+  (byte protocol_version_header.cma)
+  (native protocol_version_header.cmxs))
+ (native_archives protocol_version_header.a)
+ (requires
+  core
+  ppx_sexp_conv.runtime-lib
+  sexplib0
+  ppx_compare.runtime-lib
+  ppx_enumerate.runtime-lib
+  ppx_hash.runtime-lib
+  ppx_here.runtime-lib
+  ppx_assert.runtime-lib
+  ppx_bench.runtime-lib
+  bin_prot
+  fieldslib
+  ppx_inline_test.config
+  ppx_inline_test.runtime-lib
+  ppx_module_timer.runtime
+  ppx_stable_witness.runtime
+  ppx_string.runtime
+  base
+  typerep
+  variantslib
+  ppx_expect.runtime
+  ppx_expect.config
+  ppx_log.types
+  ppx_log.syntax
+  base_quickcheck.ppx_quickcheck.runtime
+  base_quickcheck)
+ (main_module_name Protocol_version_header)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name protocol_version_header__)
+     (visibility public)
+     (kind alias)
+     (source
+      (path Protocol_version_header__)
+      (impl (path protocol_version_header__.ml-gen))))
+    (name Protocol_version_header)
+    (modules
+     (module
+      (obj_name protocol_version_header__Known_protocol)
+      (visibility public)
+      (source
+       (path Known_protocol)
+       (intf (path known_protocol.mli))
+       (impl (path known_protocol.ml))))
+     (module
+      (obj_name protocol_version_header__List_with_max_len)
+      (visibility public)
+      (source
+       (path List_with_max_len)
+       (intf (path list_with_max_len.mli))
+       (impl (path list_with_max_len.ml))))
+     (module
+      (obj_name protocol_version_header__List_with_max_len_intf)
+      (visibility public)
+      (source
+       (path List_with_max_len_intf)
+       (impl (path list_with_max_len_intf.ml))))
+     (module
+      (obj_name protocol_version_header)
+      (visibility public)
+      (source
+       (path Protocol_version_header)
+       (intf (path protocol_version_header.mli))
+       (impl (path protocol_version_header.ml))))))
+   (wrapped true))))

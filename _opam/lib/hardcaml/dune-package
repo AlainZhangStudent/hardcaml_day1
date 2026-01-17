@@ -1,0 +1,1222 @@
+(lang dune 3.21)
+(name hardcaml)
+(version v0.17.0)
+(sections (lib .) (libexec .) (doc ../../doc/hardcaml) (stublibs ../stublibs))
+(files
+ (lib
+  (META
+   always.ml
+   always.mli
+   architecture.ml
+   architecture.mli
+   assertion_manager.ml
+   assertion_manager.mli
+   assertions.ml
+   assertions.mli
+   async_fifo.ml
+   async_fifo.mli
+   bits.ml
+   bits.mli
+   bits0.ml
+   bits0.mli
+   bits_intf.ml
+   bits_list.ml
+   bits_list.mli
+   bits_packed.ml
+   bits_packed.mli
+   build_mode.ml
+   build_mode.mli
+   caller_id.ml
+   caller_id.mli
+   circuit.ml
+   circuit.mli
+   circuit_database.ml
+   circuit_database.mli
+   circuit_utilization.ml
+   circuit_utilization.mli
+   clocking.ml
+   clocking.mli
+   clocking_intf.ml
+   comb.ml
+   comb.mli
+   comb_intf.ml
+   combinational_op.ml
+   combinational_op.mli
+   combinational_ops_database.ml
+   combinational_ops_database.mli
+   constant.ml
+   constant.mli
+   cross_product.ml
+   cross_product.mli
+   cross_product_intf.ml
+   cyclesim.ml
+   cyclesim.mli
+   cyclesim0.ml
+   cyclesim0.mli
+   cyclesim0_intf.ml
+   cyclesim2.ml
+   cyclesim2.mli
+   cyclesim2_ops.ml
+   cyclesim2_ops.mli
+   cyclesim_combine.ml
+   cyclesim_combine.mli
+   cyclesim_compile.ml
+   cyclesim_compile.mli
+   cyclesim_float_ops.ml
+   cyclesim_float_ops.mli
+   cyclesim_float_ops_intf.ml
+   cyclesim_intf.ml
+   cyclesim_lookup.ml
+   cyclesim_lookup.mli
+   cyclesim_lookup_intf.ml
+   cyclesim_schedule.ml
+   cyclesim_schedule.mli
+   dedup.ml
+   dedup.mli
+   design_rule_checks.ml
+   design_rule_checks.mli
+   dune-package
+   edge.ml
+   edge.mli
+   enum.ml
+   enum.mli
+   enum_intf.ml
+   fifo.ml
+   fifo.mli
+   fifo_intf.ml
+   flags_vector.ml
+   flags_vector.mli
+   flags_vector_intf.ml
+   hardcaml.a
+   hardcaml.cma
+   hardcaml.cmi
+   hardcaml.cmt
+   hardcaml.cmx
+   hardcaml.cmxa
+   hardcaml.ml
+   hardcaml__.cmi
+   hardcaml__.cmt
+   hardcaml__.cmx
+   hardcaml__.ml
+   hardcaml__Always.cmi
+   hardcaml__Always.cmt
+   hardcaml__Always.cmti
+   hardcaml__Always.cmx
+   hardcaml__Architecture.cmi
+   hardcaml__Architecture.cmt
+   hardcaml__Architecture.cmti
+   hardcaml__Architecture.cmx
+   hardcaml__Assertion_manager.cmi
+   hardcaml__Assertion_manager.cmt
+   hardcaml__Assertion_manager.cmti
+   hardcaml__Assertion_manager.cmx
+   hardcaml__Assertions.cmi
+   hardcaml__Assertions.cmt
+   hardcaml__Assertions.cmti
+   hardcaml__Assertions.cmx
+   hardcaml__Async_fifo.cmi
+   hardcaml__Async_fifo.cmt
+   hardcaml__Async_fifo.cmti
+   hardcaml__Async_fifo.cmx
+   hardcaml__Bits.cmi
+   hardcaml__Bits.cmt
+   hardcaml__Bits.cmti
+   hardcaml__Bits.cmx
+   hardcaml__Bits0.cmi
+   hardcaml__Bits0.cmt
+   hardcaml__Bits0.cmti
+   hardcaml__Bits0.cmx
+   hardcaml__Bits_intf.cmi
+   hardcaml__Bits_intf.cmt
+   hardcaml__Bits_intf.cmx
+   hardcaml__Bits_list.cmi
+   hardcaml__Bits_list.cmt
+   hardcaml__Bits_list.cmti
+   hardcaml__Bits_list.cmx
+   hardcaml__Bits_packed.cmi
+   hardcaml__Bits_packed.cmt
+   hardcaml__Bits_packed.cmti
+   hardcaml__Bits_packed.cmx
+   hardcaml__Build_mode.cmi
+   hardcaml__Build_mode.cmt
+   hardcaml__Build_mode.cmti
+   hardcaml__Build_mode.cmx
+   hardcaml__Caller_id.cmi
+   hardcaml__Caller_id.cmt
+   hardcaml__Caller_id.cmti
+   hardcaml__Caller_id.cmx
+   hardcaml__Circuit.cmi
+   hardcaml__Circuit.cmt
+   hardcaml__Circuit.cmti
+   hardcaml__Circuit.cmx
+   hardcaml__Circuit_database.cmi
+   hardcaml__Circuit_database.cmt
+   hardcaml__Circuit_database.cmti
+   hardcaml__Circuit_database.cmx
+   hardcaml__Circuit_utilization.cmi
+   hardcaml__Circuit_utilization.cmt
+   hardcaml__Circuit_utilization.cmti
+   hardcaml__Circuit_utilization.cmx
+   hardcaml__Clocking.cmi
+   hardcaml__Clocking.cmt
+   hardcaml__Clocking.cmti
+   hardcaml__Clocking.cmx
+   hardcaml__Clocking_intf.cmi
+   hardcaml__Clocking_intf.cmt
+   hardcaml__Clocking_intf.cmx
+   hardcaml__Comb.cmi
+   hardcaml__Comb.cmt
+   hardcaml__Comb.cmti
+   hardcaml__Comb.cmx
+   hardcaml__Comb_intf.cmi
+   hardcaml__Comb_intf.cmt
+   hardcaml__Comb_intf.cmx
+   hardcaml__Combinational_op.cmi
+   hardcaml__Combinational_op.cmt
+   hardcaml__Combinational_op.cmti
+   hardcaml__Combinational_op.cmx
+   hardcaml__Combinational_ops_database.cmi
+   hardcaml__Combinational_ops_database.cmt
+   hardcaml__Combinational_ops_database.cmti
+   hardcaml__Combinational_ops_database.cmx
+   hardcaml__Constant.cmi
+   hardcaml__Constant.cmt
+   hardcaml__Constant.cmti
+   hardcaml__Constant.cmx
+   hardcaml__Cross_product.cmi
+   hardcaml__Cross_product.cmt
+   hardcaml__Cross_product.cmti
+   hardcaml__Cross_product.cmx
+   hardcaml__Cross_product_intf.cmi
+   hardcaml__Cross_product_intf.cmt
+   hardcaml__Cross_product_intf.cmx
+   hardcaml__Cyclesim.cmi
+   hardcaml__Cyclesim.cmt
+   hardcaml__Cyclesim.cmti
+   hardcaml__Cyclesim.cmx
+   hardcaml__Cyclesim0.cmi
+   hardcaml__Cyclesim0.cmt
+   hardcaml__Cyclesim0.cmti
+   hardcaml__Cyclesim0.cmx
+   hardcaml__Cyclesim0_intf.cmi
+   hardcaml__Cyclesim0_intf.cmt
+   hardcaml__Cyclesim0_intf.cmx
+   hardcaml__Cyclesim2.cmi
+   hardcaml__Cyclesim2.cmt
+   hardcaml__Cyclesim2.cmti
+   hardcaml__Cyclesim2.cmx
+   hardcaml__Cyclesim2_ops.cmi
+   hardcaml__Cyclesim2_ops.cmt
+   hardcaml__Cyclesim2_ops.cmti
+   hardcaml__Cyclesim2_ops.cmx
+   hardcaml__Cyclesim_combine.cmi
+   hardcaml__Cyclesim_combine.cmt
+   hardcaml__Cyclesim_combine.cmti
+   hardcaml__Cyclesim_combine.cmx
+   hardcaml__Cyclesim_compile.cmi
+   hardcaml__Cyclesim_compile.cmt
+   hardcaml__Cyclesim_compile.cmti
+   hardcaml__Cyclesim_compile.cmx
+   hardcaml__Cyclesim_float_ops.cmi
+   hardcaml__Cyclesim_float_ops.cmt
+   hardcaml__Cyclesim_float_ops.cmti
+   hardcaml__Cyclesim_float_ops.cmx
+   hardcaml__Cyclesim_float_ops_intf.cmi
+   hardcaml__Cyclesim_float_ops_intf.cmt
+   hardcaml__Cyclesim_float_ops_intf.cmx
+   hardcaml__Cyclesim_intf.cmi
+   hardcaml__Cyclesim_intf.cmt
+   hardcaml__Cyclesim_intf.cmx
+   hardcaml__Cyclesim_lookup.cmi
+   hardcaml__Cyclesim_lookup.cmt
+   hardcaml__Cyclesim_lookup.cmti
+   hardcaml__Cyclesim_lookup.cmx
+   hardcaml__Cyclesim_lookup_intf.cmi
+   hardcaml__Cyclesim_lookup_intf.cmt
+   hardcaml__Cyclesim_lookup_intf.cmx
+   hardcaml__Cyclesim_schedule.cmi
+   hardcaml__Cyclesim_schedule.cmt
+   hardcaml__Cyclesim_schedule.cmti
+   hardcaml__Cyclesim_schedule.cmx
+   hardcaml__Dedup.cmi
+   hardcaml__Dedup.cmt
+   hardcaml__Dedup.cmti
+   hardcaml__Dedup.cmx
+   hardcaml__Design_rule_checks.cmi
+   hardcaml__Design_rule_checks.cmt
+   hardcaml__Design_rule_checks.cmti
+   hardcaml__Design_rule_checks.cmx
+   hardcaml__Edge.cmi
+   hardcaml__Edge.cmt
+   hardcaml__Edge.cmti
+   hardcaml__Edge.cmx
+   hardcaml__Enum.cmi
+   hardcaml__Enum.cmt
+   hardcaml__Enum.cmti
+   hardcaml__Enum.cmx
+   hardcaml__Enum_intf.cmi
+   hardcaml__Enum_intf.cmt
+   hardcaml__Enum_intf.cmx
+   hardcaml__Fifo.cmi
+   hardcaml__Fifo.cmt
+   hardcaml__Fifo.cmti
+   hardcaml__Fifo.cmx
+   hardcaml__Fifo_intf.cmi
+   hardcaml__Fifo_intf.cmt
+   hardcaml__Fifo_intf.cmx
+   hardcaml__Flags_vector.cmi
+   hardcaml__Flags_vector.cmt
+   hardcaml__Flags_vector.cmti
+   hardcaml__Flags_vector.cmx
+   hardcaml__Flags_vector_intf.cmi
+   hardcaml__Flags_vector_intf.cmt
+   hardcaml__Flags_vector_intf.cmx
+   hardcaml__Hierarchy.cmi
+   hardcaml__Hierarchy.cmt
+   hardcaml__Hierarchy.cmti
+   hardcaml__Hierarchy.cmx
+   hardcaml__Instantiation.cmi
+   hardcaml__Instantiation.cmt
+   hardcaml__Instantiation.cmti
+   hardcaml__Instantiation.cmx
+   hardcaml__Interface.cmi
+   hardcaml__Interface.cmt
+   hardcaml__Interface.cmti
+   hardcaml__Interface.cmx
+   hardcaml__Interface_intf.cmi
+   hardcaml__Interface_intf.cmt
+   hardcaml__Interface_intf.cmx
+   hardcaml__Level.cmi
+   hardcaml__Level.cmt
+   hardcaml__Level.cmti
+   hardcaml__Level.cmx
+   hardcaml__Logic.cmi
+   hardcaml__Logic.cmt
+   hardcaml__Logic.cmti
+   hardcaml__Logic.cmx
+   hardcaml__Logic_intf.cmi
+   hardcaml__Logic_intf.cmt
+   hardcaml__Logic_intf.cmx
+   hardcaml__Mangler.cmi
+   hardcaml__Mangler.cmt
+   hardcaml__Mangler.cmti
+   hardcaml__Mangler.cmx
+   hardcaml__Pair.cmi
+   hardcaml__Pair.cmt
+   hardcaml__Pair.cmti
+   hardcaml__Pair.cmx
+   hardcaml__Pair_intf.cmi
+   hardcaml__Pair_intf.cmt
+   hardcaml__Pair_intf.cmx
+   hardcaml__Parameter.cmi
+   hardcaml__Parameter.cmt
+   hardcaml__Parameter.cmti
+   hardcaml__Parameter.cmx
+   hardcaml__Parameter_name.cmi
+   hardcaml__Parameter_name.cmt
+   hardcaml__Parameter_name.cmti
+   hardcaml__Parameter_name.cmx
+   hardcaml__Ppx_hardcaml_runtime.cmi
+   hardcaml__Ppx_hardcaml_runtime.cmt
+   hardcaml__Ppx_hardcaml_runtime.cmti
+   hardcaml__Ppx_hardcaml_runtime.cmx
+   hardcaml__Property.cmi
+   hardcaml__Property.cmt
+   hardcaml__Property.cmti
+   hardcaml__Property.cmx
+   hardcaml__Property_manager.cmi
+   hardcaml__Property_manager.cmt
+   hardcaml__Property_manager.cmti
+   hardcaml__Property_manager.cmx
+   hardcaml__Ram.cmi
+   hardcaml__Ram.cmt
+   hardcaml__Ram.cmti
+   hardcaml__Ram.cmx
+   hardcaml__Read_port.cmi
+   hardcaml__Read_port.cmt
+   hardcaml__Read_port.cmti
+   hardcaml__Read_port.cmx
+   hardcaml__Reg_spec.cmi
+   hardcaml__Reg_spec.cmt
+   hardcaml__Reg_spec.cmti
+   hardcaml__Reg_spec.cmx
+   hardcaml__Reserved_words.cmi
+   hardcaml__Reserved_words.cmt
+   hardcaml__Reserved_words.cmti
+   hardcaml__Reserved_words.cmx
+   hardcaml__Rtl.cmi
+   hardcaml__Rtl.cmt
+   hardcaml__Rtl.cmti
+   hardcaml__Rtl.cmx
+   hardcaml__Rtl_ast.cmi
+   hardcaml__Rtl_ast.cmt
+   hardcaml__Rtl_ast.cmti
+   hardcaml__Rtl_ast.cmx
+   hardcaml__Rtl_attribute.cmi
+   hardcaml__Rtl_attribute.cmt
+   hardcaml__Rtl_attribute.cmti
+   hardcaml__Rtl_attribute.cmx
+   hardcaml__Rtl_deprecated.cmi
+   hardcaml__Rtl_deprecated.cmt
+   hardcaml__Rtl_deprecated.cmti
+   hardcaml__Rtl_deprecated.cmx
+   hardcaml__Rtl_intf.cmi
+   hardcaml__Rtl_intf.cmt
+   hardcaml__Rtl_intf.cmx
+   hardcaml__Rtl_name.cmi
+   hardcaml__Rtl_name.cmt
+   hardcaml__Rtl_name.cmti
+   hardcaml__Rtl_name.cmx
+   hardcaml__Rtl_name_intf.cmi
+   hardcaml__Rtl_name_intf.cmt
+   hardcaml__Rtl_name_intf.cmx
+   hardcaml__Rtl_verilog_of_ast.cmi
+   hardcaml__Rtl_verilog_of_ast.cmt
+   hardcaml__Rtl_verilog_of_ast.cmti
+   hardcaml__Rtl_verilog_of_ast.cmx
+   hardcaml__Rtl_vhdl_of_ast.cmi
+   hardcaml__Rtl_vhdl_of_ast.cmt
+   hardcaml__Rtl_vhdl_of_ast.cmti
+   hardcaml__Rtl_vhdl_of_ast.cmx
+   hardcaml__Scalar.cmi
+   hardcaml__Scalar.cmt
+   hardcaml__Scalar.cmti
+   hardcaml__Scalar.cmx
+   hardcaml__Scalar_intf.cmi
+   hardcaml__Scalar_intf.cmt
+   hardcaml__Scalar_intf.cmx
+   hardcaml__Scope.cmi
+   hardcaml__Scope.cmt
+   hardcaml__Scope.cmti
+   hardcaml__Scope.cmx
+   hardcaml__Side.cmi
+   hardcaml__Side.cmt
+   hardcaml__Side.cmti
+   hardcaml__Side.cmx
+   hardcaml__Signal.cmi
+   hardcaml__Signal.cmt
+   hardcaml__Signal.cmti
+   hardcaml__Signal.cmx
+   hardcaml__Signal__type.cmi
+   hardcaml__Signal__type.cmt
+   hardcaml__Signal__type.cmti
+   hardcaml__Signal__type.cmx
+   hardcaml__Signal__type_intf.cmi
+   hardcaml__Signal__type_intf.cmt
+   hardcaml__Signal__type_intf.cmx
+   hardcaml__Signal_graph.cmi
+   hardcaml__Signal_graph.cmt
+   hardcaml__Signal_graph.cmti
+   hardcaml__Signal_graph.cmx
+   hardcaml__Signal_intf.cmi
+   hardcaml__Signal_intf.cmt
+   hardcaml__Signal_intf.cmx
+   hardcaml__Signedness.cmi
+   hardcaml__Signedness.cmt
+   hardcaml__Signedness.cmti
+   hardcaml__Signedness.cmx
+   hardcaml__Structural.cmi
+   hardcaml__Structural.cmt
+   hardcaml__Structural.cmti
+   hardcaml__Structural.cmx
+   hardcaml__Structural_intf.cmi
+   hardcaml__Structural_intf.cmt
+   hardcaml__Structural_intf.cmx
+   hardcaml__Topsort.cmi
+   hardcaml__Topsort.cmt
+   hardcaml__Topsort.cmti
+   hardcaml__Topsort.cmx
+   hardcaml__Types.cmi
+   hardcaml__Types.cmt
+   hardcaml__Types.cmti
+   hardcaml__Types.cmx
+   hardcaml__Value.cmi
+   hardcaml__Value.cmt
+   hardcaml__Value.cmti
+   hardcaml__Value.cmx
+   hardcaml__Value_intf.cmi
+   hardcaml__Value_intf.cmt
+   hardcaml__Value_intf.cmx
+   hardcaml__Vcd.cmi
+   hardcaml__Vcd.cmt
+   hardcaml__Vcd.cmti
+   hardcaml__Vcd.cmx
+   hardcaml__Wave_data.cmi
+   hardcaml__Wave_data.cmt
+   hardcaml__Wave_data.cmti
+   hardcaml__Wave_data.cmx
+   hardcaml__Wave_data_intf.cmi
+   hardcaml__Wave_data_intf.cmt
+   hardcaml__Wave_data_intf.cmx
+   hardcaml__Wave_format.cmi
+   hardcaml__Wave_format.cmt
+   hardcaml__Wave_format.cmti
+   hardcaml__Wave_format.cmx
+   hardcaml__With_valid.cmi
+   hardcaml__With_valid.cmt
+   hardcaml__With_valid.cmti
+   hardcaml__With_valid.cmx
+   hardcaml__With_valid_intf.cmi
+   hardcaml__With_valid_intf.cmt
+   hardcaml__With_valid_intf.cmx
+   hardcaml__Write_port.cmi
+   hardcaml__Write_port.cmt
+   hardcaml__Write_port.cmti
+   hardcaml__Write_port.cmx
+   hardcaml__Zarith.cmi
+   hardcaml__Zarith.cmt
+   hardcaml__Zarith.cmx
+   hierarchy.ml
+   hierarchy.mli
+   instantiation.ml
+   instantiation.mli
+   interface.ml
+   interface.mli
+   interface_intf.ml
+   level.ml
+   level.mli
+   libhardcaml_stubs.a
+   logic.ml
+   logic.mli
+   logic_intf.ml
+   mangler.ml
+   mangler.mli
+   opam
+   pair.ml
+   pair.mli
+   pair_intf.ml
+   parameter.ml
+   parameter.mli
+   parameter_name.ml
+   parameter_name.mli
+   ppx_hardcaml0/ppx_hardcaml0.a
+   ppx_hardcaml0/ppx_hardcaml0.cma
+   ppx_hardcaml0/ppx_hardcaml0.cmi
+   ppx_hardcaml0/ppx_hardcaml0.cmt
+   ppx_hardcaml0/ppx_hardcaml0.cmx
+   ppx_hardcaml0/ppx_hardcaml0.cmxa
+   ppx_hardcaml0/ppx_hardcaml0.ml
+   ppx_hardcaml0/ppx_hardcaml0__Ppx_hardcaml_zero.cmi
+   ppx_hardcaml0/ppx_hardcaml0__Ppx_hardcaml_zero.cmt
+   ppx_hardcaml0/ppx_hardcaml0__Ppx_hardcaml_zero.cmti
+   ppx_hardcaml0/ppx_hardcaml0__Ppx_hardcaml_zero.cmx
+   ppx_hardcaml0/ppx_hardcaml_zero.ml
+   ppx_hardcaml0/ppx_hardcaml_zero.mli
+   ppx_hardcaml_runtime.ml
+   ppx_hardcaml_runtime.mli
+   property.ml
+   property.mli
+   property_manager.ml
+   property_manager.mli
+   ram.ml
+   ram.mli
+   read_port.ml
+   read_port.mli
+   reg_spec.ml
+   reg_spec.mli
+   reserved_words.ml
+   reserved_words.mli
+   rtl.ml
+   rtl.mli
+   rtl_ast.ml
+   rtl_ast.mli
+   rtl_attribute.ml
+   rtl_attribute.mli
+   rtl_deprecated.ml
+   rtl_deprecated.mli
+   rtl_intf.ml
+   rtl_name.ml
+   rtl_name.mli
+   rtl_name_intf.ml
+   rtl_verilog_of_ast.ml
+   rtl_verilog_of_ast.mli
+   rtl_vhdl_of_ast.ml
+   rtl_vhdl_of_ast.mli
+   scalar.ml
+   scalar.mli
+   scalar_intf.ml
+   scope.ml
+   scope.mli
+   side.ml
+   side.mli
+   signal.ml
+   signal.mli
+   signal__type.ml
+   signal__type.mli
+   signal__type_intf.ml
+   signal_graph.ml
+   signal_graph.mli
+   signal_intf.ml
+   signedness.ml
+   signedness.mli
+   structural.ml
+   structural.mli
+   structural_intf.ml
+   topsort.ml
+   topsort.mli
+   types.ml
+   types.mli
+   value.ml
+   value.mli
+   value_intf.ml
+   vcd.ml
+   vcd.mli
+   wave_data.ml
+   wave_data.mli
+   wave_data_intf.ml
+   wave_format.ml
+   wave_format.mli
+   with_valid.ml
+   with_valid.mli
+   with_valid_intf.ml
+   write_port.ml
+   write_port.mli
+   zarith.ml))
+ (libexec (hardcaml.cmxs ppx_hardcaml0/ppx_hardcaml0.cmxs))
+ (doc (CHANGES.md LICENSE.md README.md))
+ (stublibs (dllhardcaml_stubs.so)))
+(library
+ (name hardcaml)
+ (kind normal)
+ (archives (byte hardcaml.cma) (native hardcaml.cmxa))
+ (plugins (byte hardcaml.cma) (native hardcaml.cmxs))
+ (foreign_objects bits_stubs.o)
+ (foreign_archives (archives (for all) (files libhardcaml_stubs.a)))
+ (foreign_dll_files ../stublibs/dllhardcaml_stubs.so)
+ (native_archives hardcaml.a)
+ (requires
+  base
+  bin_prot
+  core_kernel.flags
+  stdio
+  zarith
+  ppx_sexp_conv.runtime-lib
+  sexplib0
+  ppx_compare.runtime-lib
+  ppx_enumerate.runtime-lib
+  ppx_hash.runtime-lib
+  ppx_here.runtime-lib
+  ppx_assert.runtime-lib
+  ppx_bench.runtime-lib
+  fieldslib
+  ppx_inline_test.config
+  ppx_inline_test.runtime-lib
+  ppx_module_timer.runtime
+  ppx_stable_witness.runtime
+  ppx_string.runtime
+  typerep
+  variantslib
+  ppx_expect.runtime
+  ppx_expect.config
+  ppx_log.types
+  ppx_log.syntax
+  base_quickcheck.ppx_quickcheck.runtime
+  base_quickcheck)
+ (main_module_name Hardcaml)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name hardcaml__)
+     (visibility public)
+     (kind alias)
+     (source (path Hardcaml__) (impl (path hardcaml__.ml-gen))))
+    (name Hardcaml)
+    (modules
+     (module
+      (obj_name hardcaml__Always)
+      (visibility public)
+      (source (path Always) (intf (path always.mli)) (impl (path always.ml))))
+     (module
+      (obj_name hardcaml__Architecture)
+      (visibility public)
+      (source
+       (path Architecture)
+       (intf (path architecture.mli))
+       (impl (path architecture.ml))))
+     (module
+      (obj_name hardcaml__Assertion_manager)
+      (visibility public)
+      (source
+       (path Assertion_manager)
+       (intf (path assertion_manager.mli))
+       (impl (path assertion_manager.ml))))
+     (module
+      (obj_name hardcaml__Assertions)
+      (visibility public)
+      (source
+       (path Assertions)
+       (intf (path assertions.mli))
+       (impl (path assertions.ml))))
+     (module
+      (obj_name hardcaml__Async_fifo)
+      (visibility public)
+      (source
+       (path Async_fifo)
+       (intf (path async_fifo.mli))
+       (impl (path async_fifo.ml))))
+     (module
+      (obj_name hardcaml__Bits)
+      (visibility public)
+      (source (path Bits) (intf (path bits.mli)) (impl (path bits.ml))))
+     (module
+      (obj_name hardcaml__Bits0)
+      (visibility public)
+      (source (path Bits0) (intf (path bits0.mli)) (impl (path bits0.ml))))
+     (module
+      (obj_name hardcaml__Bits_intf)
+      (visibility public)
+      (source (path Bits_intf) (impl (path bits_intf.ml))))
+     (module
+      (obj_name hardcaml__Bits_list)
+      (visibility public)
+      (source
+       (path Bits_list)
+       (intf (path bits_list.mli))
+       (impl (path bits_list.ml))))
+     (module
+      (obj_name hardcaml__Bits_packed)
+      (visibility public)
+      (source
+       (path Bits_packed)
+       (intf (path bits_packed.mli))
+       (impl (path bits_packed.ml))))
+     (module
+      (obj_name hardcaml__Build_mode)
+      (visibility public)
+      (source
+       (path Build_mode)
+       (intf (path build_mode.mli))
+       (impl (path build_mode.ml))))
+     (module
+      (obj_name hardcaml__Caller_id)
+      (visibility public)
+      (source
+       (path Caller_id)
+       (intf (path caller_id.mli))
+       (impl (path caller_id.ml))))
+     (module
+      (obj_name hardcaml__Circuit)
+      (visibility public)
+      (source
+       (path Circuit)
+       (intf (path circuit.mli))
+       (impl (path circuit.ml))))
+     (module
+      (obj_name hardcaml__Circuit_database)
+      (visibility public)
+      (source
+       (path Circuit_database)
+       (intf (path circuit_database.mli))
+       (impl (path circuit_database.ml))))
+     (module
+      (obj_name hardcaml__Circuit_utilization)
+      (visibility public)
+      (source
+       (path Circuit_utilization)
+       (intf (path circuit_utilization.mli))
+       (impl (path circuit_utilization.ml))))
+     (module
+      (obj_name hardcaml__Clocking)
+      (visibility public)
+      (source
+       (path Clocking)
+       (intf (path clocking.mli))
+       (impl (path clocking.ml))))
+     (module
+      (obj_name hardcaml__Clocking_intf)
+      (visibility public)
+      (source (path Clocking_intf) (impl (path clocking_intf.ml))))
+     (module
+      (obj_name hardcaml__Comb)
+      (visibility public)
+      (source (path Comb) (intf (path comb.mli)) (impl (path comb.ml))))
+     (module
+      (obj_name hardcaml__Comb_intf)
+      (visibility public)
+      (source (path Comb_intf) (impl (path comb_intf.ml))))
+     (module
+      (obj_name hardcaml__Combinational_op)
+      (visibility public)
+      (source
+       (path Combinational_op)
+       (intf (path combinational_op.mli))
+       (impl (path combinational_op.ml))))
+     (module
+      (obj_name hardcaml__Combinational_ops_database)
+      (visibility public)
+      (source
+       (path Combinational_ops_database)
+       (intf (path combinational_ops_database.mli))
+       (impl (path combinational_ops_database.ml))))
+     (module
+      (obj_name hardcaml__Constant)
+      (visibility public)
+      (source
+       (path Constant)
+       (intf (path constant.mli))
+       (impl (path constant.ml))))
+     (module
+      (obj_name hardcaml__Cross_product)
+      (visibility public)
+      (source
+       (path Cross_product)
+       (intf (path cross_product.mli))
+       (impl (path cross_product.ml))))
+     (module
+      (obj_name hardcaml__Cross_product_intf)
+      (visibility public)
+      (source (path Cross_product_intf) (impl (path cross_product_intf.ml))))
+     (module
+      (obj_name hardcaml__Cyclesim)
+      (visibility public)
+      (source
+       (path Cyclesim)
+       (intf (path cyclesim.mli))
+       (impl (path cyclesim.ml))))
+     (module
+      (obj_name hardcaml__Cyclesim0)
+      (visibility public)
+      (source
+       (path Cyclesim0)
+       (intf (path cyclesim0.mli))
+       (impl (path cyclesim0.ml))))
+     (module
+      (obj_name hardcaml__Cyclesim0_intf)
+      (visibility public)
+      (source (path Cyclesim0_intf) (impl (path cyclesim0_intf.ml))))
+     (module
+      (obj_name hardcaml__Cyclesim2)
+      (visibility public)
+      (source
+       (path Cyclesim2)
+       (intf (path cyclesim2.mli))
+       (impl (path cyclesim2.ml))))
+     (module
+      (obj_name hardcaml__Cyclesim2_ops)
+      (visibility public)
+      (source
+       (path Cyclesim2_ops)
+       (intf (path cyclesim2_ops.mli))
+       (impl (path cyclesim2_ops.ml))))
+     (module
+      (obj_name hardcaml__Cyclesim_combine)
+      (visibility public)
+      (source
+       (path Cyclesim_combine)
+       (intf (path cyclesim_combine.mli))
+       (impl (path cyclesim_combine.ml))))
+     (module
+      (obj_name hardcaml__Cyclesim_compile)
+      (visibility public)
+      (source
+       (path Cyclesim_compile)
+       (intf (path cyclesim_compile.mli))
+       (impl (path cyclesim_compile.ml))))
+     (module
+      (obj_name hardcaml__Cyclesim_float_ops)
+      (visibility public)
+      (source
+       (path Cyclesim_float_ops)
+       (intf (path cyclesim_float_ops.mli))
+       (impl (path cyclesim_float_ops.ml))))
+     (module
+      (obj_name hardcaml__Cyclesim_float_ops_intf)
+      (visibility public)
+      (source
+       (path Cyclesim_float_ops_intf)
+       (impl (path cyclesim_float_ops_intf.ml))))
+     (module
+      (obj_name hardcaml__Cyclesim_intf)
+      (visibility public)
+      (source (path Cyclesim_intf) (impl (path cyclesim_intf.ml))))
+     (module
+      (obj_name hardcaml__Cyclesim_lookup)
+      (visibility public)
+      (source
+       (path Cyclesim_lookup)
+       (intf (path cyclesim_lookup.mli))
+       (impl (path cyclesim_lookup.ml))))
+     (module
+      (obj_name hardcaml__Cyclesim_lookup_intf)
+      (visibility public)
+      (source
+       (path Cyclesim_lookup_intf)
+       (impl (path cyclesim_lookup_intf.ml))))
+     (module
+      (obj_name hardcaml__Cyclesim_schedule)
+      (visibility public)
+      (source
+       (path Cyclesim_schedule)
+       (intf (path cyclesim_schedule.mli))
+       (impl (path cyclesim_schedule.ml))))
+     (module
+      (obj_name hardcaml__Dedup)
+      (visibility public)
+      (source (path Dedup) (intf (path dedup.mli)) (impl (path dedup.ml))))
+     (module
+      (obj_name hardcaml__Design_rule_checks)
+      (visibility public)
+      (source
+       (path Design_rule_checks)
+       (intf (path design_rule_checks.mli))
+       (impl (path design_rule_checks.ml))))
+     (module
+      (obj_name hardcaml__Edge)
+      (visibility public)
+      (source (path Edge) (intf (path edge.mli)) (impl (path edge.ml))))
+     (module
+      (obj_name hardcaml__Enum)
+      (visibility public)
+      (source (path Enum) (intf (path enum.mli)) (impl (path enum.ml))))
+     (module
+      (obj_name hardcaml__Enum_intf)
+      (visibility public)
+      (source (path Enum_intf) (impl (path enum_intf.ml))))
+     (module
+      (obj_name hardcaml__Fifo)
+      (visibility public)
+      (source (path Fifo) (intf (path fifo.mli)) (impl (path fifo.ml))))
+     (module
+      (obj_name hardcaml__Fifo_intf)
+      (visibility public)
+      (source (path Fifo_intf) (impl (path fifo_intf.ml))))
+     (module
+      (obj_name hardcaml__Flags_vector)
+      (visibility public)
+      (source
+       (path Flags_vector)
+       (intf (path flags_vector.mli))
+       (impl (path flags_vector.ml))))
+     (module
+      (obj_name hardcaml__Flags_vector_intf)
+      (visibility public)
+      (source (path Flags_vector_intf) (impl (path flags_vector_intf.ml))))
+     (module
+      (obj_name hardcaml)
+      (visibility public)
+      (source (path Hardcaml) (impl (path hardcaml.ml))))
+     (module
+      (obj_name hardcaml__Hierarchy)
+      (visibility public)
+      (source
+       (path Hierarchy)
+       (intf (path hierarchy.mli))
+       (impl (path hierarchy.ml))))
+     (module
+      (obj_name hardcaml__Instantiation)
+      (visibility public)
+      (source
+       (path Instantiation)
+       (intf (path instantiation.mli))
+       (impl (path instantiation.ml))))
+     (module
+      (obj_name hardcaml__Interface)
+      (visibility public)
+      (source
+       (path Interface)
+       (intf (path interface.mli))
+       (impl (path interface.ml))))
+     (module
+      (obj_name hardcaml__Interface_intf)
+      (visibility public)
+      (source (path Interface_intf) (impl (path interface_intf.ml))))
+     (module
+      (obj_name hardcaml__Level)
+      (visibility public)
+      (source (path Level) (intf (path level.mli)) (impl (path level.ml))))
+     (module
+      (obj_name hardcaml__Logic)
+      (visibility public)
+      (source (path Logic) (intf (path logic.mli)) (impl (path logic.ml))))
+     (module
+      (obj_name hardcaml__Logic_intf)
+      (visibility public)
+      (source (path Logic_intf) (impl (path logic_intf.ml))))
+     (module
+      (obj_name hardcaml__Mangler)
+      (visibility public)
+      (source
+       (path Mangler)
+       (intf (path mangler.mli))
+       (impl (path mangler.ml))))
+     (module
+      (obj_name hardcaml__Pair)
+      (visibility public)
+      (source (path Pair) (intf (path pair.mli)) (impl (path pair.ml))))
+     (module
+      (obj_name hardcaml__Pair_intf)
+      (visibility public)
+      (source (path Pair_intf) (impl (path pair_intf.ml))))
+     (module
+      (obj_name hardcaml__Parameter)
+      (visibility public)
+      (source
+       (path Parameter)
+       (intf (path parameter.mli))
+       (impl (path parameter.ml))))
+     (module
+      (obj_name hardcaml__Parameter_name)
+      (visibility public)
+      (source
+       (path Parameter_name)
+       (intf (path parameter_name.mli))
+       (impl (path parameter_name.ml))))
+     (module
+      (obj_name hardcaml__Ppx_hardcaml_runtime)
+      (visibility public)
+      (source
+       (path Ppx_hardcaml_runtime)
+       (intf (path ppx_hardcaml_runtime.mli))
+       (impl (path ppx_hardcaml_runtime.ml))))
+     (module
+      (obj_name hardcaml__Property)
+      (visibility public)
+      (source
+       (path Property)
+       (intf (path property.mli))
+       (impl (path property.ml))))
+     (module
+      (obj_name hardcaml__Property_manager)
+      (visibility public)
+      (source
+       (path Property_manager)
+       (intf (path property_manager.mli))
+       (impl (path property_manager.ml))))
+     (module
+      (obj_name hardcaml__Ram)
+      (visibility public)
+      (source (path Ram) (intf (path ram.mli)) (impl (path ram.ml))))
+     (module
+      (obj_name hardcaml__Read_port)
+      (visibility public)
+      (source
+       (path Read_port)
+       (intf (path read_port.mli))
+       (impl (path read_port.ml))))
+     (module
+      (obj_name hardcaml__Reg_spec)
+      (visibility public)
+      (source
+       (path Reg_spec)
+       (intf (path reg_spec.mli))
+       (impl (path reg_spec.ml))))
+     (module
+      (obj_name hardcaml__Reserved_words)
+      (visibility public)
+      (source
+       (path Reserved_words)
+       (intf (path reserved_words.mli))
+       (impl (path reserved_words.ml))))
+     (module
+      (obj_name hardcaml__Rtl)
+      (visibility public)
+      (source (path Rtl) (intf (path rtl.mli)) (impl (path rtl.ml))))
+     (module
+      (obj_name hardcaml__Rtl_ast)
+      (visibility public)
+      (source
+       (path Rtl_ast)
+       (intf (path rtl_ast.mli))
+       (impl (path rtl_ast.ml))))
+     (module
+      (obj_name hardcaml__Rtl_attribute)
+      (visibility public)
+      (source
+       (path Rtl_attribute)
+       (intf (path rtl_attribute.mli))
+       (impl (path rtl_attribute.ml))))
+     (module
+      (obj_name hardcaml__Rtl_deprecated)
+      (visibility public)
+      (source
+       (path Rtl_deprecated)
+       (intf (path rtl_deprecated.mli))
+       (impl (path rtl_deprecated.ml))))
+     (module
+      (obj_name hardcaml__Rtl_intf)
+      (visibility public)
+      (source (path Rtl_intf) (impl (path rtl_intf.ml))))
+     (module
+      (obj_name hardcaml__Rtl_name)
+      (visibility public)
+      (source
+       (path Rtl_name)
+       (intf (path rtl_name.mli))
+       (impl (path rtl_name.ml))))
+     (module
+      (obj_name hardcaml__Rtl_name_intf)
+      (visibility public)
+      (source (path Rtl_name_intf) (impl (path rtl_name_intf.ml))))
+     (module
+      (obj_name hardcaml__Rtl_verilog_of_ast)
+      (visibility public)
+      (source
+       (path Rtl_verilog_of_ast)
+       (intf (path rtl_verilog_of_ast.mli))
+       (impl (path rtl_verilog_of_ast.ml))))
+     (module
+      (obj_name hardcaml__Rtl_vhdl_of_ast)
+      (visibility public)
+      (source
+       (path Rtl_vhdl_of_ast)
+       (intf (path rtl_vhdl_of_ast.mli))
+       (impl (path rtl_vhdl_of_ast.ml))))
+     (module
+      (obj_name hardcaml__Scalar)
+      (visibility public)
+      (source (path Scalar) (intf (path scalar.mli)) (impl (path scalar.ml))))
+     (module
+      (obj_name hardcaml__Scalar_intf)
+      (visibility public)
+      (source (path Scalar_intf) (impl (path scalar_intf.ml))))
+     (module
+      (obj_name hardcaml__Scope)
+      (visibility public)
+      (source (path Scope) (intf (path scope.mli)) (impl (path scope.ml))))
+     (module
+      (obj_name hardcaml__Side)
+      (visibility public)
+      (source (path Side) (intf (path side.mli)) (impl (path side.ml))))
+     (module
+      (obj_name hardcaml__Signal)
+      (visibility public)
+      (source (path Signal) (intf (path signal.mli)) (impl (path signal.ml))))
+     (module
+      (obj_name hardcaml__Signal__type)
+      (visibility public)
+      (source
+       (path Signal__type)
+       (intf (path signal__type.mli))
+       (impl (path signal__type.ml))))
+     (module
+      (obj_name hardcaml__Signal__type_intf)
+      (visibility public)
+      (source (path Signal__type_intf) (impl (path signal__type_intf.ml))))
+     (module
+      (obj_name hardcaml__Signal_graph)
+      (visibility public)
+      (source
+       (path Signal_graph)
+       (intf (path signal_graph.mli))
+       (impl (path signal_graph.ml))))
+     (module
+      (obj_name hardcaml__Signal_intf)
+      (visibility public)
+      (source (path Signal_intf) (impl (path signal_intf.ml))))
+     (module
+      (obj_name hardcaml__Signedness)
+      (visibility public)
+      (source
+       (path Signedness)
+       (intf (path signedness.mli))
+       (impl (path signedness.ml))))
+     (module
+      (obj_name hardcaml__Structural)
+      (visibility public)
+      (source
+       (path Structural)
+       (intf (path structural.mli))
+       (impl (path structural.ml))))
+     (module
+      (obj_name hardcaml__Structural_intf)
+      (visibility public)
+      (source (path Structural_intf) (impl (path structural_intf.ml))))
+     (module
+      (obj_name hardcaml__Topsort)
+      (visibility public)
+      (source
+       (path Topsort)
+       (intf (path topsort.mli))
+       (impl (path topsort.ml))))
+     (module
+      (obj_name hardcaml__Types)
+      (visibility public)
+      (source (path Types) (intf (path types.mli)) (impl (path types.ml))))
+     (module
+      (obj_name hardcaml__Value)
+      (visibility public)
+      (source (path Value) (intf (path value.mli)) (impl (path value.ml))))
+     (module
+      (obj_name hardcaml__Value_intf)
+      (visibility public)
+      (source (path Value_intf) (impl (path value_intf.ml))))
+     (module
+      (obj_name hardcaml__Vcd)
+      (visibility public)
+      (source (path Vcd) (intf (path vcd.mli)) (impl (path vcd.ml))))
+     (module
+      (obj_name hardcaml__Wave_data)
+      (visibility public)
+      (source
+       (path Wave_data)
+       (intf (path wave_data.mli))
+       (impl (path wave_data.ml))))
+     (module
+      (obj_name hardcaml__Wave_data_intf)
+      (visibility public)
+      (source (path Wave_data_intf) (impl (path wave_data_intf.ml))))
+     (module
+      (obj_name hardcaml__Wave_format)
+      (visibility public)
+      (source
+       (path Wave_format)
+       (intf (path wave_format.mli))
+       (impl (path wave_format.ml))))
+     (module
+      (obj_name hardcaml__With_valid)
+      (visibility public)
+      (source
+       (path With_valid)
+       (intf (path with_valid.mli))
+       (impl (path with_valid.ml))))
+     (module
+      (obj_name hardcaml__With_valid_intf)
+      (visibility public)
+      (source (path With_valid_intf) (impl (path with_valid_intf.ml))))
+     (module
+      (obj_name hardcaml__Write_port)
+      (visibility public)
+      (source
+       (path Write_port)
+       (intf (path write_port.mli))
+       (impl (path write_port.ml))))
+     (module
+      (obj_name hardcaml__Zarith)
+      (visibility public)
+      (source (path Zarith) (impl (path zarith.ml))))))
+   (wrapped true))))
+(library
+ (name hardcaml.ppx_hardcaml0)
+ (kind ppx_deriver)
+ (archives
+  (byte ppx_hardcaml0/ppx_hardcaml0.cma)
+  (native ppx_hardcaml0/ppx_hardcaml0.cmxa))
+ (plugins
+  (byte ppx_hardcaml0/ppx_hardcaml0.cma)
+  (native ppx_hardcaml0/ppx_hardcaml0.cmxs))
+ (native_archives ppx_hardcaml0/ppx_hardcaml0.a)
+ (requires base compiler-libs.common ppx_sexp_conv ppxlib.ast ppxlib)
+ (main_module_name Ppx_hardcaml0)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name ppx_hardcaml0)
+     (visibility public)
+     (kind alias)
+     (source
+      (path Ppx_hardcaml0)
+      (impl (path ppx_hardcaml0/ppx_hardcaml0.ml-gen))))
+    (name Ppx_hardcaml0)
+    (modules
+     (module
+      (obj_name ppx_hardcaml0__Ppx_hardcaml_zero)
+      (visibility public)
+      (source
+       (path Ppx_hardcaml_zero)
+       (intf (path ppx_hardcaml0/ppx_hardcaml_zero.mli))
+       (impl (path ppx_hardcaml0/ppx_hardcaml_zero.ml))))))
+   (wrapped true))))

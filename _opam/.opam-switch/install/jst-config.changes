@@ -1,0 +1,19 @@
+opam-version: "2.0"
+added: [
+  "doc/jst-config" {"D"}
+  "doc/jst-config/LICENSE.md" {"F:S1126T1768614567.38"}
+  "lib/jst-config" {"D"}
+  "lib/jst-config/META" {"F:S178T1768614567.38"}
+  "lib/jst-config/config.h" {"F:S561T1768614567.38"}
+  "lib/jst-config/config_h.a" {"F:S1384T1768614567.38"}
+  "lib/jst-config/config_h.cma" {"F:S976T1768614567.38"}
+  "lib/jst-config/config_h.cmi" {"F:S116T1768614567.38"}
+  "lib/jst-config/config_h.cmt" {"F:S1207T1768614567.38"}
+  "lib/jst-config/config_h.cmx" {"F:S107T1768614567.38"}
+  "lib/jst-config/config_h.cmxa" {"F:S113T1768614567.38"}
+  "lib/jst-config/config_h.cmxs" {"F:S34224T1768614567.38"}
+  "lib/jst-config/config_h.ml" {"F:S24T1768614567.38"}
+  "lib/jst-config/dune-package" {"F:S788T1768614567.38"}
+  "lib/jst-config/opam" {"F:S1083T1768614567.38"}
+  "lib/jst-config/thread_id.h" {"F:S672T1768614567.38"}
+]

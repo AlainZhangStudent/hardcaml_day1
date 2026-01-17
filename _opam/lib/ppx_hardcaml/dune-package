@@ -1,0 +1,90 @@
+(lang dune 3.21)
+(name ppx_hardcaml)
+(version v0.17.0)
+(sections (lib .) (libexec .) (doc ../../doc/ppx_hardcaml))
+(files
+ (lib
+  (META
+   dune-package
+   opam
+   ppx_hardcaml.a
+   ppx_hardcaml.cma
+   ppx_hardcaml.cmi
+   ppx_hardcaml.cmt
+   ppx_hardcaml.cmti
+   ppx_hardcaml.cmx
+   ppx_hardcaml.cmxa
+   ppx_hardcaml.ml
+   ppx_hardcaml.mli
+   runtime/ppx_hardcaml_runtime.a
+   runtime/ppx_hardcaml_runtime.cma
+   runtime/ppx_hardcaml_runtime.cmi
+   runtime/ppx_hardcaml_runtime.cmt
+   runtime/ppx_hardcaml_runtime.cmx
+   runtime/ppx_hardcaml_runtime.cmxa
+   runtime/ppx_hardcaml_runtime.ml))
+ (libexec (ppx_hardcaml.cmxs runtime/ppx_hardcaml_runtime.cmxs))
+ (doc (CHANGES.md LICENSE.md README.md)))
+(library
+ (name ppx_hardcaml)
+ (kind ppx_deriver)
+ (archives (byte ppx_hardcaml.cma) (native ppx_hardcaml.cmxa))
+ (plugins (byte ppx_hardcaml.cma) (native ppx_hardcaml.cmxs))
+ (native_archives ppx_hardcaml.a)
+ (requires compiler-libs.common hardcaml.ppx_hardcaml0 ppxlib.ast)
+ (ppx_runtime_deps ppx_hardcaml.runtime)
+ (main_module_name Ppx_hardcaml)
+ (modes byte native)
+ (modules
+  (singleton
+   (obj_name ppx_hardcaml)
+   (visibility public)
+   (source
+    (path Ppx_hardcaml)
+    (intf (path ppx_hardcaml.mli))
+    (impl (path ppx_hardcaml.ml))))))
+(library
+ (name ppx_hardcaml.runtime)
+ (kind normal)
+ (archives
+  (byte runtime/ppx_hardcaml_runtime.cma)
+  (native runtime/ppx_hardcaml_runtime.cmxa))
+ (plugins
+  (byte runtime/ppx_hardcaml_runtime.cma)
+  (native runtime/ppx_hardcaml_runtime.cmxs))
+ (native_archives runtime/ppx_hardcaml_runtime.a)
+ (requires
+  base
+  hardcaml
+  ppx_sexp_conv.runtime-lib
+  sexplib0
+  ppx_compare.runtime-lib
+  ppx_enumerate.runtime-lib
+  ppx_hash.runtime-lib
+  ppx_here.runtime-lib
+  ppx_assert.runtime-lib
+  ppx_bench.runtime-lib
+  bin_prot
+  fieldslib
+  ppx_inline_test.config
+  ppx_inline_test.runtime-lib
+  ppx_module_timer.runtime
+  ppx_stable_witness.runtime
+  ppx_string.runtime
+  typerep
+  variantslib
+  ppx_expect.runtime
+  ppx_expect.config
+  ppx_log.types
+  ppx_log.syntax
+  base_quickcheck.ppx_quickcheck.runtime
+  base_quickcheck)
+ (main_module_name Ppx_hardcaml_runtime)
+ (modes byte native)
+ (modules
+  (singleton
+   (obj_name ppx_hardcaml_runtime)
+   (visibility public)
+   (source
+    (path Ppx_hardcaml_runtime)
+    (impl (path runtime/ppx_hardcaml_runtime.ml))))))

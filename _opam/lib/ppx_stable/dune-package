@@ -1,0 +1,136 @@
+(lang dune 3.21)
+(name ppx_stable)
+(version v0.17.0)
+(sections (lib .) (libexec .) (doc ../../doc/ppx_stable))
+(files
+ (lib
+  (META
+   abstract.ml
+   abstract.mli
+   ast_helpers.ml
+   ast_helpers.mli
+   dune-package
+   generic_map.ml
+   generic_map.mli
+   invariants.ml
+   invariants.mli
+   naming.ml
+   naming.mli
+   opam
+   ppx_stable.a
+   ppx_stable.cma
+   ppx_stable.cmi
+   ppx_stable.cmt
+   ppx_stable.cmti
+   ppx_stable.cmx
+   ppx_stable.cmxa
+   ppx_stable.ml
+   ppx_stable.mli
+   ppx_stable__.cmi
+   ppx_stable__.cmt
+   ppx_stable__.cmx
+   ppx_stable__.ml
+   ppx_stable__Abstract.cmi
+   ppx_stable__Abstract.cmt
+   ppx_stable__Abstract.cmti
+   ppx_stable__Abstract.cmx
+   ppx_stable__Ast_helpers.cmi
+   ppx_stable__Ast_helpers.cmt
+   ppx_stable__Ast_helpers.cmti
+   ppx_stable__Ast_helpers.cmx
+   ppx_stable__Generic_map.cmi
+   ppx_stable__Generic_map.cmt
+   ppx_stable__Generic_map.cmti
+   ppx_stable__Generic_map.cmx
+   ppx_stable__Invariants.cmi
+   ppx_stable__Invariants.cmt
+   ppx_stable__Invariants.cmti
+   ppx_stable__Invariants.cmx
+   ppx_stable__Naming.cmi
+   ppx_stable__Naming.cmt
+   ppx_stable__Naming.cmti
+   ppx_stable__Naming.cmx
+   ppx_stable__Record.cmi
+   ppx_stable__Record.cmt
+   ppx_stable__Record.cmti
+   ppx_stable__Record.cmx
+   ppx_stable__Variants.cmi
+   ppx_stable__Variants.cmt
+   ppx_stable__Variants.cmti
+   ppx_stable__Variants.cmx
+   record.ml
+   record.mli
+   variants.ml
+   variants.mli))
+ (libexec (ppx_stable.cmxs))
+ (doc (CHANGES.md LICENSE.md README.md)))
+(library
+ (name ppx_stable)
+ (kind ppx_deriver)
+ (archives (byte ppx_stable.cma) (native ppx_stable.cmxa))
+ (plugins (byte ppx_stable.cma) (native ppx_stable.cmxs))
+ (native_archives ppx_stable.a)
+ (requires base compiler-libs.common ppxlib.ast ppxlib)
+ (main_module_name Ppx_stable)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name ppx_stable__)
+     (visibility public)
+     (kind alias)
+     (source (path Ppx_stable__) (impl (path ppx_stable__.ml-gen))))
+    (name Ppx_stable)
+    (modules
+     (module
+      (obj_name ppx_stable__Abstract)
+      (visibility public)
+      (source
+       (path Abstract)
+       (intf (path abstract.mli))
+       (impl (path abstract.ml))))
+     (module
+      (obj_name ppx_stable__Ast_helpers)
+      (visibility public)
+      (source
+       (path Ast_helpers)
+       (intf (path ast_helpers.mli))
+       (impl (path ast_helpers.ml))))
+     (module
+      (obj_name ppx_stable__Generic_map)
+      (visibility public)
+      (source
+       (path Generic_map)
+       (intf (path generic_map.mli))
+       (impl (path generic_map.ml))))
+     (module
+      (obj_name ppx_stable__Invariants)
+      (visibility public)
+      (source
+       (path Invariants)
+       (intf (path invariants.mli))
+       (impl (path invariants.ml))))
+     (module
+      (obj_name ppx_stable__Naming)
+      (visibility public)
+      (source (path Naming) (intf (path naming.mli)) (impl (path naming.ml))))
+     (module
+      (obj_name ppx_stable)
+      (visibility public)
+      (source
+       (path Ppx_stable)
+       (intf (path ppx_stable.mli))
+       (impl (path ppx_stable.ml))))
+     (module
+      (obj_name ppx_stable__Record)
+      (visibility public)
+      (source (path Record) (intf (path record.mli)) (impl (path record.ml))))
+     (module
+      (obj_name ppx_stable__Variants)
+      (visibility public)
+      (source
+       (path Variants)
+       (intf (path variants.mli))
+       (impl (path variants.ml))))))
+   (wrapped true))))

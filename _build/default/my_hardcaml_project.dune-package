@@ -1,0 +1,72 @@
+(lang dune 3.21)
+(name my_hardcaml_project)
+(sections (lib .) (libexec .) (bin ../../bin))
+(files
+ (lib
+  (META
+   dune-package
+   hardcaml_lib.a
+   hardcaml_lib.cma
+   hardcaml_lib.cmi
+   hardcaml_lib.cmt
+   hardcaml_lib.cmx
+   hardcaml_lib.cmxa
+   hardcaml_lib.ml
+   hardcaml_lib__Logic.cmi
+   hardcaml_lib__Logic.cmt
+   hardcaml_lib__Logic.cmx
+   logic.ml
+   opam))
+ (libexec (hardcaml_lib.cmxs))
+ (bin (run_ptr)))
+(library
+ (name my_hardcaml_project)
+ (kind normal)
+ (archives (byte hardcaml_lib.cma) (native hardcaml_lib.cmxa))
+ (plugins (byte hardcaml_lib.cma) (native hardcaml_lib.cmxs))
+ (native_archives hardcaml_lib.a)
+ (requires
+  hardcaml
+  core
+  ppx_sexp_conv.runtime-lib
+  sexplib0
+  ppx_compare.runtime-lib
+  ppx_enumerate.runtime-lib
+  ppx_hash.runtime-lib
+  ppx_here.runtime-lib
+  ppx_assert.runtime-lib
+  ppx_bench.runtime-lib
+  bin_prot
+  fieldslib
+  ppx_inline_test.config
+  ppx_inline_test.runtime-lib
+  ppx_module_timer.runtime
+  ppx_stable_witness.runtime
+  ppx_string.runtime
+  base
+  typerep
+  variantslib
+  ppx_expect.runtime
+  ppx_expect.config
+  ppx_log.types
+  ppx_log.syntax
+  base_quickcheck.ppx_quickcheck.runtime
+  base_quickcheck
+  ppx_hardcaml.runtime)
+ (main_module_name Hardcaml_lib)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name hardcaml_lib)
+     (visibility public)
+     (kind alias)
+     (source (path Hardcaml_lib) (impl (path hardcaml_lib.ml-gen))))
+    (name Hardcaml_lib)
+    (modules
+     (module
+      (obj_name hardcaml_lib__Logic)
+      (visibility public)
+      (source (path Logic) (impl (path logic.ml))))))
+   (wrapped true))))

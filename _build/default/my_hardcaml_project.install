@@ -1,0 +1,22 @@
+lib: [
+  "_build/install/default/lib/my_hardcaml_project/META"
+  "_build/install/default/lib/my_hardcaml_project/dune-package"
+  "_build/install/default/lib/my_hardcaml_project/hardcaml_lib.a"
+  "_build/install/default/lib/my_hardcaml_project/hardcaml_lib.cma"
+  "_build/install/default/lib/my_hardcaml_project/hardcaml_lib.cmi"
+  "_build/install/default/lib/my_hardcaml_project/hardcaml_lib.cmt"
+  "_build/install/default/lib/my_hardcaml_project/hardcaml_lib.cmx"
+  "_build/install/default/lib/my_hardcaml_project/hardcaml_lib.cmxa"
+  "_build/install/default/lib/my_hardcaml_project/hardcaml_lib.ml"
+  "_build/install/default/lib/my_hardcaml_project/hardcaml_lib__Logic.cmi"
+  "_build/install/default/lib/my_hardcaml_project/hardcaml_lib__Logic.cmt"
+  "_build/install/default/lib/my_hardcaml_project/hardcaml_lib__Logic.cmx"
+  "_build/install/default/lib/my_hardcaml_project/logic.ml"
+  "_build/install/default/lib/my_hardcaml_project/opam"
+]
+libexec: [
+  "_build/install/default/lib/my_hardcaml_project/hardcaml_lib.cmxs"
+]
+bin: [
+  "_build/install/default/bin/run_ptr"
+]

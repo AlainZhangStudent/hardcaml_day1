@@ -1,0 +1,388 @@
+(lang dune 3.21)
+(name async_rpc_kernel)
+(version v0.17.0)
+(sections (lib .) (libexec .) (doc ../../doc/async_rpc_kernel))
+(files
+ (lib
+  (META
+   async_rpc_kernel.a
+   async_rpc_kernel.cma
+   async_rpc_kernel.cmi
+   async_rpc_kernel.cmt
+   async_rpc_kernel.cmx
+   async_rpc_kernel.cmxa
+   async_rpc_kernel.ml
+   async_rpc_kernel__.cmi
+   async_rpc_kernel__.cmt
+   async_rpc_kernel__.cmx
+   async_rpc_kernel__.ml
+   async_rpc_kernel__Connection.cmi
+   async_rpc_kernel__Connection.cmt
+   async_rpc_kernel__Connection.cmti
+   async_rpc_kernel__Connection.cmx
+   async_rpc_kernel__Connection_intf.cmi
+   async_rpc_kernel__Connection_intf.cmt
+   async_rpc_kernel__Connection_intf.cmx
+   async_rpc_kernel__Description.cmi
+   async_rpc_kernel__Description.cmt
+   async_rpc_kernel__Description.cmti
+   async_rpc_kernel__Description.cmx
+   async_rpc_kernel__How_to_recognise_errors.cmi
+   async_rpc_kernel__How_to_recognise_errors.cmt
+   async_rpc_kernel__How_to_recognise_errors.cmti
+   async_rpc_kernel__How_to_recognise_errors.cmx
+   async_rpc_kernel__Implementation.cmi
+   async_rpc_kernel__Implementation.cmt
+   async_rpc_kernel__Implementation.cmti
+   async_rpc_kernel__Implementation.cmx
+   async_rpc_kernel__Implementation_types.cmi
+   async_rpc_kernel__Implementation_types.cmt
+   async_rpc_kernel__Implementation_types.cmx
+   async_rpc_kernel__Implementations.cmi
+   async_rpc_kernel__Implementations.cmt
+   async_rpc_kernel__Implementations.cmti
+   async_rpc_kernel__Implementations.cmx
+   async_rpc_kernel__Menu.cmi
+   async_rpc_kernel__Menu.cmt
+   async_rpc_kernel__Menu.cmti
+   async_rpc_kernel__Menu.cmx
+   async_rpc_kernel__Nat0.cmi
+   async_rpc_kernel__Nat0.cmt
+   async_rpc_kernel__Nat0.cmti
+   async_rpc_kernel__Nat0.cmx
+   async_rpc_kernel__On_exception.cmi
+   async_rpc_kernel__On_exception.cmt
+   async_rpc_kernel__On_exception.cmti
+   async_rpc_kernel__On_exception.cmx
+   async_rpc_kernel__Or_not_authorized.cmi
+   async_rpc_kernel__Or_not_authorized.cmt
+   async_rpc_kernel__Or_not_authorized.cmti
+   async_rpc_kernel__Or_not_authorized.cmx
+   async_rpc_kernel__Persistent_connection.cmi
+   async_rpc_kernel__Persistent_connection.cmt
+   async_rpc_kernel__Persistent_connection.cmti
+   async_rpc_kernel__Persistent_connection.cmx
+   async_rpc_kernel__Pipe_transport.cmi
+   async_rpc_kernel__Pipe_transport.cmt
+   async_rpc_kernel__Pipe_transport.cmti
+   async_rpc_kernel__Pipe_transport.cmx
+   async_rpc_kernel__Protocol.cmi
+   async_rpc_kernel__Protocol.cmt
+   async_rpc_kernel__Protocol.cmx
+   async_rpc_kernel__Protocol_writer.cmi
+   async_rpc_kernel__Protocol_writer.cmt
+   async_rpc_kernel__Protocol_writer.cmti
+   async_rpc_kernel__Protocol_writer.cmx
+   async_rpc_kernel__Rpc.cmi
+   async_rpc_kernel__Rpc.cmt
+   async_rpc_kernel__Rpc.cmti
+   async_rpc_kernel__Rpc.cmx
+   async_rpc_kernel__Rpc_error.cmi
+   async_rpc_kernel__Rpc_error.cmt
+   async_rpc_kernel__Rpc_error.cmti
+   async_rpc_kernel__Rpc_error.cmx
+   async_rpc_kernel__Rpc_metadata.cmi
+   async_rpc_kernel__Rpc_metadata.cmt
+   async_rpc_kernel__Rpc_metadata.cmti
+   async_rpc_kernel__Rpc_metadata.cmx
+   async_rpc_kernel__Rpc_result.cmi
+   async_rpc_kernel__Rpc_result.cmt
+   async_rpc_kernel__Rpc_result.cmti
+   async_rpc_kernel__Rpc_result.cmx
+   async_rpc_kernel__Rpc_shapes.cmi
+   async_rpc_kernel__Rpc_shapes.cmt
+   async_rpc_kernel__Rpc_shapes.cmti
+   async_rpc_kernel__Rpc_shapes.cmx
+   async_rpc_kernel__Tracing_event.cmi
+   async_rpc_kernel__Tracing_event.cmt
+   async_rpc_kernel__Tracing_event.cmti
+   async_rpc_kernel__Tracing_event.cmx
+   async_rpc_kernel__Transport.cmi
+   async_rpc_kernel__Transport.cmt
+   async_rpc_kernel__Transport.cmti
+   async_rpc_kernel__Transport.cmx
+   async_rpc_kernel__Transport_intf.cmi
+   async_rpc_kernel__Transport_intf.cmt
+   async_rpc_kernel__Transport_intf.cmx
+   async_rpc_kernel__Util.cmi
+   async_rpc_kernel__Util.cmt
+   async_rpc_kernel__Util.cmti
+   async_rpc_kernel__Util.cmx
+   async_rpc_kernel__Versioned_rpc.cmi
+   async_rpc_kernel__Versioned_rpc.cmt
+   async_rpc_kernel__Versioned_rpc.cmti
+   async_rpc_kernel__Versioned_rpc.cmx
+   async_rpc_kernel__Writer_with_length.cmi
+   async_rpc_kernel__Writer_with_length.cmt
+   async_rpc_kernel__Writer_with_length.cmti
+   async_rpc_kernel__Writer_with_length.cmx
+   connection.ml
+   connection.mli
+   connection_intf.ml
+   description.ml
+   description.mli
+   dune-package
+   how_to_recognise_errors.ml
+   how_to_recognise_errors.mli
+   implementation.ml
+   implementation.mli
+   implementation_types.ml
+   implementations.ml
+   implementations.mli
+   menu.ml
+   menu.mli
+   nat0.ml
+   nat0.mli
+   on_exception.ml
+   on_exception.mli
+   opam
+   or_not_authorized.ml
+   or_not_authorized.mli
+   persistent_connection.ml
+   persistent_connection.mli
+   pipe_transport.ml
+   pipe_transport.mli
+   protocol.ml
+   protocol_writer.ml
+   protocol_writer.mli
+   rpc.ml
+   rpc.mli
+   rpc_error.ml
+   rpc_error.mli
+   rpc_metadata.ml
+   rpc_metadata.mli
+   rpc_result.ml
+   rpc_result.mli
+   rpc_shapes.ml
+   rpc_shapes.mli
+   tracing_event.ml
+   tracing_event.mli
+   transport.ml
+   transport.mli
+   transport_intf.ml
+   util.ml
+   util.mli
+   versioned_rpc.ml
+   versioned_rpc.mli
+   writer_with_length.ml
+   writer_with_length.mli))
+ (libexec (async_rpc_kernel.cmxs))
+ (doc (CHANGES.md LICENSE.md README.md)))
+(library
+ (name async_rpc_kernel)
+ (kind normal)
+ (archives (byte async_rpc_kernel.cma) (native async_rpc_kernel.cmxa))
+ (plugins (byte async_rpc_kernel.cma) (native async_rpc_kernel.cmxs))
+ (native_archives async_rpc_kernel.a)
+ (requires
+  async_kernel
+  core
+  async_kernel.eager_deferred
+  gel
+  core_kernel.moption
+  async_kernel.persistent_connection_kernel
+  protocol_version_header
+  core_kernel.reversed_list
+  ppx_sexp_conv.runtime-lib
+  sexplib0
+  ppx_compare.runtime-lib
+  ppx_enumerate.runtime-lib
+  ppx_hash.runtime-lib
+  ppx_here.runtime-lib
+  ppx_assert.runtime-lib
+  ppx_bench.runtime-lib
+  bin_prot
+  fieldslib
+  ppx_inline_test.config
+  ppx_inline_test.runtime-lib
+  ppx_module_timer.runtime
+  ppx_stable_witness.runtime
+  ppx_string.runtime
+  base
+  typerep
+  variantslib
+  ppx_expect.runtime
+  ppx_expect.config
+  ppx_log.types
+  ppx_log.syntax
+  base_quickcheck.ppx_quickcheck.runtime
+  base_quickcheck)
+ (main_module_name Async_rpc_kernel)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name async_rpc_kernel__)
+     (visibility public)
+     (kind alias)
+     (source
+      (path Async_rpc_kernel__)
+      (impl (path async_rpc_kernel__.ml-gen))))
+    (name Async_rpc_kernel)
+    (modules
+     (module
+      (obj_name async_rpc_kernel)
+      (visibility public)
+      (source (path Async_rpc_kernel) (impl (path async_rpc_kernel.ml))))
+     (module
+      (obj_name async_rpc_kernel__Connection)
+      (visibility public)
+      (source
+       (path Connection)
+       (intf (path connection.mli))
+       (impl (path connection.ml))))
+     (module
+      (obj_name async_rpc_kernel__Connection_intf)
+      (visibility public)
+      (source (path Connection_intf) (impl (path connection_intf.ml))))
+     (module
+      (obj_name async_rpc_kernel__Description)
+      (visibility public)
+      (source
+       (path Description)
+       (intf (path description.mli))
+       (impl (path description.ml))))
+     (module
+      (obj_name async_rpc_kernel__How_to_recognise_errors)
+      (visibility public)
+      (source
+       (path How_to_recognise_errors)
+       (intf (path how_to_recognise_errors.mli))
+       (impl (path how_to_recognise_errors.ml))))
+     (module
+      (obj_name async_rpc_kernel__Implementation)
+      (visibility public)
+      (source
+       (path Implementation)
+       (intf (path implementation.mli))
+       (impl (path implementation.ml))))
+     (module
+      (obj_name async_rpc_kernel__Implementation_types)
+      (visibility public)
+      (source
+       (path Implementation_types)
+       (impl (path implementation_types.ml))))
+     (module
+      (obj_name async_rpc_kernel__Implementations)
+      (visibility public)
+      (source
+       (path Implementations)
+       (intf (path implementations.mli))
+       (impl (path implementations.ml))))
+     (module
+      (obj_name async_rpc_kernel__Menu)
+      (visibility public)
+      (source (path Menu) (intf (path menu.mli)) (impl (path menu.ml))))
+     (module
+      (obj_name async_rpc_kernel__Nat0)
+      (visibility public)
+      (source (path Nat0) (intf (path nat0.mli)) (impl (path nat0.ml))))
+     (module
+      (obj_name async_rpc_kernel__On_exception)
+      (visibility public)
+      (source
+       (path On_exception)
+       (intf (path on_exception.mli))
+       (impl (path on_exception.ml))))
+     (module
+      (obj_name async_rpc_kernel__Or_not_authorized)
+      (visibility public)
+      (source
+       (path Or_not_authorized)
+       (intf (path or_not_authorized.mli))
+       (impl (path or_not_authorized.ml))))
+     (module
+      (obj_name async_rpc_kernel__Persistent_connection)
+      (visibility public)
+      (source
+       (path Persistent_connection)
+       (intf (path persistent_connection.mli))
+       (impl (path persistent_connection.ml))))
+     (module
+      (obj_name async_rpc_kernel__Pipe_transport)
+      (visibility public)
+      (source
+       (path Pipe_transport)
+       (intf (path pipe_transport.mli))
+       (impl (path pipe_transport.ml))))
+     (module
+      (obj_name async_rpc_kernel__Protocol)
+      (visibility public)
+      (source (path Protocol) (impl (path protocol.ml))))
+     (module
+      (obj_name async_rpc_kernel__Protocol_writer)
+      (visibility public)
+      (source
+       (path Protocol_writer)
+       (intf (path protocol_writer.mli))
+       (impl (path protocol_writer.ml))))
+     (module
+      (obj_name async_rpc_kernel__Rpc)
+      (visibility public)
+      (source (path Rpc) (intf (path rpc.mli)) (impl (path rpc.ml))))
+     (module
+      (obj_name async_rpc_kernel__Rpc_error)
+      (visibility public)
+      (source
+       (path Rpc_error)
+       (intf (path rpc_error.mli))
+       (impl (path rpc_error.ml))))
+     (module
+      (obj_name async_rpc_kernel__Rpc_metadata)
+      (visibility public)
+      (source
+       (path Rpc_metadata)
+       (intf (path rpc_metadata.mli))
+       (impl (path rpc_metadata.ml))))
+     (module
+      (obj_name async_rpc_kernel__Rpc_result)
+      (visibility public)
+      (source
+       (path Rpc_result)
+       (intf (path rpc_result.mli))
+       (impl (path rpc_result.ml))))
+     (module
+      (obj_name async_rpc_kernel__Rpc_shapes)
+      (visibility public)
+      (source
+       (path Rpc_shapes)
+       (intf (path rpc_shapes.mli))
+       (impl (path rpc_shapes.ml))))
+     (module
+      (obj_name async_rpc_kernel__Tracing_event)
+      (visibility public)
+      (source
+       (path Tracing_event)
+       (intf (path tracing_event.mli))
+       (impl (path tracing_event.ml))))
+     (module
+      (obj_name async_rpc_kernel__Transport)
+      (visibility public)
+      (source
+       (path Transport)
+       (intf (path transport.mli))
+       (impl (path transport.ml))))
+     (module
+      (obj_name async_rpc_kernel__Transport_intf)
+      (visibility public)
+      (source (path Transport_intf) (impl (path transport_intf.ml))))
+     (module
+      (obj_name async_rpc_kernel__Util)
+      (visibility public)
+      (source (path Util) (intf (path util.mli)) (impl (path util.ml))))
+     (module
+      (obj_name async_rpc_kernel__Versioned_rpc)
+      (visibility public)
+      (source
+       (path Versioned_rpc)
+       (intf (path versioned_rpc.mli))
+       (impl (path versioned_rpc.ml))))
+     (module
+      (obj_name async_rpc_kernel__Writer_with_length)
+      (visibility public)
+      (source
+       (path Writer_with_length)
+       (intf (path writer_with_length.mli))
+       (impl (path writer_with_length.ml))))))
+   (wrapped true))))

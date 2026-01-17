@@ -1,0 +1,5 @@
+(library
+ (name iobuf_bench)
+ (libraries iobuf)
+ (preprocess
+  (pps ppx_jane)))

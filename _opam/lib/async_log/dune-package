@@ -1,0 +1,495 @@
+(lang dune 3.21)
+(name async_log)
+(version v0.17.0)
+(sections (lib .) (libexec .) (doc ../../doc/async_log))
+(files
+ (lib
+  (META
+   assign_top_level_logs.ml
+   assign_top_level_logs.mli
+   async_log.a
+   async_log.cma
+   async_log.cmi
+   async_log.cmt
+   async_log.cmti
+   async_log.cmx
+   async_log.cmxa
+   async_log.ml
+   async_log.mli
+   async_log__.cmi
+   async_log__.cmt
+   async_log__.cmx
+   async_log__.ml
+   async_log__Assign_top_level_logs.cmi
+   async_log__Assign_top_level_logs.cmt
+   async_log__Assign_top_level_logs.cmti
+   async_log__Assign_top_level_logs.cmx
+   async_log__Blocking.cmi
+   async_log__Blocking.cmt
+   async_log__Blocking.cmti
+   async_log__Blocking.cmx
+   async_log__Import.cmi
+   async_log__Import.cmt
+   async_log__Import.cmx
+   async_log__Import_stable.cmi
+   async_log__Import_stable.cmt
+   async_log__Import_stable.cmx
+   async_log__Log.cmi
+   async_log__Log.cmt
+   async_log__Log.cmti
+   async_log__Log.cmx
+   async_log__Message.cmi
+   async_log__Message.cmt
+   async_log__Message.cmti
+   async_log__Message.cmx
+   async_log__Message_reader.cmi
+   async_log__Message_reader.cmt
+   async_log__Message_reader.cmti
+   async_log__Message_reader.cmx
+   async_log__Output.cmi
+   async_log__Output.cmt
+   async_log__Output.cmti
+   async_log__Output.cmx
+   async_log__Rotation.cmi
+   async_log__Rotation.cmt
+   async_log__Rotation.cmti
+   async_log__Rotation.cmx
+   async_log__Rotation_id.cmi
+   async_log__Rotation_id.cmt
+   async_log__Rotation_id.cmti
+   async_log__Rotation_id.cmx
+   async_log__Rotation_id_intf.cmi
+   async_log__Rotation_id_intf.cmt
+   async_log__Rotation_id_intf.cmx
+   blocking.ml
+   blocking.mli
+   dune-package
+   import.ml
+   import_stable.ml
+   kernel/async_log_kernel.a
+   kernel/async_log_kernel.cma
+   kernel/async_log_kernel.cmi
+   kernel/async_log_kernel.cmt
+   kernel/async_log_kernel.cmti
+   kernel/async_log_kernel.cmx
+   kernel/async_log_kernel.cmxa
+   kernel/async_log_kernel.ml
+   kernel/async_log_kernel.mli
+   kernel/async_log_kernel__.cmi
+   kernel/async_log_kernel__.cmt
+   kernel/async_log_kernel__.cmx
+   kernel/async_log_kernel__.ml
+   kernel/async_log_kernel__Buffered_output.cmi
+   kernel/async_log_kernel__Buffered_output.cmt
+   kernel/async_log_kernel__Buffered_output.cmti
+   kernel/async_log_kernel__Buffered_output.cmx
+   kernel/async_log_kernel__Global.cmi
+   kernel/async_log_kernel__Global.cmt
+   kernel/async_log_kernel__Global.cmti
+   kernel/async_log_kernel__Global.cmx
+   kernel/async_log_kernel__Global_intf.cmi
+   kernel/async_log_kernel__Global_intf.cmt
+   kernel/async_log_kernel__Global_intf.cmx
+   kernel/async_log_kernel__Import.cmi
+   kernel/async_log_kernel__Import.cmt
+   kernel/async_log_kernel__Import.cmx
+   kernel/async_log_kernel__Level.cmi
+   kernel/async_log_kernel__Level.cmt
+   kernel/async_log_kernel__Level.cmti
+   kernel/async_log_kernel__Level.cmx
+   kernel/async_log_kernel__Live_entry_registry.cmi
+   kernel/async_log_kernel__Live_entry_registry.cmt
+   kernel/async_log_kernel__Live_entry_registry.cmti
+   kernel/async_log_kernel__Live_entry_registry.cmx
+   kernel/async_log_kernel__Log.cmi
+   kernel/async_log_kernel__Log.cmt
+   kernel/async_log_kernel__Log.cmti
+   kernel/async_log_kernel__Log.cmx
+   kernel/async_log_kernel__Message.cmi
+   kernel/async_log_kernel__Message.cmt
+   kernel/async_log_kernel__Message.cmti
+   kernel/async_log_kernel__Message.cmx
+   kernel/async_log_kernel__Message_event.cmi
+   kernel/async_log_kernel__Message_event.cmt
+   kernel/async_log_kernel__Message_event.cmti
+   kernel/async_log_kernel__Message_event.cmx
+   kernel/async_log_kernel__Mutable_outputs.cmi
+   kernel/async_log_kernel__Mutable_outputs.cmt
+   kernel/async_log_kernel__Mutable_outputs.cmti
+   kernel/async_log_kernel__Mutable_outputs.cmx
+   kernel/async_log_kernel__On_error.cmi
+   kernel/async_log_kernel__On_error.cmt
+   kernel/async_log_kernel__On_error.cmti
+   kernel/async_log_kernel__On_error.cmx
+   kernel/async_log_kernel__Output.cmi
+   kernel/async_log_kernel__Output.cmt
+   kernel/async_log_kernel__Output.cmti
+   kernel/async_log_kernel__Output.cmx
+   kernel/async_log_kernel__Output_format.cmi
+   kernel/async_log_kernel__Output_format.cmt
+   kernel/async_log_kernel__Output_format.cmti
+   kernel/async_log_kernel__Output_format.cmx
+   kernel/async_log_kernel__Ppx_log_syntax.cmi
+   kernel/async_log_kernel__Ppx_log_syntax.cmt
+   kernel/async_log_kernel__Ppx_log_syntax.cmti
+   kernel/async_log_kernel__Ppx_log_syntax.cmx
+   kernel/async_log_kernel__Raw_log.cmi
+   kernel/async_log_kernel__Raw_log.cmt
+   kernel/async_log_kernel__Raw_log.cmti
+   kernel/async_log_kernel__Raw_log.cmx
+   kernel/async_log_kernel__Sexp_or_string.cmi
+   kernel/async_log_kernel__Sexp_or_string.cmt
+   kernel/async_log_kernel__Sexp_or_string.cmti
+   kernel/async_log_kernel__Sexp_or_string.cmx
+   kernel/async_log_kernel__Versioned.cmi
+   kernel/async_log_kernel__Versioned.cmt
+   kernel/async_log_kernel__Versioned.cmti
+   kernel/async_log_kernel__Versioned.cmx
+   kernel/async_log_kernel__Versioned_intf.cmi
+   kernel/async_log_kernel__Versioned_intf.cmt
+   kernel/async_log_kernel__Versioned_intf.cmx
+   kernel/buffered_output.ml
+   kernel/buffered_output.mli
+   kernel/global.ml
+   kernel/global.mli
+   kernel/global_intf.ml
+   kernel/import.ml
+   kernel/level.ml
+   kernel/level.mli
+   kernel/live_entry_registry.ml
+   kernel/live_entry_registry.mli
+   kernel/log.ml
+   kernel/log.mli
+   kernel/message.ml
+   kernel/message.mli
+   kernel/message_event.ml
+   kernel/message_event.mli
+   kernel/mutable_outputs.ml
+   kernel/mutable_outputs.mli
+   kernel/on_error.ml
+   kernel/on_error.mli
+   kernel/output.ml
+   kernel/output.mli
+   kernel/output_format.ml
+   kernel/output_format.mli
+   kernel/ppx_log_syntax.ml
+   kernel/ppx_log_syntax.mli
+   kernel/raw_log.ml
+   kernel/raw_log.mli
+   kernel/sexp_or_string.ml
+   kernel/sexp_or_string.mli
+   kernel/versioned.ml
+   kernel/versioned.mli
+   kernel/versioned_intf.ml
+   log.ml
+   log.mli
+   message.ml
+   message.mli
+   message_reader.ml
+   message_reader.mli
+   opam
+   output.ml
+   output.mli
+   rotation.ml
+   rotation.mli
+   rotation_id.ml
+   rotation_id.mli
+   rotation_id_intf.ml))
+ (libexec (async_log.cmxs kernel/async_log_kernel.cmxs))
+ (doc (CHANGES.md LICENSE.md)))
+(library
+ (name async_log)
+ (kind normal)
+ (archives (byte async_log.cma) (native async_log.cmxa))
+ (plugins (byte async_log.cma) (native async_log.cmxs))
+ (native_archives async_log.a)
+ (requires
+  async_unix
+  async_log.kernel
+  core_kernel.univ
+  ppx_sexp_conv.runtime-lib
+  sexplib0
+  ppx_compare.runtime-lib
+  ppx_enumerate.runtime-lib
+  ppx_hash.runtime-lib
+  ppx_here.runtime-lib
+  ppx_assert.runtime-lib
+  ppx_bench.runtime-lib
+  bin_prot
+  fieldslib
+  ppx_inline_test.config
+  ppx_inline_test.runtime-lib
+  ppx_module_timer.runtime
+  ppx_stable_witness.runtime
+  ppx_string.runtime
+  base
+  typerep
+  variantslib
+  ppx_expect.runtime
+  ppx_expect.config
+  ppx_log.types
+  ppx_log.syntax
+  base_quickcheck.ppx_quickcheck.runtime
+  base_quickcheck)
+ (main_module_name Async_log)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name async_log__)
+     (visibility public)
+     (kind alias)
+     (source (path Async_log__) (impl (path async_log__.ml-gen))))
+    (name Async_log)
+    (modules
+     (module
+      (obj_name async_log__Assign_top_level_logs)
+      (visibility public)
+      (source
+       (path Assign_top_level_logs)
+       (intf (path assign_top_level_logs.mli))
+       (impl (path assign_top_level_logs.ml))))
+     (module
+      (obj_name async_log)
+      (visibility public)
+      (source
+       (path Async_log)
+       (intf (path async_log.mli))
+       (impl (path async_log.ml))))
+     (module
+      (obj_name async_log__Blocking)
+      (visibility public)
+      (source
+       (path Blocking)
+       (intf (path blocking.mli))
+       (impl (path blocking.ml))))
+     (module
+      (obj_name async_log__Import)
+      (visibility public)
+      (source (path Import) (impl (path import.ml))))
+     (module
+      (obj_name async_log__Import_stable)
+      (visibility public)
+      (source (path Import_stable) (impl (path import_stable.ml))))
+     (module
+      (obj_name async_log__Log)
+      (visibility public)
+      (source (path Log) (intf (path log.mli)) (impl (path log.ml))))
+     (module
+      (obj_name async_log__Message)
+      (visibility public)
+      (source
+       (path Message)
+       (intf (path message.mli))
+       (impl (path message.ml))))
+     (module
+      (obj_name async_log__Message_reader)
+      (visibility public)
+      (source
+       (path Message_reader)
+       (intf (path message_reader.mli))
+       (impl (path message_reader.ml))))
+     (module
+      (obj_name async_log__Output)
+      (visibility public)
+      (source (path Output) (intf (path output.mli)) (impl (path output.ml))))
+     (module
+      (obj_name async_log__Rotation)
+      (visibility public)
+      (source
+       (path Rotation)
+       (intf (path rotation.mli))
+       (impl (path rotation.ml))))
+     (module
+      (obj_name async_log__Rotation_id)
+      (visibility public)
+      (source
+       (path Rotation_id)
+       (intf (path rotation_id.mli))
+       (impl (path rotation_id.ml))))
+     (module
+      (obj_name async_log__Rotation_id_intf)
+      (visibility public)
+      (source (path Rotation_id_intf) (impl (path rotation_id_intf.ml))))))
+   (wrapped true))))
+(library
+ (name async_log.kernel)
+ (kind normal)
+ (archives
+  (byte kernel/async_log_kernel.cma)
+  (native kernel/async_log_kernel.cmxa))
+ (plugins
+  (byte kernel/async_log_kernel.cma)
+  (native kernel/async_log_kernel.cmxs))
+ (native_archives kernel/async_log_kernel.a)
+ (requires
+  async_kernel
+  core
+  async_kernel.eager_deferred
+  timezone
+  core_kernel.univ
+  core_kernel.uuid
+  ppx_sexp_conv.runtime-lib
+  sexplib0
+  ppx_compare.runtime-lib
+  ppx_enumerate.runtime-lib
+  ppx_hash.runtime-lib
+  ppx_here.runtime-lib
+  ppx_assert.runtime-lib
+  ppx_bench.runtime-lib
+  bin_prot
+  fieldslib
+  ppx_inline_test.config
+  ppx_inline_test.runtime-lib
+  ppx_module_timer.runtime
+  ppx_stable_witness.runtime
+  ppx_string.runtime
+  base
+  typerep
+  variantslib
+  ppx_expect.runtime
+  ppx_expect.config
+  ppx_log.types
+  ppx_log.syntax
+  base_quickcheck.ppx_quickcheck.runtime
+  base_quickcheck)
+ (main_module_name Async_log_kernel)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name async_log_kernel__)
+     (visibility public)
+     (kind alias)
+     (source
+      (path Async_log_kernel__)
+      (impl (path kernel/async_log_kernel__.ml-gen))))
+    (name Async_log_kernel)
+    (modules
+     (module
+      (obj_name async_log_kernel)
+      (visibility public)
+      (source
+       (path Async_log_kernel)
+       (intf (path kernel/async_log_kernel.mli))
+       (impl (path kernel/async_log_kernel.ml))))
+     (module
+      (obj_name async_log_kernel__Buffered_output)
+      (visibility public)
+      (source
+       (path Buffered_output)
+       (intf (path kernel/buffered_output.mli))
+       (impl (path kernel/buffered_output.ml))))
+     (module
+      (obj_name async_log_kernel__Global)
+      (visibility public)
+      (source
+       (path Global)
+       (intf (path kernel/global.mli))
+       (impl (path kernel/global.ml))))
+     (module
+      (obj_name async_log_kernel__Global_intf)
+      (visibility public)
+      (source (path Global_intf) (impl (path kernel/global_intf.ml))))
+     (module
+      (obj_name async_log_kernel__Import)
+      (visibility public)
+      (source (path Import) (impl (path kernel/import.ml))))
+     (module
+      (obj_name async_log_kernel__Level)
+      (visibility public)
+      (source
+       (path Level)
+       (intf (path kernel/level.mli))
+       (impl (path kernel/level.ml))))
+     (module
+      (obj_name async_log_kernel__Live_entry_registry)
+      (visibility public)
+      (source
+       (path Live_entry_registry)
+       (intf (path kernel/live_entry_registry.mli))
+       (impl (path kernel/live_entry_registry.ml))))
+     (module
+      (obj_name async_log_kernel__Log)
+      (visibility public)
+      (source
+       (path Log)
+       (intf (path kernel/log.mli))
+       (impl (path kernel/log.ml))))
+     (module
+      (obj_name async_log_kernel__Message)
+      (visibility public)
+      (source
+       (path Message)
+       (intf (path kernel/message.mli))
+       (impl (path kernel/message.ml))))
+     (module
+      (obj_name async_log_kernel__Message_event)
+      (visibility public)
+      (source
+       (path Message_event)
+       (intf (path kernel/message_event.mli))
+       (impl (path kernel/message_event.ml))))
+     (module
+      (obj_name async_log_kernel__Mutable_outputs)
+      (visibility public)
+      (source
+       (path Mutable_outputs)
+       (intf (path kernel/mutable_outputs.mli))
+       (impl (path kernel/mutable_outputs.ml))))
+     (module
+      (obj_name async_log_kernel__On_error)
+      (visibility public)
+      (source
+       (path On_error)
+       (intf (path kernel/on_error.mli))
+       (impl (path kernel/on_error.ml))))
+     (module
+      (obj_name async_log_kernel__Output)
+      (visibility public)
+      (source
+       (path Output)
+       (intf (path kernel/output.mli))
+       (impl (path kernel/output.ml))))
+     (module
+      (obj_name async_log_kernel__Output_format)
+      (visibility public)
+      (source
+       (path Output_format)
+       (intf (path kernel/output_format.mli))
+       (impl (path kernel/output_format.ml))))
+     (module
+      (obj_name async_log_kernel__Ppx_log_syntax)
+      (visibility public)
+      (source
+       (path Ppx_log_syntax)
+       (intf (path kernel/ppx_log_syntax.mli))
+       (impl (path kernel/ppx_log_syntax.ml))))
+     (module
+      (obj_name async_log_kernel__Raw_log)
+      (visibility public)
+      (source
+       (path Raw_log)
+       (intf (path kernel/raw_log.mli))
+       (impl (path kernel/raw_log.ml))))
+     (module
+      (obj_name async_log_kernel__Sexp_or_string)
+      (visibility public)
+      (source
+       (path Sexp_or_string)
+       (intf (path kernel/sexp_or_string.mli))
+       (impl (path kernel/sexp_or_string.ml))))
+     (module
+      (obj_name async_log_kernel__Versioned)
+      (visibility public)
+      (source
+       (path Versioned)
+       (intf (path kernel/versioned.mli))
+       (impl (path kernel/versioned.ml))))
+     (module
+      (obj_name async_log_kernel__Versioned_intf)
+      (visibility public)
+      (source (path Versioned_intf) (impl (path kernel/versioned_intf.ml))))))
+   (wrapped true))))

@@ -1,0 +1,27 @@
+version = "0.2.3"
+description = "Declaring terminals"
+requires = "uutf"
+archive(byte) = "notty.cma"
+archive(native) = "notty.cmxa"
+plugin(byte) = "notty.cma"
+plugin(native) = "notty.cmxs"
+package "top" (
+  directory = "top"
+  version = "0.2.3"
+  description = "Notty toplevel support"
+  requires = "compiler-libs.toplevel notty"
+  archive(byte) = "notty_top.cma"
+  archive(native) = "notty_top.cmxa"
+  plugin(byte) = "notty_top.cma"
+  plugin(native) = "notty_top.cmxs"
+)
+package "unix" (
+  directory = "unix"
+  version = "0.2.3"
+  description = "Notty Unix IO"
+  requires = "notty unix"
+  archive(byte) = "notty_unix.cma"
+  archive(native) = "notty_unix.cmxa"
+  plugin(byte) = "notty_unix.cma"
+  plugin(native) = "notty_unix.cmxs"
+)

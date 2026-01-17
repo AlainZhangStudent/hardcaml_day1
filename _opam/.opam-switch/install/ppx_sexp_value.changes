@@ -1,0 +1,22 @@
+opam-version: "2.0"
+added: [
+  "doc/ppx_sexp_value" {"D"}
+  "doc/ppx_sexp_value/CHANGES.md" {"F:S240T1768614565."}
+  "doc/ppx_sexp_value/LICENSE.md" {"F:S1126T1768614565."}
+  "doc/ppx_sexp_value/README.md" {"F:S3206T1768614565."}
+  "lib/ppx_sexp_value" {"D"}
+  "lib/ppx_sexp_value/META" {"F:S855T1768614565."}
+  "lib/ppx_sexp_value/dune-package" {"F:S1035T1768614565."}
+  "lib/ppx_sexp_value/opam" {"F:S886T1768614565."}
+  "lib/ppx_sexp_value/ppx.exe" {"F:S18586072T1768614565."}
+  "lib/ppx_sexp_value/ppx_sexp_value.a" {"F:S37848T1768614565."}
+  "lib/ppx_sexp_value/ppx_sexp_value.cma" {"F:S31269T1768614565."}
+  "lib/ppx_sexp_value/ppx_sexp_value.cmi" {"F:S200T1768614565."}
+  "lib/ppx_sexp_value/ppx_sexp_value.cmt" {"F:S48598T1768614565."}
+  "lib/ppx_sexp_value/ppx_sexp_value.cmti" {"F:S1985T1768614565."}
+  "lib/ppx_sexp_value/ppx_sexp_value.cmx" {"F:S8824T1768614565."}
+  "lib/ppx_sexp_value/ppx_sexp_value.cmxa" {"F:S7975T1768614565."}
+  "lib/ppx_sexp_value/ppx_sexp_value.cmxs" {"F:S75728T1768614565."}
+  "lib/ppx_sexp_value/ppx_sexp_value.ml" {"F:S7879T1768614565."}
+  "lib/ppx_sexp_value/ppx_sexp_value.mli" {"F:S0T1768614565."}
+]

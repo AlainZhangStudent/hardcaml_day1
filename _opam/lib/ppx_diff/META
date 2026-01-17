@@ -1,0 +1,94 @@
+package "diffable" (
+  directory = "diffable"
+  version = "v0.17.0"
+  description = ""
+  requires =
+  "base
+   base_quickcheck
+   base_quickcheck.ppx_quickcheck.runtime
+   bin_prot
+   fieldslib
+   gel
+   ppx_assert.runtime-lib
+   ppx_bench.runtime-lib
+   ppx_compare.runtime-lib
+   ppx_diff.diffable_cinaps
+   ppx_enumerate.runtime-lib
+   ppx_expect.config
+   ppx_expect.runtime
+   ppx_hash.runtime-lib
+   ppx_here.runtime-lib
+   ppx_inline_test.config
+   ppx_inline_test.runtime-lib
+   ppx_log.syntax
+   ppx_log.types
+   ppx_module_timer.runtime
+   ppx_sexp_conv.runtime-lib
+   ppx_stable_witness.runtime
+   ppx_string.runtime
+   sexplib0
+   typerep
+   variantslib"
+  archive(byte) = "diffable.cma"
+  archive(native) = "diffable.cmxa"
+  plugin(byte) = "diffable.cma"
+  plugin(native) = "diffable.cmxs"
+)
+package "diffable_cinaps" (
+  directory = "diffable_cinaps"
+  version = "v0.17.0"
+  description = ""
+  requires =
+  "base
+   base_quickcheck
+   base_quickcheck.ppx_quickcheck.runtime
+   bin_prot
+   fieldslib
+   ppx_assert.runtime-lib
+   ppx_bench.runtime-lib
+   ppx_compare.runtime-lib
+   ppx_enumerate.runtime-lib
+   ppx_expect.config
+   ppx_expect.runtime
+   ppx_hash.runtime-lib
+   ppx_here.runtime-lib
+   ppx_inline_test.config
+   ppx_inline_test.runtime-lib
+   ppx_log.syntax
+   ppx_log.types
+   ppx_module_timer.runtime
+   ppx_sexp_conv.runtime-lib
+   ppx_stable_witness.runtime
+   ppx_string.runtime
+   sexplib0
+   typerep
+   variantslib"
+  archive(byte) = "diffable_cinaps.cma"
+  archive(native) = "diffable_cinaps.cmxa"
+  plugin(byte) = "diffable_cinaps.cma"
+  plugin(native) = "diffable_cinaps.cmxs"
+)
+package "ppx_diff" (
+  directory = "ppx_diff"
+  version = "v0.17.0"
+  description = ""
+  requires(ppx_driver) = "base
+                          ppx_compare.runtime-lib
+                          ppx_diff.diffable
+                          ppx_enumerate.runtime-lib
+                          ppxlib
+                          ppxlib.ast
+                          ppxlib_jane"
+  archive(ppx_driver,byte) = "ppx_diff.cma"
+  archive(ppx_driver,native) = "ppx_diff.cmxa"
+  plugin(ppx_driver,byte) = "ppx_diff.cma"
+  plugin(ppx_driver,native) = "ppx_diff.cmxs"
+  # This is what dune uses to find out the runtime dependencies of
+  # a preprocessor
+  ppx_runtime_deps = "ppx_diff.diffable"
+  # This line makes things transparent for people mixing preprocessors
+  # and normal dependencies
+  requires(-ppx_driver) = "ppx_diff.diffable"
+  ppx(-ppx_driver,-custom_ppx) = "./ppx.exe --as-ppx"
+  library_kind = "ppx_rewriter"
+)

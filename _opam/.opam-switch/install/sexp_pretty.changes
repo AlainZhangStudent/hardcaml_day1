@@ -1,0 +1,38 @@
+opam-version: "2.0"
+added: [
+  "doc/sexp_pretty" {"D"}
+  "doc/sexp_pretty/CHANGES.md" {"F:S115T1768614568.07"}
+  "doc/sexp_pretty/LICENSE.md" {"F:S1126T1768614568.07"}
+  "doc/sexp_pretty/README.org" {"F:S121T1768614568.07"}
+  "lib/sexp_pretty" {"D"}
+  "lib/sexp_pretty/META" {"F:S318T1768614568.06"}
+  "lib/sexp_pretty/config.ml" {"F:S8713T1768614568.06"}
+  "lib/sexp_pretty/config.mli" {"F:S4403T1768614568.06"}
+  "lib/sexp_pretty/dune-package" {"F:S1900T1768614568.06"}
+  "lib/sexp_pretty/opam" {"F:S867T1768614568.07"}
+  "lib/sexp_pretty/sexp_pretty.a" {"F:S252216T1768614568.07"}
+  "lib/sexp_pretty/sexp_pretty.cma" {"F:S187132T1768614568.07"}
+  "lib/sexp_pretty/sexp_pretty.cmi" {"F:S7372T1768614568.07"}
+  "lib/sexp_pretty/sexp_pretty.cmt" {"F:S212869T1768614568.07"}
+  "lib/sexp_pretty/sexp_pretty.cmti" {"F:S14736T1768614568.07"}
+  "lib/sexp_pretty/sexp_pretty.cmx" {"F:S29257T1768614568.07"}
+  "lib/sexp_pretty/sexp_pretty.cmxa" {"F:S19438T1768614568.07"}
+  "lib/sexp_pretty/sexp_pretty.cmxs" {"F:S260864T1768614568.07"}
+  "lib/sexp_pretty/sexp_pretty.ml" {"F:S42251T1768614568.07"}
+  "lib/sexp_pretty/sexp_pretty.mli" {"F:S37T1768614568.07"}
+  "lib/sexp_pretty/sexp_pretty__.cmi" {"F:S405T1768614568.07"}
+  "lib/sexp_pretty/sexp_pretty__.cmt" {"F:S2119T1768614568.07"}
+  "lib/sexp_pretty/sexp_pretty__.cmx" {"F:S199T1768614568.07"}
+  "lib/sexp_pretty/sexp_pretty__.ml" {"F:S278T1768614568.07"}
+  "lib/sexp_pretty/sexp_pretty__Config.cmi" {"F:S8354T1768614568.07"}
+  "lib/sexp_pretty/sexp_pretty__Config.cmt" {"F:S93948T1768614568.07"}
+  "lib/sexp_pretty/sexp_pretty__Config.cmti" {"F:S28650T1768614568.07"}
+  "lib/sexp_pretty/sexp_pretty__Config.cmx" {"F:S12335T1768614568.07"}
+  "lib/sexp_pretty/sexp_pretty__Sexp_pretty_intf.cmi"
+    {"F:S7654T1768614568.07"}
+  "lib/sexp_pretty/sexp_pretty__Sexp_pretty_intf.cmt"
+    {"F:S18857T1768614568.07"}
+  "lib/sexp_pretty/sexp_pretty__Sexp_pretty_intf.cmx"
+    {"F:S6009T1768614568.07"}
+  "lib/sexp_pretty/sexp_pretty_intf.ml" {"F:S1581T1768614568.07"}
+]

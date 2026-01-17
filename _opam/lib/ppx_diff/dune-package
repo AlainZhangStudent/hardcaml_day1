@@ -1,0 +1,753 @@
+(lang dune 3.21)
+(name ppx_diff)
+(version v0.17.0)
+(sections (lib .) (libexec .) (doc ../../doc/ppx_diff))
+(files
+ (lib
+  (META
+   diffable/atomic.ml
+   diffable/atomic.mli
+   diffable/basic_diffs.ml
+   diffable/basic_diffs.mli
+   diffable/diff_intf.ml
+   diffable/diffable.a
+   diffable/diffable.cma
+   diffable/diffable.cmi
+   diffable/diffable.cmt
+   diffable/diffable.cmx
+   diffable/diffable.cmxa
+   diffable/diffable.ml
+   diffable/diffable__.cmi
+   diffable/diffable__.cmt
+   diffable/diffable__.cmx
+   diffable/diffable__.ml
+   diffable/diffable__Atomic.cmi
+   diffable/diffable__Atomic.cmt
+   diffable/diffable__Atomic.cmti
+   diffable/diffable__Atomic.cmx
+   diffable/diffable__Basic_diffs.cmi
+   diffable/diffable__Basic_diffs.cmt
+   diffable/diffable__Basic_diffs.cmti
+   diffable/diffable__Basic_diffs.cmx
+   diffable/diffable__Diff_intf.cmi
+   diffable/diffable__Diff_intf.cmt
+   diffable/diffable__Diff_intf.cmx
+   diffable/diffable__Diffable_intf.cmi
+   diffable/diffable__Diffable_intf.cmt
+   diffable/diffable__Diffable_intf.cmx
+   diffable/diffable__Map_diff.cmi
+   diffable/diffable__Map_diff.cmt
+   diffable/diffable__Map_diff.cmti
+   diffable/diffable__Map_diff.cmx
+   diffable/diffable__Of_variant.cmi
+   diffable/diffable__Of_variant.cmt
+   diffable/diffable__Of_variant.cmti
+   diffable/diffable__Of_variant.cmx
+   diffable/diffable__Optional_diff.cmi
+   diffable/diffable__Optional_diff.cmt
+   diffable/diffable__Optional_diff.cmti
+   diffable/diffable__Optional_diff.cmx
+   diffable/diffable__Set_diff.cmi
+   diffable/diffable__Set_diff.cmt
+   diffable/diffable__Set_diff.cmti
+   diffable/diffable__Set_diff.cmx
+   diffable/diffable__Tuples.cmi
+   diffable/diffable__Tuples.cmt
+   diffable/diffable__Tuples.cmti
+   diffable/diffable__Tuples.cmx
+   diffable/diffable_intf.ml
+   diffable/map_diff.ml
+   diffable/map_diff.mli
+   diffable/of_variant.ml
+   diffable/of_variant.mli
+   diffable/optional_diff.ml
+   diffable/optional_diff.mli
+   diffable/set_diff.ml
+   diffable/set_diff.mli
+   diffable/tuples.ml
+   diffable/tuples.mli
+   diffable_cinaps/diffable_cinaps.a
+   diffable_cinaps/diffable_cinaps.cma
+   diffable_cinaps/diffable_cinaps.cmi
+   diffable_cinaps/diffable_cinaps.cmt
+   diffable_cinaps/diffable_cinaps.cmx
+   diffable_cinaps/diffable_cinaps.cmxa
+   diffable_cinaps/diffable_cinaps.ml
+   diffable_cinaps/diffable_cinaps__.cmi
+   diffable_cinaps/diffable_cinaps__.cmt
+   diffable_cinaps/diffable_cinaps__.cmx
+   diffable_cinaps/diffable_cinaps__.ml
+   diffable_cinaps/diffable_cinaps__Tuple_helpers.cmi
+   diffable_cinaps/diffable_cinaps__Tuple_helpers.cmt
+   diffable_cinaps/diffable_cinaps__Tuple_helpers.cmti
+   diffable_cinaps/diffable_cinaps__Tuple_helpers.cmx
+   diffable_cinaps/tuple_helpers.ml
+   diffable_cinaps/tuple_helpers.mli
+   dune-package
+   opam
+   ppx_diff/build_helper.ml
+   ppx_diff/build_helper.mli
+   ppx_diff/builder.ml
+   ppx_diff/builder.mli
+   ppx_diff/context.ml
+   ppx_diff/context.mli
+   ppx_diff/core_diff.ml
+   ppx_diff/core_diff.mli
+   ppx_diff/diff.ml
+   ppx_diff/diff.mli
+   ppx_diff/diff_abstract.ml
+   ppx_diff/diff_abstract.mli
+   ppx_diff/diff_as_map.ml
+   ppx_diff/diff_as_map.mli
+   ppx_diff/diff_as_set.ml
+   ppx_diff/diff_as_set.mli
+   ppx_diff/diff_atomic.ml
+   ppx_diff/diff_atomic.mli
+   ppx_diff/diff_constr.ml
+   ppx_diff/diff_constr.mli
+   ppx_diff/diff_core.ml
+   ppx_diff/diff_core.mli
+   ppx_diff/diff_record.ml
+   ppx_diff/diff_record.mli
+   ppx_diff/diff_tuple.ml
+   ppx_diff/diff_tuple.mli
+   ppx_diff/diff_var.ml
+   ppx_diff/diff_var.mli
+   ppx_diff/diff_variant.ml
+   ppx_diff/diff_variant.mli
+   ppx_diff/function_name.ml
+   ppx_diff/function_name.mli
+   ppx_diff/how_to_diff.ml
+   ppx_diff/how_to_diff.mli
+   ppx_diff/items.ml
+   ppx_diff/items.mli
+   ppx_diff/longident_helper.ml
+   ppx_diff/longident_helper.mli
+   ppx_diff/map_and_set_helper.ml
+   ppx_diff/map_and_set_helper.mli
+   ppx_diff/module_name.ml
+   ppx_diff/module_name.mli
+   ppx_diff/nonempty_list.ml
+   ppx_diff/nonempty_list.mli
+   ppx_diff/ppx_diff.a
+   ppx_diff/ppx_diff.cma
+   ppx_diff/ppx_diff.cmi
+   ppx_diff/ppx_diff.cmt
+   ppx_diff/ppx_diff.cmti
+   ppx_diff/ppx_diff.cmx
+   ppx_diff/ppx_diff.cmxa
+   ppx_diff/ppx_diff.ml
+   ppx_diff/ppx_diff.mli
+   ppx_diff/ppx_diff__.cmi
+   ppx_diff/ppx_diff__.cmt
+   ppx_diff/ppx_diff__.cmx
+   ppx_diff/ppx_diff__.ml
+   ppx_diff/ppx_diff__Build_helper.cmi
+   ppx_diff/ppx_diff__Build_helper.cmt
+   ppx_diff/ppx_diff__Build_helper.cmti
+   ppx_diff/ppx_diff__Build_helper.cmx
+   ppx_diff/ppx_diff__Builder.cmi
+   ppx_diff/ppx_diff__Builder.cmt
+   ppx_diff/ppx_diff__Builder.cmti
+   ppx_diff/ppx_diff__Builder.cmx
+   ppx_diff/ppx_diff__Context.cmi
+   ppx_diff/ppx_diff__Context.cmt
+   ppx_diff/ppx_diff__Context.cmti
+   ppx_diff/ppx_diff__Context.cmx
+   ppx_diff/ppx_diff__Core_diff.cmi
+   ppx_diff/ppx_diff__Core_diff.cmt
+   ppx_diff/ppx_diff__Core_diff.cmti
+   ppx_diff/ppx_diff__Core_diff.cmx
+   ppx_diff/ppx_diff__Diff.cmi
+   ppx_diff/ppx_diff__Diff.cmt
+   ppx_diff/ppx_diff__Diff.cmti
+   ppx_diff/ppx_diff__Diff.cmx
+   ppx_diff/ppx_diff__Diff_abstract.cmi
+   ppx_diff/ppx_diff__Diff_abstract.cmt
+   ppx_diff/ppx_diff__Diff_abstract.cmti
+   ppx_diff/ppx_diff__Diff_abstract.cmx
+   ppx_diff/ppx_diff__Diff_as_map.cmi
+   ppx_diff/ppx_diff__Diff_as_map.cmt
+   ppx_diff/ppx_diff__Diff_as_map.cmti
+   ppx_diff/ppx_diff__Diff_as_map.cmx
+   ppx_diff/ppx_diff__Diff_as_set.cmi
+   ppx_diff/ppx_diff__Diff_as_set.cmt
+   ppx_diff/ppx_diff__Diff_as_set.cmti
+   ppx_diff/ppx_diff__Diff_as_set.cmx
+   ppx_diff/ppx_diff__Diff_atomic.cmi
+   ppx_diff/ppx_diff__Diff_atomic.cmt
+   ppx_diff/ppx_diff__Diff_atomic.cmti
+   ppx_diff/ppx_diff__Diff_atomic.cmx
+   ppx_diff/ppx_diff__Diff_constr.cmi
+   ppx_diff/ppx_diff__Diff_constr.cmt
+   ppx_diff/ppx_diff__Diff_constr.cmti
+   ppx_diff/ppx_diff__Diff_constr.cmx
+   ppx_diff/ppx_diff__Diff_core.cmi
+   ppx_diff/ppx_diff__Diff_core.cmt
+   ppx_diff/ppx_diff__Diff_core.cmti
+   ppx_diff/ppx_diff__Diff_core.cmx
+   ppx_diff/ppx_diff__Diff_record.cmi
+   ppx_diff/ppx_diff__Diff_record.cmt
+   ppx_diff/ppx_diff__Diff_record.cmti
+   ppx_diff/ppx_diff__Diff_record.cmx
+   ppx_diff/ppx_diff__Diff_tuple.cmi
+   ppx_diff/ppx_diff__Diff_tuple.cmt
+   ppx_diff/ppx_diff__Diff_tuple.cmti
+   ppx_diff/ppx_diff__Diff_tuple.cmx
+   ppx_diff/ppx_diff__Diff_var.cmi
+   ppx_diff/ppx_diff__Diff_var.cmt
+   ppx_diff/ppx_diff__Diff_var.cmti
+   ppx_diff/ppx_diff__Diff_var.cmx
+   ppx_diff/ppx_diff__Diff_variant.cmi
+   ppx_diff/ppx_diff__Diff_variant.cmt
+   ppx_diff/ppx_diff__Diff_variant.cmti
+   ppx_diff/ppx_diff__Diff_variant.cmx
+   ppx_diff/ppx_diff__Function_name.cmi
+   ppx_diff/ppx_diff__Function_name.cmt
+   ppx_diff/ppx_diff__Function_name.cmti
+   ppx_diff/ppx_diff__Function_name.cmx
+   ppx_diff/ppx_diff__How_to_diff.cmi
+   ppx_diff/ppx_diff__How_to_diff.cmt
+   ppx_diff/ppx_diff__How_to_diff.cmti
+   ppx_diff/ppx_diff__How_to_diff.cmx
+   ppx_diff/ppx_diff__Items.cmi
+   ppx_diff/ppx_diff__Items.cmt
+   ppx_diff/ppx_diff__Items.cmti
+   ppx_diff/ppx_diff__Items.cmx
+   ppx_diff/ppx_diff__Longident_helper.cmi
+   ppx_diff/ppx_diff__Longident_helper.cmt
+   ppx_diff/ppx_diff__Longident_helper.cmti
+   ppx_diff/ppx_diff__Longident_helper.cmx
+   ppx_diff/ppx_diff__Map_and_set_helper.cmi
+   ppx_diff/ppx_diff__Map_and_set_helper.cmt
+   ppx_diff/ppx_diff__Map_and_set_helper.cmti
+   ppx_diff/ppx_diff__Map_and_set_helper.cmx
+   ppx_diff/ppx_diff__Module_name.cmi
+   ppx_diff/ppx_diff__Module_name.cmt
+   ppx_diff/ppx_diff__Module_name.cmti
+   ppx_diff/ppx_diff__Module_name.cmx
+   ppx_diff/ppx_diff__Nonempty_list.cmi
+   ppx_diff/ppx_diff__Nonempty_list.cmt
+   ppx_diff/ppx_diff__Nonempty_list.cmti
+   ppx_diff/ppx_diff__Nonempty_list.cmx
+   ppx_diff/ppx_diff__Prefix.cmi
+   ppx_diff/ppx_diff__Prefix.cmt
+   ppx_diff/ppx_diff__Prefix.cmti
+   ppx_diff/ppx_diff__Prefix.cmx
+   ppx_diff/ppx_diff__Record_field_name.cmi
+   ppx_diff/ppx_diff__Record_field_name.cmt
+   ppx_diff/ppx_diff__Record_field_name.cmti
+   ppx_diff/ppx_diff__Record_field_name.cmx
+   ppx_diff/ppx_diff__Shared.cmi
+   ppx_diff/ppx_diff__Shared.cmt
+   ppx_diff/ppx_diff__Shared.cmti
+   ppx_diff/ppx_diff__Shared.cmx
+   ppx_diff/ppx_diff__Stable_version.cmi
+   ppx_diff/ppx_diff__Stable_version.cmt
+   ppx_diff/ppx_diff__Stable_version.cmti
+   ppx_diff/ppx_diff__Stable_version.cmx
+   ppx_diff/ppx_diff__Type_declaration.cmi
+   ppx_diff/ppx_diff__Type_declaration.cmt
+   ppx_diff/ppx_diff__Type_declaration.cmti
+   ppx_diff/ppx_diff__Type_declaration.cmx
+   ppx_diff/ppx_diff__Type_kind.cmi
+   ppx_diff/ppx_diff__Type_kind.cmt
+   ppx_diff/ppx_diff__Type_kind.cmti
+   ppx_diff/ppx_diff__Type_kind.cmx
+   ppx_diff/ppx_diff__Type_name.cmi
+   ppx_diff/ppx_diff__Type_name.cmt
+   ppx_diff/ppx_diff__Type_name.cmti
+   ppx_diff/ppx_diff__Type_name.cmx
+   ppx_diff/ppx_diff__Type_param.cmi
+   ppx_diff/ppx_diff__Type_param.cmt
+   ppx_diff/ppx_diff__Type_param.cmti
+   ppx_diff/ppx_diff__Type_param.cmx
+   ppx_diff/ppx_diff__Unboxed.cmi
+   ppx_diff/ppx_diff__Unboxed.cmt
+   ppx_diff/ppx_diff__Unboxed.cmti
+   ppx_diff/ppx_diff__Unboxed.cmx
+   ppx_diff/ppx_diff__Var.cmi
+   ppx_diff/ppx_diff__Var.cmt
+   ppx_diff/ppx_diff__Var.cmti
+   ppx_diff/ppx_diff__Var.cmx
+   ppx_diff/ppx_diff__Variant_row_name.cmi
+   ppx_diff/ppx_diff__Variant_row_name.cmt
+   ppx_diff/ppx_diff__Variant_row_name.cmti
+   ppx_diff/ppx_diff__Variant_row_name.cmx
+   ppx_diff/ppx_diff__What_to_derive.cmi
+   ppx_diff/ppx_diff__What_to_derive.cmt
+   ppx_diff/ppx_diff__What_to_derive.cmti
+   ppx_diff/ppx_diff__What_to_derive.cmx
+   ppx_diff/prefix.ml
+   ppx_diff/prefix.mli
+   ppx_diff/record_field_name.ml
+   ppx_diff/record_field_name.mli
+   ppx_diff/shared.ml
+   ppx_diff/shared.mli
+   ppx_diff/stable_version.ml
+   ppx_diff/stable_version.mli
+   ppx_diff/type_declaration.ml
+   ppx_diff/type_declaration.mli
+   ppx_diff/type_kind.ml
+   ppx_diff/type_kind.mli
+   ppx_diff/type_name.ml
+   ppx_diff/type_name.mli
+   ppx_diff/type_param.ml
+   ppx_diff/type_param.mli
+   ppx_diff/unboxed.ml
+   ppx_diff/unboxed.mli
+   ppx_diff/var.ml
+   ppx_diff/var.mli
+   ppx_diff/variant_row_name.ml
+   ppx_diff/variant_row_name.mli
+   ppx_diff/what_to_derive.ml
+   ppx_diff/what_to_derive.mli))
+ (libexec
+  (diffable/diffable.cmxs
+   diffable_cinaps/diffable_cinaps.cmxs
+   ppx_diff/ppx.exe
+   ppx_diff/ppx_diff.cmxs))
+ (doc (LICENSE.md README.md)))
+(library
+ (name ppx_diff.diffable)
+ (kind normal)
+ (archives (byte diffable/diffable.cma) (native diffable/diffable.cmxa))
+ (plugins (byte diffable/diffable.cma) (native diffable/diffable.cmxs))
+ (native_archives diffable/diffable.a)
+ (requires
+  base
+  gel
+  ppx_diff.diffable_cinaps
+  ppx_sexp_conv.runtime-lib
+  sexplib0
+  ppx_compare.runtime-lib
+  ppx_enumerate.runtime-lib
+  ppx_hash.runtime-lib
+  ppx_here.runtime-lib
+  ppx_assert.runtime-lib
+  ppx_bench.runtime-lib
+  bin_prot
+  fieldslib
+  ppx_inline_test.config
+  ppx_inline_test.runtime-lib
+  ppx_module_timer.runtime
+  ppx_stable_witness.runtime
+  ppx_string.runtime
+  typerep
+  variantslib
+  ppx_expect.runtime
+  ppx_expect.config
+  ppx_log.types
+  ppx_log.syntax
+  base_quickcheck.ppx_quickcheck.runtime
+  base_quickcheck)
+ (main_module_name Diffable)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name diffable__)
+     (visibility public)
+     (kind alias)
+     (source (path Diffable__) (impl (path diffable/diffable__.ml-gen))))
+    (name Diffable)
+    (modules
+     (module
+      (obj_name diffable__Atomic)
+      (visibility public)
+      (source
+       (path Atomic)
+       (intf (path diffable/atomic.mli))
+       (impl (path diffable/atomic.ml))))
+     (module
+      (obj_name diffable__Basic_diffs)
+      (visibility public)
+      (source
+       (path Basic_diffs)
+       (intf (path diffable/basic_diffs.mli))
+       (impl (path diffable/basic_diffs.ml))))
+     (module
+      (obj_name diffable__Diff_intf)
+      (visibility public)
+      (source (path Diff_intf) (impl (path diffable/diff_intf.ml))))
+     (module
+      (obj_name diffable)
+      (visibility public)
+      (source (path Diffable) (impl (path diffable/diffable.ml))))
+     (module
+      (obj_name diffable__Diffable_intf)
+      (visibility public)
+      (source (path Diffable_intf) (impl (path diffable/diffable_intf.ml))))
+     (module
+      (obj_name diffable__Map_diff)
+      (visibility public)
+      (source
+       (path Map_diff)
+       (intf (path diffable/map_diff.mli))
+       (impl (path diffable/map_diff.ml))))
+     (module
+      (obj_name diffable__Of_variant)
+      (visibility public)
+      (source
+       (path Of_variant)
+       (intf (path diffable/of_variant.mli))
+       (impl (path diffable/of_variant.ml))))
+     (module
+      (obj_name diffable__Optional_diff)
+      (visibility public)
+      (source
+       (path Optional_diff)
+       (intf (path diffable/optional_diff.mli))
+       (impl (path diffable/optional_diff.ml))))
+     (module
+      (obj_name diffable__Set_diff)
+      (visibility public)
+      (source
+       (path Set_diff)
+       (intf (path diffable/set_diff.mli))
+       (impl (path diffable/set_diff.ml))))
+     (module
+      (obj_name diffable__Tuples)
+      (visibility public)
+      (source
+       (path Tuples)
+       (intf (path diffable/tuples.mli))
+       (impl (path diffable/tuples.ml))))))
+   (wrapped true))))
+(library
+ (name ppx_diff.diffable_cinaps)
+ (kind normal)
+ (archives
+  (byte diffable_cinaps/diffable_cinaps.cma)
+  (native diffable_cinaps/diffable_cinaps.cmxa))
+ (plugins
+  (byte diffable_cinaps/diffable_cinaps.cma)
+  (native diffable_cinaps/diffable_cinaps.cmxs))
+ (native_archives diffable_cinaps/diffable_cinaps.a)
+ (requires
+  base
+  ppx_sexp_conv.runtime-lib
+  sexplib0
+  ppx_compare.runtime-lib
+  ppx_enumerate.runtime-lib
+  ppx_hash.runtime-lib
+  ppx_here.runtime-lib
+  ppx_assert.runtime-lib
+  ppx_bench.runtime-lib
+  bin_prot
+  fieldslib
+  ppx_inline_test.config
+  ppx_inline_test.runtime-lib
+  ppx_module_timer.runtime
+  ppx_stable_witness.runtime
+  ppx_string.runtime
+  typerep
+  variantslib
+  ppx_expect.runtime
+  ppx_expect.config
+  ppx_log.types
+  ppx_log.syntax
+  base_quickcheck.ppx_quickcheck.runtime
+  base_quickcheck)
+ (main_module_name Diffable_cinaps)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name diffable_cinaps__)
+     (visibility public)
+     (kind alias)
+     (source
+      (path Diffable_cinaps__)
+      (impl (path diffable_cinaps/diffable_cinaps__.ml-gen))))
+    (name Diffable_cinaps)
+    (modules
+     (module
+      (obj_name diffable_cinaps)
+      (visibility public)
+      (source
+       (path Diffable_cinaps)
+       (impl (path diffable_cinaps/diffable_cinaps.ml))))
+     (module
+      (obj_name diffable_cinaps__Tuple_helpers)
+      (visibility public)
+      (source
+       (path Tuple_helpers)
+       (intf (path diffable_cinaps/tuple_helpers.mli))
+       (impl (path diffable_cinaps/tuple_helpers.ml))))))
+   (wrapped true))))
+(library
+ (name ppx_diff.ppx_diff)
+ (kind ppx_rewriter)
+ (archives (byte ppx_diff/ppx_diff.cma) (native ppx_diff/ppx_diff.cmxa))
+ (plugins (byte ppx_diff/ppx_diff.cma) (native ppx_diff/ppx_diff.cmxs))
+ (native_archives ppx_diff/ppx_diff.a)
+ (requires
+  base
+  ppxlib.ast
+  ppxlib
+  ppxlib_jane
+  ppx_diff.diffable
+  ppx_enumerate.runtime-lib
+  ppx_compare.runtime-lib)
+ (ppx_runtime_deps ppx_diff.diffable)
+ (main_module_name Ppx_diff)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name ppx_diff__)
+     (visibility public)
+     (kind alias)
+     (source (path Ppx_diff__) (impl (path ppx_diff/ppx_diff__.ml-gen))))
+    (name Ppx_diff)
+    (modules
+     (module
+      (obj_name ppx_diff__Build_helper)
+      (visibility public)
+      (source
+       (path Build_helper)
+       (intf (path ppx_diff/build_helper.mli))
+       (impl (path ppx_diff/build_helper.ml))))
+     (module
+      (obj_name ppx_diff__Builder)
+      (visibility public)
+      (source
+       (path Builder)
+       (intf (path ppx_diff/builder.mli))
+       (impl (path ppx_diff/builder.ml))))
+     (module
+      (obj_name ppx_diff__Context)
+      (visibility public)
+      (source
+       (path Context)
+       (intf (path ppx_diff/context.mli))
+       (impl (path ppx_diff/context.ml))))
+     (module
+      (obj_name ppx_diff__Core_diff)
+      (visibility public)
+      (source
+       (path Core_diff)
+       (intf (path ppx_diff/core_diff.mli))
+       (impl (path ppx_diff/core_diff.ml))))
+     (module
+      (obj_name ppx_diff__Diff)
+      (visibility public)
+      (source
+       (path Diff)
+       (intf (path ppx_diff/diff.mli))
+       (impl (path ppx_diff/diff.ml))))
+     (module
+      (obj_name ppx_diff__Diff_abstract)
+      (visibility public)
+      (source
+       (path Diff_abstract)
+       (intf (path ppx_diff/diff_abstract.mli))
+       (impl (path ppx_diff/diff_abstract.ml))))
+     (module
+      (obj_name ppx_diff__Diff_as_map)
+      (visibility public)
+      (source
+       (path Diff_as_map)
+       (intf (path ppx_diff/diff_as_map.mli))
+       (impl (path ppx_diff/diff_as_map.ml))))
+     (module
+      (obj_name ppx_diff__Diff_as_set)
+      (visibility public)
+      (source
+       (path Diff_as_set)
+       (intf (path ppx_diff/diff_as_set.mli))
+       (impl (path ppx_diff/diff_as_set.ml))))
+     (module
+      (obj_name ppx_diff__Diff_atomic)
+      (visibility public)
+      (source
+       (path Diff_atomic)
+       (intf (path ppx_diff/diff_atomic.mli))
+       (impl (path ppx_diff/diff_atomic.ml))))
+     (module
+      (obj_name ppx_diff__Diff_constr)
+      (visibility public)
+      (source
+       (path Diff_constr)
+       (intf (path ppx_diff/diff_constr.mli))
+       (impl (path ppx_diff/diff_constr.ml))))
+     (module
+      (obj_name ppx_diff__Diff_core)
+      (visibility public)
+      (source
+       (path Diff_core)
+       (intf (path ppx_diff/diff_core.mli))
+       (impl (path ppx_diff/diff_core.ml))))
+     (module
+      (obj_name ppx_diff__Diff_record)
+      (visibility public)
+      (source
+       (path Diff_record)
+       (intf (path ppx_diff/diff_record.mli))
+       (impl (path ppx_diff/diff_record.ml))))
+     (module
+      (obj_name ppx_diff__Diff_tuple)
+      (visibility public)
+      (source
+       (path Diff_tuple)
+       (intf (path ppx_diff/diff_tuple.mli))
+       (impl (path ppx_diff/diff_tuple.ml))))
+     (module
+      (obj_name ppx_diff__Diff_var)
+      (visibility public)
+      (source
+       (path Diff_var)
+       (intf (path ppx_diff/diff_var.mli))
+       (impl (path ppx_diff/diff_var.ml))))
+     (module
+      (obj_name ppx_diff__Diff_variant)
+      (visibility public)
+      (source
+       (path Diff_variant)
+       (intf (path ppx_diff/diff_variant.mli))
+       (impl (path ppx_diff/diff_variant.ml))))
+     (module
+      (obj_name ppx_diff__Function_name)
+      (visibility public)
+      (source
+       (path Function_name)
+       (intf (path ppx_diff/function_name.mli))
+       (impl (path ppx_diff/function_name.ml))))
+     (module
+      (obj_name ppx_diff__How_to_diff)
+      (visibility public)
+      (source
+       (path How_to_diff)
+       (intf (path ppx_diff/how_to_diff.mli))
+       (impl (path ppx_diff/how_to_diff.ml))))
+     (module
+      (obj_name ppx_diff__Items)
+      (visibility public)
+      (source
+       (path Items)
+       (intf (path ppx_diff/items.mli))
+       (impl (path ppx_diff/items.ml))))
+     (module
+      (obj_name ppx_diff__Longident_helper)
+      (visibility public)
+      (source
+       (path Longident_helper)
+       (intf (path ppx_diff/longident_helper.mli))
+       (impl (path ppx_diff/longident_helper.ml))))
+     (module
+      (obj_name ppx_diff__Map_and_set_helper)
+      (visibility public)
+      (source
+       (path Map_and_set_helper)
+       (intf (path ppx_diff/map_and_set_helper.mli))
+       (impl (path ppx_diff/map_and_set_helper.ml))))
+     (module
+      (obj_name ppx_diff__Module_name)
+      (visibility public)
+      (source
+       (path Module_name)
+       (intf (path ppx_diff/module_name.mli))
+       (impl (path ppx_diff/module_name.ml))))
+     (module
+      (obj_name ppx_diff__Nonempty_list)
+      (visibility public)
+      (source
+       (path Nonempty_list)
+       (intf (path ppx_diff/nonempty_list.mli))
+       (impl (path ppx_diff/nonempty_list.ml))))
+     (module
+      (obj_name ppx_diff)
+      (visibility public)
+      (source
+       (path Ppx_diff)
+       (intf (path ppx_diff/ppx_diff.mli))
+       (impl (path ppx_diff/ppx_diff.ml))))
+     (module
+      (obj_name ppx_diff__Prefix)
+      (visibility public)
+      (source
+       (path Prefix)
+       (intf (path ppx_diff/prefix.mli))
+       (impl (path ppx_diff/prefix.ml))))
+     (module
+      (obj_name ppx_diff__Record_field_name)
+      (visibility public)
+      (source
+       (path Record_field_name)
+       (intf (path ppx_diff/record_field_name.mli))
+       (impl (path ppx_diff/record_field_name.ml))))
+     (module
+      (obj_name ppx_diff__Shared)
+      (visibility public)
+      (source
+       (path Shared)
+       (intf (path ppx_diff/shared.mli))
+       (impl (path ppx_diff/shared.ml))))
+     (module
+      (obj_name ppx_diff__Stable_version)
+      (visibility public)
+      (source
+       (path Stable_version)
+       (intf (path ppx_diff/stable_version.mli))
+       (impl (path ppx_diff/stable_version.ml))))
+     (module
+      (obj_name ppx_diff__Type_declaration)
+      (visibility public)
+      (source
+       (path Type_declaration)
+       (intf (path ppx_diff/type_declaration.mli))
+       (impl (path ppx_diff/type_declaration.ml))))
+     (module
+      (obj_name ppx_diff__Type_kind)
+      (visibility public)
+      (source
+       (path Type_kind)
+       (intf (path ppx_diff/type_kind.mli))
+       (impl (path ppx_diff/type_kind.ml))))
+     (module
+      (obj_name ppx_diff__Type_name)
+      (visibility public)
+      (source
+       (path Type_name)
+       (intf (path ppx_diff/type_name.mli))
+       (impl (path ppx_diff/type_name.ml))))
+     (module
+      (obj_name ppx_diff__Type_param)
+      (visibility public)
+      (source
+       (path Type_param)
+       (intf (path ppx_diff/type_param.mli))
+       (impl (path ppx_diff/type_param.ml))))
+     (module
+      (obj_name ppx_diff__Unboxed)
+      (visibility public)
+      (source
+       (path Unboxed)
+       (intf (path ppx_diff/unboxed.mli))
+       (impl (path ppx_diff/unboxed.ml))))
+     (module
+      (obj_name ppx_diff__Var)
+      (visibility public)
+      (source
+       (path Var)
+       (intf (path ppx_diff/var.mli))
+       (impl (path ppx_diff/var.ml))))
+     (module
+      (obj_name ppx_diff__Variant_row_name)
+      (visibility public)
+      (source
+       (path Variant_row_name)
+       (intf (path ppx_diff/variant_row_name.mli))
+       (impl (path ppx_diff/variant_row_name.ml))))
+     (module
+      (obj_name ppx_diff__What_to_derive)
+      (visibility public)
+      (source
+       (path What_to_derive)
+       (intf (path ppx_diff/what_to_derive.mli))
+       (impl (path ppx_diff/what_to_derive.ml))))))
+   (wrapped true))))

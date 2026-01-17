@@ -1,0 +1,39 @@
+opam-version: "2.0"
+lib: [
+  "_build/install/default/lib/ppx_hardcaml/META"
+  "_build/install/default/lib/ppx_hardcaml/dune-package"
+  "_build/install/default/lib/ppx_hardcaml/opam"
+  "_build/install/default/lib/ppx_hardcaml/ppx_hardcaml.a"
+  "_build/install/default/lib/ppx_hardcaml/ppx_hardcaml.cma"
+  "_build/install/default/lib/ppx_hardcaml/ppx_hardcaml.cmi"
+  "_build/install/default/lib/ppx_hardcaml/ppx_hardcaml.cmt"
+  "_build/install/default/lib/ppx_hardcaml/ppx_hardcaml.cmti"
+  "_build/install/default/lib/ppx_hardcaml/ppx_hardcaml.cmx"
+  "_build/install/default/lib/ppx_hardcaml/ppx_hardcaml.cmxa"
+  "_build/install/default/lib/ppx_hardcaml/ppx_hardcaml.ml"
+  "_build/install/default/lib/ppx_hardcaml/ppx_hardcaml.mli"
+  "_build/install/default/lib/ppx_hardcaml/runtime/ppx_hardcaml_runtime.a"
+    {"runtime/ppx_hardcaml_runtime.a"}
+  "_build/install/default/lib/ppx_hardcaml/runtime/ppx_hardcaml_runtime.cma"
+    {"runtime/ppx_hardcaml_runtime.cma"}
+  "_build/install/default/lib/ppx_hardcaml/runtime/ppx_hardcaml_runtime.cmi"
+    {"runtime/ppx_hardcaml_runtime.cmi"}
+  "_build/install/default/lib/ppx_hardcaml/runtime/ppx_hardcaml_runtime.cmt"
+    {"runtime/ppx_hardcaml_runtime.cmt"}
+  "_build/install/default/lib/ppx_hardcaml/runtime/ppx_hardcaml_runtime.cmx"
+    {"runtime/ppx_hardcaml_runtime.cmx"}
+  "_build/install/default/lib/ppx_hardcaml/runtime/ppx_hardcaml_runtime.cmxa"
+    {"runtime/ppx_hardcaml_runtime.cmxa"}
+  "_build/install/default/lib/ppx_hardcaml/runtime/ppx_hardcaml_runtime.ml"
+    {"runtime/ppx_hardcaml_runtime.ml"}
+]
+doc: [
+  "_build/install/default/doc/ppx_hardcaml/CHANGES.md"
+  "_build/install/default/doc/ppx_hardcaml/LICENSE.md"
+  "_build/install/default/doc/ppx_hardcaml/README.md"
+]
+libexec: [
+  "_build/install/default/lib/ppx_hardcaml/ppx_hardcaml.cmxs"
+  "_build/install/default/lib/ppx_hardcaml/runtime/ppx_hardcaml_runtime.cmxs"
+    {"runtime/ppx_hardcaml_runtime.cmxs"}
+]

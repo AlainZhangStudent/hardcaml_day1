@@ -1,0 +1,43 @@
+(lang dune 3.21)
+(name capitalization)
+(version v0.17.0)
+(sections (lib .) (libexec .) (doc ../../doc/capitalization))
+(files
+ (lib
+  (META
+   capitalization.a
+   capitalization.cma
+   capitalization.cmi
+   capitalization.cmt
+   capitalization.cmti
+   capitalization.cmx
+   capitalization.cmxa
+   capitalization.ml
+   capitalization.mli
+   dune-package
+   opam))
+ (libexec (capitalization.cmxs))
+ (doc (LICENSE.md README.md)))
+(library
+ (name capitalization)
+ (kind normal)
+ (archives (byte capitalization.cma) (native capitalization.cmxa))
+ (plugins (byte capitalization.cma) (native capitalization.cmxs))
+ (native_archives capitalization.a)
+ (requires
+  base
+  ppx_sexp_conv.runtime-lib
+  sexplib0
+  ppx_compare.runtime-lib
+  ppx_enumerate.runtime-lib
+  ppx_hash.runtime-lib)
+ (main_module_name Capitalization)
+ (modes byte native)
+ (modules
+  (singleton
+   (obj_name capitalization)
+   (visibility public)
+   (source
+    (path Capitalization)
+    (intf (path capitalization.mli))
+    (impl (path capitalization.ml))))))

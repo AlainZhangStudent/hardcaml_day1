@@ -1,0 +1,21 @@
+version = "v0.17.0"
+description = ""
+requires(ppx_driver) = "base
+                        capitalization
+                        compiler-libs.common
+                        ppx_here.runtime-lib
+                        ppx_string.runtime
+                        ppxlib
+                        ppxlib.ast"
+archive(ppx_driver,byte) = "ppx_string_conv.cma"
+archive(ppx_driver,native) = "ppx_string_conv.cmxa"
+plugin(ppx_driver,byte) = "ppx_string_conv.cma"
+plugin(ppx_driver,native) = "ppx_string_conv.cmxs"
+# This is what dune uses to find out the runtime dependencies of
+# a preprocessor
+ppx_runtime_deps = "base"
+# This line makes things transparent for people mixing preprocessors
+# and normal dependencies
+requires(-ppx_driver) = "base"
+ppx(-ppx_driver,-custom_ppx) = "./ppx.exe --as-ppx"
+library_kind = "ppx_rewriter"

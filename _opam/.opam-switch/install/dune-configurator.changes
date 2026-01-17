@@ -1,0 +1,68 @@
+opam-version: "2.0"
+added: [
+  "doc/dune-configurator" {"D"}
+  "doc/dune-configurator/CHANGES.md" {"F:S192367T1768614543.57"}
+  "doc/dune-configurator/LICENSE.md" {"F:S1111T1768614543.57"}
+  "doc/dune-configurator/README.md" {"F:S5829T1768614543.57"}
+  "doc/dune-configurator/odoc-pages" {"D"}
+  "doc/dune-configurator/odoc-pages/index.mld" {"F:S1652T1768614543.58"}
+  "lib/dune-configurator" {"D"}
+  "lib/dune-configurator/.private" {"D"}
+  "lib/dune-configurator/.private/configurator__Dune_lang.cmi"
+    {"F:S482T1768614543.57"}
+  "lib/dune-configurator/.private/configurator__Dune_lang.cmt"
+    {"F:S20676T1768614543.57"}
+  "lib/dune-configurator/.private/configurator__Dune_lang.cmti"
+    {"F:S2368T1768614543.57"}
+  "lib/dune-configurator/.private/configurator__Import.cmi"
+    {"F:S28882T1768614543.57"}
+  "lib/dune-configurator/.private/configurator__Import.cmt"
+    {"F:S130815T1768614543.57"}
+  "lib/dune-configurator/.private/configurator__Ocaml_config.cmi"
+    {"F:S608T1768614543.57"}
+  "lib/dune-configurator/.private/configurator__Ocaml_config.cmt"
+    {"F:S7917T1768614543.57"}
+  "lib/dune-configurator/.private/configurator__Ocaml_config.cmti"
+    {"F:S3002T1768614543.57"}
+  "lib/dune-configurator/META" {"F:S203T1768614543.57"}
+  "lib/dune-configurator/configurator.a" {"F:S246312T1768614543.57"}
+  "lib/dune-configurator/configurator.cma" {"F:S155506T1768614543.57"}
+  "lib/dune-configurator/configurator.cmi" {"F:S304T1768614543.57"}
+  "lib/dune-configurator/configurator.cmt" {"F:S1770T1768614543.57"}
+  "lib/dune-configurator/configurator.cmx" {"F:S222T1768614543.57"}
+  "lib/dune-configurator/configurator.cmxa" {"F:S6551T1768614543.57"}
+  "lib/dune-configurator/configurator.cmxs" {"F:S224016T1768614543.57"}
+  "lib/dune-configurator/configurator.ml" {"F:S15T1768614543.57"}
+  "lib/dune-configurator/configurator__.cmi" {"F:S600T1768614543.57"}
+  "lib/dune-configurator/configurator__.cmt" {"F:S2889T1768614543.57"}
+  "lib/dune-configurator/configurator__.cmx" {"F:S276T1768614543.57"}
+  "lib/dune-configurator/configurator__.ml" {"F:S511T1768614543.57"}
+  "lib/dune-configurator/configurator__Dune_lang.cmx"
+    {"F:S1304T1768614543.57"}
+  "lib/dune-configurator/configurator__Extract_obj.cmi"
+    {"F:S488T1768614543.57"}
+  "lib/dune-configurator/configurator__Extract_obj.cmt"
+    {"F:S8767T1768614543.57"}
+  "lib/dune-configurator/configurator__Extract_obj.cmti"
+    {"F:S2402T1768614543.57"}
+  "lib/dune-configurator/configurator__Extract_obj.cmx"
+    {"F:S2767T1768614543.57"}
+  "lib/dune-configurator/configurator__Import.cmx" {"F:S39139T1768614543.57"}
+  "lib/dune-configurator/configurator__Ocaml_config.cmx"
+    {"F:S1589T1768614543.57"}
+  "lib/dune-configurator/configurator__V1.cmi" {"F:S2507T1768614543.57"}
+  "lib/dune-configurator/configurator__V1.cmt" {"F:S133000T1768614543.57"}
+  "lib/dune-configurator/configurator__V1.cmti" {"F:S15305T1768614543.57"}
+  "lib/dune-configurator/configurator__V1.cmx" {"F:S9198T1768614543.57"}
+  "lib/dune-configurator/dune-package" {"F:S2902T1768614543.57"}
+  "lib/dune-configurator/dune_lang.ml" {"F:S2367T1768614543.57"}
+  "lib/dune-configurator/dune_lang.mli" {"F:S132T1768614543.57"}
+  "lib/dune-configurator/extract_obj.ml" {"F:S7867T1768614543.57"}
+  "lib/dune-configurator/extract_obj.mli" {"F:S228T1768614543.57"}
+  "lib/dune-configurator/import.ml" {"F:S8318T1768614543.57"}
+  "lib/dune-configurator/ocaml_config.ml" {"F:S808T1768614543.57"}
+  "lib/dune-configurator/ocaml_config.mli" {"F:S357T1768614543.57"}
+  "lib/dune-configurator/opam" {"F:S1187T1768614543.57"}
+  "lib/dune-configurator/v1.ml" {"F:S23472T1768614543.57"}
+  "lib/dune-configurator/v1.mli" {"F:S6648T1768614543.57"}
+]

@@ -1,0 +1,159 @@
+version = "v0.17.0"
+description = ""
+requires =
+"async_kernel
+ async_kernel.eager_deferred
+ async_kernel.read_write_pair
+ async_unix.thread_pool
+ async_unix.thread_safe_ivar
+ base
+ base_quickcheck
+ base_quickcheck.ppx_quickcheck.runtime
+ bin_prot
+ core
+ core_kernel.bounded_int_table
+ core_unix.bigstring_unix
+ core_unix.filename_unix
+ core_unix.iobuf_unix
+ core_unix.nano_mutex
+ core_unix.squeue
+ core_unix.sys_unix
+ core_unix.time_ns_unix
+ core_unix.time_stamp_counter
+ cstruct
+ fieldslib
+ ppx_assert.runtime-lib
+ ppx_bench.runtime-lib
+ ppx_compare.runtime-lib
+ ppx_enumerate.runtime-lib
+ ppx_expect.config
+ ppx_expect.runtime
+ ppx_hash.runtime-lib
+ ppx_here.runtime-lib
+ ppx_inline_test.config
+ ppx_inline_test.runtime-lib
+ ppx_log.syntax
+ ppx_log.types
+ ppx_module_timer.runtime
+ ppx_sexp_conv.runtime-lib
+ ppx_stable_witness.runtime
+ ppx_string.runtime
+ sexplib0
+ typerep
+ variantslib"
+archive(byte) = "async_unix.cma"
+archive(native) = "async_unix.cmxa"
+plugin(byte) = "async_unix.cma"
+plugin(native) = "async_unix.cmxs"
+package "thread_pool" (
+  directory = "thread_pool"
+  version = "v0.17.0"
+  description = ""
+  requires =
+  "async_unix.thread_safe_ivar
+   base
+   base_quickcheck
+   base_quickcheck.ppx_quickcheck.runtime
+   bin_prot
+   core
+   core_kernel.thread_pool_cpu_affinity
+   core_unix.linux_ext
+   core_unix.nano_mutex
+   core_unix.squeue
+   core_unix.time_ns_unix
+   fieldslib
+   ppx_assert.runtime-lib
+   ppx_bench.runtime-lib
+   ppx_compare.runtime-lib
+   ppx_enumerate.runtime-lib
+   ppx_expect.config
+   ppx_expect.runtime
+   ppx_hash.runtime-lib
+   ppx_here.runtime-lib
+   ppx_inline_test.config
+   ppx_inline_test.runtime-lib
+   ppx_log.syntax
+   ppx_log.types
+   ppx_module_timer.runtime
+   ppx_sexp_conv.runtime-lib
+   ppx_stable_witness.runtime
+   ppx_string.runtime
+   sexplib0
+   typerep
+   variantslib"
+  archive(byte) = "thread_pool.cma"
+  archive(native) = "thread_pool.cmxa"
+  plugin(byte) = "thread_pool.cma"
+  plugin(native) = "thread_pool.cmxs"
+)
+package "thread_safe_ivar" (
+  directory = "thread_safe_ivar"
+  version = "v0.17.0"
+  description = ""
+  requires =
+  "base
+   base_quickcheck
+   base_quickcheck.ppx_quickcheck.runtime
+   bin_prot
+   core
+   core_unix.error_checking_mutex
+   fieldslib
+   ppx_assert.runtime-lib
+   ppx_bench.runtime-lib
+   ppx_compare.runtime-lib
+   ppx_enumerate.runtime-lib
+   ppx_expect.config
+   ppx_expect.runtime
+   ppx_hash.runtime-lib
+   ppx_here.runtime-lib
+   ppx_inline_test.config
+   ppx_inline_test.runtime-lib
+   ppx_log.syntax
+   ppx_log.types
+   ppx_module_timer.runtime
+   ppx_sexp_conv.runtime-lib
+   ppx_stable_witness.runtime
+   ppx_string.runtime
+   sexplib0
+   typerep
+   variantslib"
+  archive(byte) = "thread_safe_ivar.cma"
+  archive(native) = "thread_safe_ivar.cmxa"
+  plugin(byte) = "thread_safe_ivar.cma"
+  plugin(native) = "thread_safe_ivar.cmxs"
+)
+package "thread_safe_pipe" (
+  directory = "thread_safe_pipe"
+  version = "v0.17.0"
+  description = ""
+  requires =
+  "async_unix
+   base
+   base_quickcheck
+   base_quickcheck.ppx_quickcheck.runtime
+   bin_prot
+   fieldslib
+   ppx_assert.runtime-lib
+   ppx_bench.runtime-lib
+   ppx_compare.runtime-lib
+   ppx_enumerate.runtime-lib
+   ppx_expect.config
+   ppx_expect.runtime
+   ppx_hash.runtime-lib
+   ppx_here.runtime-lib
+   ppx_inline_test.config
+   ppx_inline_test.runtime-lib
+   ppx_log.syntax
+   ppx_log.types
+   ppx_module_timer.runtime
+   ppx_sexp_conv.runtime-lib
+   ppx_stable_witness.runtime
+   ppx_string.runtime
+   sexplib0
+   typerep
+   variantslib"
+  archive(byte) = "thread_safe_pipe.cma"
+  archive(native) = "thread_safe_pipe.cmxa"
+  plugin(byte) = "thread_safe_pipe.cma"
+  plugin(native) = "thread_safe_pipe.cmxs"
+)

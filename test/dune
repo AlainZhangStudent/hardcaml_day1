@@ -1,0 +1,5 @@
+(library
+ (name test_logic)
+ (inline_tests)
+ (preprocess (pps ppx_expect ppx_hardcaml ppx_jane))
+ (libraries my_hardcaml_project hardcaml core))

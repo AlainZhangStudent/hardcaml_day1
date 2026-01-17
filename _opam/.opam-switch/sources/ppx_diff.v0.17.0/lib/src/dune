@@ -1,0 +1,6 @@
+(library
+ (name diffable)
+ (public_name ppx_diff.diffable)
+ (libraries base gel diffable_cinaps)
+ (preprocess
+  (pps ppx_jane)))

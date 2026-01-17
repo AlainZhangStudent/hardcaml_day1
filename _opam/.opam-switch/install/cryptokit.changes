@@ -1,0 +1,32 @@
+opam-version: "2.0"
+added: [
+  "doc/cryptokit" {"D"}
+  "doc/cryptokit/LICENSE" {"F:S26394T1768614545.4"}
+  "doc/cryptokit/README.md" {"F:S7736T1768614545.4"}
+  "lib/cryptokit" {"D"}
+  "lib/cryptokit/META" {"F:S173T1768614545.39"}
+  "lib/cryptokit/cryptokit.a" {"F:S353592T1768614545.39"}
+  "lib/cryptokit/cryptokit.cma" {"F:S281032T1768614545.39"}
+  "lib/cryptokit/cryptokit.cmi" {"F:S13059T1768614545.39"}
+  "lib/cryptokit/cryptokit.cmt" {"F:S416144T1768614545.39"}
+  "lib/cryptokit/cryptokit.cmti" {"F:S90807T1768614545.39"}
+  "lib/cryptokit/cryptokit.cmx" {"F:S12063T1768614545.39"}
+  "lib/cryptokit/cryptokit.cmxa" {"F:S2141T1768614545.39"}
+  "lib/cryptokit/cryptokit.cmxs" {"F:S396592T1768614545.4"}
+  "lib/cryptokit/cryptokit.ml" {"F:S63436T1768614545.39"}
+  "lib/cryptokit/cryptokit.mli" {"F:S63456T1768614545.4"}
+  "lib/cryptokit/cryptokitBignum.ml" {"F:S3743T1768614545.4"}
+  "lib/cryptokit/cryptokitBignum.mli" {"F:S1478T1768614545.4"}
+  "lib/cryptokit/cryptokit__.cmi" {"F:S226T1768614545.4"}
+  "lib/cryptokit/cryptokit__.cmt" {"F:S1588T1768614545.4"}
+  "lib/cryptokit/cryptokit__.cmx" {"F:S143T1768614545.4"}
+  "lib/cryptokit/cryptokit__.ml" {"F:S121T1768614545.4"}
+  "lib/cryptokit/cryptokit__CryptokitBignum.cmi" {"F:S1089T1768614545.4"}
+  "lib/cryptokit/cryptokit__CryptokitBignum.cmt" {"F:S20454T1768614545.4"}
+  "lib/cryptokit/cryptokit__CryptokitBignum.cmti" {"F:S5676T1768614545.4"}
+  "lib/cryptokit/cryptokit__CryptokitBignum.cmx" {"F:S2540T1768614545.4"}
+  "lib/cryptokit/dune-package" {"F:S2106T1768614545.4"}
+  "lib/cryptokit/libcryptokit_stubs.a" {"F:S283504T1768614545.4"}
+  "lib/cryptokit/opam" {"F:S968T1768614545.4"}
+  "lib/stublibs/dllcryptokit_stubs.so" {"F:S125624T1768614545.4"}
+]

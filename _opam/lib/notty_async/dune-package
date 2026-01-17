@@ -1,0 +1,63 @@
+(lang dune 3.21)
+(name notty_async)
+(version v0.17.0)
+(sections (lib .) (libexec .) (doc ../../doc/notty_async))
+(files
+ (lib
+  (META
+   dune-package
+   notty_async.a
+   notty_async.cma
+   notty_async.cmi
+   notty_async.cmt
+   notty_async.cmti
+   notty_async.cmx
+   notty_async.cmxa
+   notty_async.ml
+   notty_async.mli
+   opam))
+ (libexec (notty_async.cmxs))
+ (doc (LICENSE.md README.org)))
+(library
+ (name notty_async)
+ (kind normal)
+ (archives (byte notty_async.cma) (native notty_async.cmxa))
+ (plugins (byte notty_async.cma) (native notty_async.cmxs))
+ (native_archives notty_async.a)
+ (requires
+  async
+  notty.unix
+  ppx_sexp_conv.runtime-lib
+  sexplib0
+  ppx_compare.runtime-lib
+  ppx_enumerate.runtime-lib
+  ppx_hash.runtime-lib
+  ppx_here.runtime-lib
+  ppx_assert.runtime-lib
+  ppx_bench.runtime-lib
+  bin_prot
+  fieldslib
+  ppx_inline_test.config
+  ppx_inline_test.runtime-lib
+  ppx_module_timer.runtime
+  ppx_stable_witness.runtime
+  ppx_string.runtime
+  base
+  typerep
+  variantslib
+  ppx_expect.runtime
+  ppx_expect.config
+  ppx_log.types
+  ppx_log.syntax
+  base_quickcheck.ppx_quickcheck.runtime
+  base_quickcheck)
+ (main_module_name Notty_async)
+ (modes byte native)
+ (modules
+  (singleton
+   (obj_name notty_async)
+   (visibility public)
+   (source
+    (path Notty_async)
+    (intf (path notty_async.mli))
+    (impl (path notty_async.ml))))))

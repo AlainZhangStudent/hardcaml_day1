@@ -1,0 +1,20 @@
+opam-version: "2.0"
+lib: [
+  "_build/install/default/lib/notty_async/META"
+  "_build/install/default/lib/notty_async/dune-package"
+  "_build/install/default/lib/notty_async/notty_async.a"
+  "_build/install/default/lib/notty_async/notty_async.cma"
+  "_build/install/default/lib/notty_async/notty_async.cmi"
+  "_build/install/default/lib/notty_async/notty_async.cmt"
+  "_build/install/default/lib/notty_async/notty_async.cmti"
+  "_build/install/default/lib/notty_async/notty_async.cmx"
+  "_build/install/default/lib/notty_async/notty_async.cmxa"
+  "_build/install/default/lib/notty_async/notty_async.ml"
+  "_build/install/default/lib/notty_async/notty_async.mli"
+  "_build/install/default/lib/notty_async/opam"
+]
+doc: [
+  "_build/install/default/doc/notty_async/LICENSE.md"
+  "_build/install/default/doc/notty_async/README.org"
+]
+libexec: "_build/install/default/lib/notty_async/notty_async.cmxs"

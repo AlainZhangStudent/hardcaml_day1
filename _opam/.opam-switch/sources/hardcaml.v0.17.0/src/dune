@@ -1,0 +1,18 @@
+(library
+ (foreign_stubs
+  (language c)
+  (names bits_stubs))
+ (name hardcaml)
+ (public_name hardcaml)
+ (libraries base bin_prot core_kernel.flags stdio zarith)
+ (preprocess
+  (pps ppx_jane ppx_hardcaml0))
+ (ocamlopt_flags
+  :standard
+  (:include ocamlopt-flags)))
+
+(rule
+ (targets ocamlopt-flags)
+ (deps)
+ (action
+  (bash "echo '()' > ocamlopt-flags")))

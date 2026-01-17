@@ -1,0 +1,20 @@
+opam-version: "2.0"
+lib: [
+  "_build/install/default/lib/capitalization/META"
+  "_build/install/default/lib/capitalization/capitalization.a"
+  "_build/install/default/lib/capitalization/capitalization.cma"
+  "_build/install/default/lib/capitalization/capitalization.cmi"
+  "_build/install/default/lib/capitalization/capitalization.cmt"
+  "_build/install/default/lib/capitalization/capitalization.cmti"
+  "_build/install/default/lib/capitalization/capitalization.cmx"
+  "_build/install/default/lib/capitalization/capitalization.cmxa"
+  "_build/install/default/lib/capitalization/capitalization.ml"
+  "_build/install/default/lib/capitalization/capitalization.mli"
+  "_build/install/default/lib/capitalization/dune-package"
+  "_build/install/default/lib/capitalization/opam"
+]
+doc: [
+  "_build/install/default/doc/capitalization/LICENSE.md"
+  "_build/install/default/doc/capitalization/README.md"
+]
+libexec: "_build/install/default/lib/capitalization/capitalization.cmxs"

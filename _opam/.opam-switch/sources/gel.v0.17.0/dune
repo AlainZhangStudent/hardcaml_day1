@@ -1,0 +1,6 @@
+(library
+ (name gel)
+ (public_name gel)
+ (libraries base)
+ (preprocess
+  (pps ppx_jane)))

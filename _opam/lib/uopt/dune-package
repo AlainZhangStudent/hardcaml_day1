@@ -1,0 +1,58 @@
+(lang dune 3.21)
+(name uopt)
+(version v0.17.0)
+(sections (lib .) (libexec .) (doc ../../doc/uopt))
+(files
+ (lib
+  (META
+   dune-package
+   opam
+   uopt.a
+   uopt.cma
+   uopt.cmi
+   uopt.cmt
+   uopt.cmti
+   uopt.cmx
+   uopt.cmxa
+   uopt.ml
+   uopt.mli))
+ (libexec (uopt.cmxs))
+ (doc (LICENSE.md)))
+(library
+ (name uopt)
+ (kind normal)
+ (archives (byte uopt.cma) (native uopt.cmxa))
+ (plugins (byte uopt.cma) (native uopt.cmxs))
+ (native_archives uopt.a)
+ (requires
+  base
+  ppx_sexp_conv.runtime-lib
+  sexplib0
+  ppx_compare.runtime-lib
+  ppx_enumerate.runtime-lib
+  ppx_hash.runtime-lib
+  ppx_here.runtime-lib
+  ppx_assert.runtime-lib
+  ppx_bench.runtime-lib
+  bin_prot
+  fieldslib
+  ppx_inline_test.config
+  ppx_inline_test.runtime-lib
+  ppx_module_timer.runtime
+  ppx_stable_witness.runtime
+  ppx_string.runtime
+  typerep
+  variantslib
+  ppx_expect.runtime
+  ppx_expect.config
+  ppx_log.types
+  ppx_log.syntax
+  base_quickcheck.ppx_quickcheck.runtime
+  base_quickcheck)
+ (main_module_name Uopt)
+ (modes byte native)
+ (modules
+  (singleton
+   (obj_name uopt)
+   (visibility public)
+   (source (path Uopt) (intf (path uopt.mli)) (impl (path uopt.ml))))))

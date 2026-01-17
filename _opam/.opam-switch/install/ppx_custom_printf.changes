@@ -1,0 +1,33 @@
+opam-version: "2.0"
+added: [
+  "doc/ppx_custom_printf" {"D"}
+  "doc/ppx_custom_printf/CHANGES.md" {"F:S575T1768614566.29"}
+  "doc/ppx_custom_printf/LICENSE.md" {"F:S1126T1768614566.29"}
+  "doc/ppx_custom_printf/README.md" {"F:S2514T1768614566.29"}
+  "lib/ppx_custom_printf" {"D"}
+  "lib/ppx_custom_printf/META" {"F:S718T1768614566.27"}
+  "lib/ppx_custom_printf/dune-package" {"F:S1788T1768614566.27"}
+  "lib/ppx_custom_printf/format_lifter.ml" {"F:S10289T1768614566.27"}
+  "lib/ppx_custom_printf/opam" {"F:S846T1768614566.27"}
+  "lib/ppx_custom_printf/ppx.exe" {"F:S18692536T1768614566.28"}
+  "lib/ppx_custom_printf/ppx_custom_printf.a" {"F:S158032T1768614566.27"}
+  "lib/ppx_custom_printf/ppx_custom_printf.cma" {"F:S122194T1768614566.27"}
+  "lib/ppx_custom_printf/ppx_custom_printf.cmi" {"F:S246T1768614566.27"}
+  "lib/ppx_custom_printf/ppx_custom_printf.cmt" {"F:S66413T1768614566.27"}
+  "lib/ppx_custom_printf/ppx_custom_printf.cmti" {"F:S2059T1768614566.27"}
+  "lib/ppx_custom_printf/ppx_custom_printf.cmx" {"F:S9626T1768614566.27"}
+  "lib/ppx_custom_printf/ppx_custom_printf.cmxa" {"F:S9033T1768614566.27"}
+  "lib/ppx_custom_printf/ppx_custom_printf.cmxs" {"F:S184008T1768614566.28"}
+  "lib/ppx_custom_printf/ppx_custom_printf.ml" {"F:S9797T1768614566.27"}
+  "lib/ppx_custom_printf/ppx_custom_printf.mli" {"F:S0T1768614566.27"}
+  "lib/ppx_custom_printf/ppx_custom_printf__.cmi" {"F:S359T1768614566.27"}
+  "lib/ppx_custom_printf/ppx_custom_printf__.cmt" {"F:S1902T1768614566.27"}
+  "lib/ppx_custom_printf/ppx_custom_printf__.cmx" {"F:S198T1768614566.27"}
+  "lib/ppx_custom_printf/ppx_custom_printf__.ml" {"F:S213T1768614566.27"}
+  "lib/ppx_custom_printf/ppx_custom_printf__Format_lifter.cmi"
+    {"F:S11307T1768614566.27"}
+  "lib/ppx_custom_printf/ppx_custom_printf__Format_lifter.cmt"
+    {"F:S144002T1768614566.27"}
+  "lib/ppx_custom_printf/ppx_custom_printf__Format_lifter.cmx"
+    {"F:S473T1768614566.27"}
+]

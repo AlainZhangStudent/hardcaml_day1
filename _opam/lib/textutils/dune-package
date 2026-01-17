@@ -1,0 +1,351 @@
+(lang dune 3.21)
+(name textutils)
+(version v0.17.0)
+(sections (lib .) (libexec .) (doc ../../doc/textutils))
+(files
+ (lib
+  (META
+   ascii_table/ascii_table.a
+   ascii_table/ascii_table.cma
+   ascii_table/ascii_table.cmi
+   ascii_table/ascii_table.cmt
+   ascii_table/ascii_table.cmti
+   ascii_table/ascii_table.cmx
+   ascii_table/ascii_table.cmxa
+   ascii_table/ascii_table.ml
+   ascii_table/ascii_table.mli
+   ascii_table_kernel/ascii_table_kernel.a
+   ascii_table_kernel/ascii_table_kernel.cma
+   ascii_table_kernel/ascii_table_kernel.cmi
+   ascii_table_kernel/ascii_table_kernel.cmt
+   ascii_table_kernel/ascii_table_kernel.cmti
+   ascii_table_kernel/ascii_table_kernel.cmx
+   ascii_table_kernel/ascii_table_kernel.cmxa
+   ascii_table_kernel/ascii_table_kernel.ml
+   ascii_table_kernel/ascii_table_kernel.mli
+   ascii_table_kernel/ascii_table_kernel__.cmi
+   ascii_table_kernel/ascii_table_kernel__.cmt
+   ascii_table_kernel/ascii_table_kernel__.cmx
+   ascii_table_kernel/ascii_table_kernel__.ml
+   ascii_table_kernel/ascii_table_kernel__Ascii_table_kernel_intf.cmi
+   ascii_table_kernel/ascii_table_kernel__Ascii_table_kernel_intf.cmt
+   ascii_table_kernel/ascii_table_kernel__Ascii_table_kernel_intf.cmx
+   ascii_table_kernel/ascii_table_kernel__Cell.cmi
+   ascii_table_kernel/ascii_table_kernel__Cell.cmt
+   ascii_table_kernel/ascii_table_kernel__Cell.cmti
+   ascii_table_kernel/ascii_table_kernel__Cell.cmx
+   ascii_table_kernel/ascii_table_kernel__Cell_intf.cmi
+   ascii_table_kernel/ascii_table_kernel__Cell_intf.cmt
+   ascii_table_kernel/ascii_table_kernel__Cell_intf.cmx
+   ascii_table_kernel/ascii_table_kernel__Column.cmi
+   ascii_table_kernel/ascii_table_kernel__Column.cmt
+   ascii_table_kernel/ascii_table_kernel__Column.cmti
+   ascii_table_kernel/ascii_table_kernel__Column.cmx
+   ascii_table_kernel/ascii_table_kernel__Column_intf.cmi
+   ascii_table_kernel/ascii_table_kernel__Column_intf.cmt
+   ascii_table_kernel/ascii_table_kernel__Column_intf.cmx
+   ascii_table_kernel/ascii_table_kernel__Grid.cmi
+   ascii_table_kernel/ascii_table_kernel__Grid.cmt
+   ascii_table_kernel/ascii_table_kernel__Grid.cmti
+   ascii_table_kernel/ascii_table_kernel__Grid.cmx
+   ascii_table_kernel/ascii_table_kernel__Grid_intf.cmi
+   ascii_table_kernel/ascii_table_kernel__Grid_intf.cmt
+   ascii_table_kernel/ascii_table_kernel__Grid_intf.cmx
+   ascii_table_kernel/ascii_table_kernel__Import.cmi
+   ascii_table_kernel/ascii_table_kernel__Import.cmt
+   ascii_table_kernel/ascii_table_kernel__Import.cmx
+   ascii_table_kernel/ascii_table_kernel__Screen.cmi
+   ascii_table_kernel/ascii_table_kernel__Screen.cmt
+   ascii_table_kernel/ascii_table_kernel__Screen.cmti
+   ascii_table_kernel/ascii_table_kernel__Screen.cmx
+   ascii_table_kernel/ascii_table_kernel__Screen_intf.cmi
+   ascii_table_kernel/ascii_table_kernel__Screen_intf.cmt
+   ascii_table_kernel/ascii_table_kernel__Screen_intf.cmx
+   ascii_table_kernel/ascii_table_kernel__Table_char.cmi
+   ascii_table_kernel/ascii_table_kernel__Table_char.cmt
+   ascii_table_kernel/ascii_table_kernel__Table_char.cmti
+   ascii_table_kernel/ascii_table_kernel__Table_char.cmx
+   ascii_table_kernel/ascii_table_kernel__Utf8_text_chunks.cmi
+   ascii_table_kernel/ascii_table_kernel__Utf8_text_chunks.cmt
+   ascii_table_kernel/ascii_table_kernel__Utf8_text_chunks.cmti
+   ascii_table_kernel/ascii_table_kernel__Utf8_text_chunks.cmx
+   ascii_table_kernel/ascii_table_kernel_intf.ml
+   ascii_table_kernel/cell.ml
+   ascii_table_kernel/cell.mli
+   ascii_table_kernel/cell_intf.ml
+   ascii_table_kernel/column.ml
+   ascii_table_kernel/column.mli
+   ascii_table_kernel/column_intf.ml
+   ascii_table_kernel/grid.ml
+   ascii_table_kernel/grid.mli
+   ascii_table_kernel/grid_intf.ml
+   ascii_table_kernel/import.ml
+   ascii_table_kernel/screen.ml
+   ascii_table_kernel/screen.mli
+   ascii_table_kernel/screen_intf.ml
+   ascii_table_kernel/table_char.ml
+   ascii_table_kernel/table_char.mli
+   ascii_table_kernel/utf8_text_chunks.ml
+   ascii_table_kernel/utf8_text_chunks.mli
+   console/console.a
+   console/console.cma
+   console/console.cmi
+   console/console.cmt
+   console/console.cmti
+   console/console.cmx
+   console/console.cmxa
+   console/console.ml
+   console/console.mli
+   console/console__.cmi
+   console/console__.cmt
+   console/console__.cmx
+   console/console__.ml
+   console/console__Console_intf.cmi
+   console/console__Console_intf.cmt
+   console/console__Console_intf.cmx
+   console/console_intf.ml
+   dune-package
+   opam))
+ (libexec
+  (ascii_table/ascii_table.cmxs
+   ascii_table_kernel/ascii_table_kernel.cmxs
+   console/console.cmxs))
+ (doc (CHANGES.md LICENSE.md)))
+(library
+ (name textutils.ascii_table)
+ (kind normal)
+ (archives
+  (byte ascii_table/ascii_table.cma)
+  (native ascii_table/ascii_table.cmxa))
+ (plugins
+  (byte ascii_table/ascii_table.cma)
+  (native ascii_table/ascii_table.cmxs))
+ (native_archives ascii_table/ascii_table.a)
+ (requires
+  textutils.console
+  core
+  textutils.ascii_table_kernel
+  ppx_sexp_conv.runtime-lib
+  sexplib0
+  ppx_compare.runtime-lib
+  ppx_enumerate.runtime-lib
+  ppx_hash.runtime-lib
+  ppx_here.runtime-lib
+  ppx_assert.runtime-lib
+  ppx_bench.runtime-lib
+  bin_prot
+  fieldslib
+  ppx_inline_test.config
+  ppx_inline_test.runtime-lib
+  ppx_module_timer.runtime
+  ppx_stable_witness.runtime
+  ppx_string.runtime
+  base
+  typerep
+  variantslib
+  ppx_expect.runtime
+  ppx_expect.config
+  ppx_log.types
+  ppx_log.syntax
+  base_quickcheck.ppx_quickcheck.runtime
+  base_quickcheck)
+ (main_module_name Ascii_table)
+ (modes byte native)
+ (modules
+  (singleton
+   (obj_name ascii_table)
+   (visibility public)
+   (source
+    (path Ascii_table)
+    (intf (path ascii_table/ascii_table.mli))
+    (impl (path ascii_table/ascii_table.ml))))))
+(library
+ (name textutils.ascii_table_kernel)
+ (kind normal)
+ (archives
+  (byte ascii_table_kernel/ascii_table_kernel.cma)
+  (native ascii_table_kernel/ascii_table_kernel.cmxa))
+ (plugins
+  (byte ascii_table_kernel/ascii_table_kernel.cma)
+  (native ascii_table_kernel/ascii_table_kernel.cmxs))
+ (native_archives ascii_table_kernel/ascii_table_kernel.a)
+ (requires
+  core_kernel.ansi_kernel
+  core
+  uutf
+  ppx_sexp_conv.runtime-lib
+  sexplib0
+  ppx_compare.runtime-lib
+  ppx_enumerate.runtime-lib
+  ppx_hash.runtime-lib
+  ppx_here.runtime-lib
+  ppx_assert.runtime-lib
+  ppx_bench.runtime-lib
+  bin_prot
+  fieldslib
+  ppx_inline_test.config
+  ppx_inline_test.runtime-lib
+  ppx_module_timer.runtime
+  ppx_stable_witness.runtime
+  ppx_string.runtime
+  base
+  typerep
+  variantslib
+  ppx_expect.runtime
+  ppx_expect.config
+  ppx_log.types
+  ppx_log.syntax
+  base_quickcheck.ppx_quickcheck.runtime
+  base_quickcheck)
+ (main_module_name Ascii_table_kernel)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name ascii_table_kernel__)
+     (visibility public)
+     (kind alias)
+     (source
+      (path Ascii_table_kernel__)
+      (impl (path ascii_table_kernel/ascii_table_kernel__.ml-gen))))
+    (name Ascii_table_kernel)
+    (modules
+     (module
+      (obj_name ascii_table_kernel)
+      (visibility public)
+      (source
+       (path Ascii_table_kernel)
+       (intf (path ascii_table_kernel/ascii_table_kernel.mli))
+       (impl (path ascii_table_kernel/ascii_table_kernel.ml))))
+     (module
+      (obj_name ascii_table_kernel__Ascii_table_kernel_intf)
+      (visibility public)
+      (source
+       (path Ascii_table_kernel_intf)
+       (impl (path ascii_table_kernel/ascii_table_kernel_intf.ml))))
+     (module
+      (obj_name ascii_table_kernel__Cell)
+      (visibility public)
+      (source
+       (path Cell)
+       (intf (path ascii_table_kernel/cell.mli))
+       (impl (path ascii_table_kernel/cell.ml))))
+     (module
+      (obj_name ascii_table_kernel__Cell_intf)
+      (visibility public)
+      (source (path Cell_intf) (impl (path ascii_table_kernel/cell_intf.ml))))
+     (module
+      (obj_name ascii_table_kernel__Column)
+      (visibility public)
+      (source
+       (path Column)
+       (intf (path ascii_table_kernel/column.mli))
+       (impl (path ascii_table_kernel/column.ml))))
+     (module
+      (obj_name ascii_table_kernel__Column_intf)
+      (visibility public)
+      (source
+       (path Column_intf)
+       (impl (path ascii_table_kernel/column_intf.ml))))
+     (module
+      (obj_name ascii_table_kernel__Grid)
+      (visibility public)
+      (source
+       (path Grid)
+       (intf (path ascii_table_kernel/grid.mli))
+       (impl (path ascii_table_kernel/grid.ml))))
+     (module
+      (obj_name ascii_table_kernel__Grid_intf)
+      (visibility public)
+      (source (path Grid_intf) (impl (path ascii_table_kernel/grid_intf.ml))))
+     (module
+      (obj_name ascii_table_kernel__Import)
+      (visibility public)
+      (source (path Import) (impl (path ascii_table_kernel/import.ml))))
+     (module
+      (obj_name ascii_table_kernel__Screen)
+      (visibility public)
+      (source
+       (path Screen)
+       (intf (path ascii_table_kernel/screen.mli))
+       (impl (path ascii_table_kernel/screen.ml))))
+     (module
+      (obj_name ascii_table_kernel__Screen_intf)
+      (visibility public)
+      (source
+       (path Screen_intf)
+       (impl (path ascii_table_kernel/screen_intf.ml))))
+     (module
+      (obj_name ascii_table_kernel__Table_char)
+      (visibility public)
+      (source
+       (path Table_char)
+       (intf (path ascii_table_kernel/table_char.mli))
+       (impl (path ascii_table_kernel/table_char.ml))))
+     (module
+      (obj_name ascii_table_kernel__Utf8_text_chunks)
+      (visibility public)
+      (source
+       (path Utf8_text_chunks)
+       (intf (path ascii_table_kernel/utf8_text_chunks.mli))
+       (impl (path ascii_table_kernel/utf8_text_chunks.ml))))))
+   (wrapped true))))
+(library
+ (name textutils.console)
+ (kind normal)
+ (archives (byte console/console.cma) (native console/console.cmxa))
+ (plugins (byte console/console.cma) (native console/console.cmxs))
+ (native_archives console/console.a)
+ (requires
+  core_kernel.ansi_kernel
+  core
+  core_unix.linux_ext
+  ppx_sexp_conv.runtime-lib
+  sexplib0
+  ppx_compare.runtime-lib
+  ppx_enumerate.runtime-lib
+  ppx_hash.runtime-lib
+  ppx_here.runtime-lib
+  ppx_assert.runtime-lib
+  ppx_bench.runtime-lib
+  bin_prot
+  fieldslib
+  ppx_inline_test.config
+  ppx_inline_test.runtime-lib
+  ppx_module_timer.runtime
+  ppx_stable_witness.runtime
+  ppx_string.runtime
+  base
+  typerep
+  variantslib
+  ppx_expect.runtime
+  ppx_expect.config
+  ppx_log.types
+  ppx_log.syntax
+  base_quickcheck.ppx_quickcheck.runtime
+  base_quickcheck)
+ (main_module_name Console)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name console__)
+     (visibility public)
+     (kind alias)
+     (source (path Console__) (impl (path console/console__.ml-gen))))
+    (name Console)
+    (modules
+     (module
+      (obj_name console)
+      (visibility public)
+      (source
+       (path Console)
+       (intf (path console/console.mli))
+       (impl (path console/console.ml))))
+     (module
+      (obj_name console__Console_intf)
+      (visibility public)
+      (source (path Console_intf) (impl (path console/console_intf.ml))))))
+   (wrapped true))))

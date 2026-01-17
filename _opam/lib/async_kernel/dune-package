@@ -1,0 +1,1323 @@
+(lang dune 3.21)
+(name async_kernel)
+(version v0.17.0)
+(sections (lib .) (libexec .) (doc ../../doc/async_kernel))
+(files
+ (lib
+  (META
+   async_condition.ml
+   async_condition.mli
+   async_gc.ml
+   async_gc.mli
+   async_invariant.ml
+   async_invariant.mli
+   async_invariant_intf.ml
+   async_kernel.a
+   async_kernel.cma
+   async_kernel.cmi
+   async_kernel.cmt
+   async_kernel.cmx
+   async_kernel.cmxa
+   async_kernel.ml
+   async_kernel__.cmi
+   async_kernel__.cmt
+   async_kernel__.cmx
+   async_kernel__.ml
+   async_kernel__Async_condition.cmi
+   async_kernel__Async_condition.cmt
+   async_kernel__Async_condition.cmti
+   async_kernel__Async_condition.cmx
+   async_kernel__Async_gc.cmi
+   async_kernel__Async_gc.cmt
+   async_kernel__Async_gc.cmti
+   async_kernel__Async_gc.cmx
+   async_kernel__Async_invariant.cmi
+   async_kernel__Async_invariant.cmt
+   async_kernel__Async_invariant.cmti
+   async_kernel__Async_invariant.cmx
+   async_kernel__Async_invariant_intf.cmi
+   async_kernel__Async_invariant_intf.cmt
+   async_kernel__Async_invariant_intf.cmx
+   async_kernel__Async_kernel_scheduler.cmi
+   async_kernel__Async_kernel_scheduler.cmt
+   async_kernel__Async_kernel_scheduler.cmti
+   async_kernel__Async_kernel_scheduler.cmx
+   async_kernel__Async_stream.cmi
+   async_kernel__Async_stream.cmt
+   async_kernel__Async_stream.cmti
+   async_kernel__Async_stream.cmx
+   async_kernel__Bvar.cmi
+   async_kernel__Bvar.cmt
+   async_kernel__Bvar.cmti
+   async_kernel__Bvar.cmx
+   async_kernel__Clock_intf.cmi
+   async_kernel__Clock_intf.cmt
+   async_kernel__Clock_intf.cmx
+   async_kernel__Clock_ns.cmi
+   async_kernel__Clock_ns.cmt
+   async_kernel__Clock_ns.cmti
+   async_kernel__Clock_ns.cmx
+   async_kernel__Cycle_hook.cmi
+   async_kernel__Cycle_hook.cmt
+   async_kernel__Cycle_hook.cmti
+   async_kernel__Cycle_hook.cmx
+   async_kernel__Debug.cmi
+   async_kernel__Debug.cmt
+   async_kernel__Debug.cmti
+   async_kernel__Debug.cmx
+   async_kernel__Deferred.cmi
+   async_kernel__Deferred.cmt
+   async_kernel__Deferred.cmti
+   async_kernel__Deferred.cmx
+   async_kernel__Deferred0.cmi
+   async_kernel__Deferred0.cmt
+   async_kernel__Deferred0.cmti
+   async_kernel__Deferred0.cmx
+   async_kernel__Deferred1.cmi
+   async_kernel__Deferred1.cmt
+   async_kernel__Deferred1.cmx
+   async_kernel__Deferred_array.cmi
+   async_kernel__Deferred_array.cmt
+   async_kernel__Deferred_array.cmti
+   async_kernel__Deferred_array.cmx
+   async_kernel__Deferred_list.cmi
+   async_kernel__Deferred_list.cmt
+   async_kernel__Deferred_list.cmti
+   async_kernel__Deferred_list.cmx
+   async_kernel__Deferred_map.cmi
+   async_kernel__Deferred_map.cmt
+   async_kernel__Deferred_map.cmti
+   async_kernel__Deferred_map.cmx
+   async_kernel__Deferred_memo.cmi
+   async_kernel__Deferred_memo.cmt
+   async_kernel__Deferred_memo.cmti
+   async_kernel__Deferred_memo.cmx
+   async_kernel__Deferred_memo_intf.cmi
+   async_kernel__Deferred_memo_intf.cmt
+   async_kernel__Deferred_memo_intf.cmx
+   async_kernel__Deferred_option.cmi
+   async_kernel__Deferred_option.cmt
+   async_kernel__Deferred_option.cmti
+   async_kernel__Deferred_option.cmx
+   async_kernel__Deferred_or_error.cmi
+   async_kernel__Deferred_or_error.cmt
+   async_kernel__Deferred_or_error.cmti
+   async_kernel__Deferred_or_error.cmx
+   async_kernel__Deferred_queue.cmi
+   async_kernel__Deferred_queue.cmt
+   async_kernel__Deferred_queue.cmti
+   async_kernel__Deferred_queue.cmx
+   async_kernel__Deferred_result.cmi
+   async_kernel__Deferred_result.cmt
+   async_kernel__Deferred_result.cmti
+   async_kernel__Deferred_result.cmx
+   async_kernel__Deferred_sequence.cmi
+   async_kernel__Deferred_sequence.cmt
+   async_kernel__Deferred_sequence.cmti
+   async_kernel__Deferred_sequence.cmx
+   async_kernel__Deferred_set.cmi
+   async_kernel__Deferred_set.cmt
+   async_kernel__Deferred_set.cmti
+   async_kernel__Deferred_set.cmx
+   async_kernel__Deferred_std.cmi
+   async_kernel__Deferred_std.cmt
+   async_kernel__Deferred_std.cmx
+   async_kernel__Execution_context.cmi
+   async_kernel__Execution_context.cmt
+   async_kernel__Execution_context.cmti
+   async_kernel__Execution_context.cmx
+   async_kernel__External_job.cmi
+   async_kernel__External_job.cmt
+   async_kernel__External_job.cmti
+   async_kernel__External_job.cmx
+   async_kernel__Import.cmi
+   async_kernel__Import.cmt
+   async_kernel__Import.cmx
+   async_kernel__Ivar.cmi
+   async_kernel__Ivar.cmt
+   async_kernel__Ivar.cmti
+   async_kernel__Ivar.cmx
+   async_kernel__Ivar0.cmi
+   async_kernel__Ivar0.cmt
+   async_kernel__Ivar0.cmti
+   async_kernel__Ivar0.cmx
+   async_kernel__Ivar_filler.cmi
+   async_kernel__Ivar_filler.cmt
+   async_kernel__Ivar_filler.cmti
+   async_kernel__Ivar_filler.cmx
+   async_kernel__Job.cmi
+   async_kernel__Job.cmt
+   async_kernel__Job.cmti
+   async_kernel__Job.cmx
+   async_kernel__Job_or_event.cmi
+   async_kernel__Job_or_event.cmt
+   async_kernel__Job_or_event.cmti
+   async_kernel__Job_or_event.cmx
+   async_kernel__Job_or_event_intf.cmi
+   async_kernel__Job_or_event_intf.cmt
+   async_kernel__Job_or_event_intf.cmx
+   async_kernel__Job_pool.cmi
+   async_kernel__Job_pool.cmt
+   async_kernel__Job_pool.cmti
+   async_kernel__Job_pool.cmx
+   async_kernel__Job_queue.cmi
+   async_kernel__Job_queue.cmt
+   async_kernel__Job_queue.cmti
+   async_kernel__Job_queue.cmx
+   async_kernel__Lazy_deferred.cmi
+   async_kernel__Lazy_deferred.cmt
+   async_kernel__Lazy_deferred.cmti
+   async_kernel__Lazy_deferred.cmx
+   async_kernel__Monad_sequence.cmi
+   async_kernel__Monad_sequence.cmt
+   async_kernel__Monad_sequence.cmx
+   async_kernel__Monitor.cmi
+   async_kernel__Monitor.cmt
+   async_kernel__Monitor.cmti
+   async_kernel__Monitor.cmx
+   async_kernel__Monitor0.cmi
+   async_kernel__Monitor0.cmt
+   async_kernel__Monitor0.cmx
+   async_kernel__Mvar.cmi
+   async_kernel__Mvar.cmt
+   async_kernel__Mvar.cmti
+   async_kernel__Mvar.cmx
+   async_kernel__Pipe.cmi
+   async_kernel__Pipe.cmt
+   async_kernel__Pipe.cmti
+   async_kernel__Pipe.cmx
+   async_kernel__Priority.cmi
+   async_kernel__Priority.cmt
+   async_kernel__Priority.cmti
+   async_kernel__Priority.cmx
+   async_kernel__Require_explicit_time_source.cmi
+   async_kernel__Require_explicit_time_source.cmt
+   async_kernel__Require_explicit_time_source.cmti
+   async_kernel__Require_explicit_time_source.cmx
+   async_kernel__Scheduler.cmi
+   async_kernel__Scheduler.cmt
+   async_kernel__Scheduler.cmti
+   async_kernel__Scheduler.cmx
+   async_kernel__Scheduler0.cmi
+   async_kernel__Scheduler0.cmt
+   async_kernel__Scheduler0.cmx
+   async_kernel__Scheduler1.cmi
+   async_kernel__Scheduler1.cmt
+   async_kernel__Scheduler1.cmx
+   async_kernel__Stack_or_counter.cmi
+   async_kernel__Stack_or_counter.cmt
+   async_kernel__Stack_or_counter.cmti
+   async_kernel__Stack_or_counter.cmx
+   async_kernel__Synchronous_time_source.cmi
+   async_kernel__Synchronous_time_source.cmt
+   async_kernel__Synchronous_time_source.cmti
+   async_kernel__Synchronous_time_source.cmx
+   async_kernel__Synchronous_time_source0.cmi
+   async_kernel__Synchronous_time_source0.cmt
+   async_kernel__Synchronous_time_source0.cmx
+   async_kernel__Tail.cmi
+   async_kernel__Tail.cmt
+   async_kernel__Tail.cmti
+   async_kernel__Tail.cmx
+   async_kernel__Throttle.cmi
+   async_kernel__Throttle.cmt
+   async_kernel__Throttle.cmti
+   async_kernel__Throttle.cmx
+   async_kernel__Throttled.cmi
+   async_kernel__Throttled.cmt
+   async_kernel__Throttled.cmti
+   async_kernel__Throttled.cmx
+   async_kernel__Time_ns.cmi
+   async_kernel__Time_ns.cmt
+   async_kernel__Time_ns.cmx
+   async_kernel__Time_source.cmi
+   async_kernel__Time_source.cmt
+   async_kernel__Time_source.cmti
+   async_kernel__Time_source.cmx
+   async_kernel__Time_source_intf.cmi
+   async_kernel__Time_source_intf.cmt
+   async_kernel__Time_source_intf.cmx
+   async_kernel__Types.cmi
+   async_kernel__Types.cmt
+   async_kernel__Types.cmx
+   async_kernel_scheduler.ml
+   async_kernel_scheduler.mli
+   async_stream.ml
+   async_stream.mli
+   bvar.ml
+   bvar.mli
+   clock_intf.ml
+   clock_ns.ml
+   clock_ns.mli
+   config/async_kernel_config.a
+   config/async_kernel_config.cma
+   config/async_kernel_config.cmi
+   config/async_kernel_config.cmt
+   config/async_kernel_config.cmti
+   config/async_kernel_config.cmx
+   config/async_kernel_config.cmxa
+   config/async_kernel_config.ml
+   config/async_kernel_config.mli
+   cycle_hook.ml
+   cycle_hook.mli
+   debug.ml
+   debug.mli
+   deferred.ml
+   deferred.mli
+   deferred0.ml
+   deferred0.mli
+   deferred1.ml
+   deferred_array.ml
+   deferred_array.mli
+   deferred_list.ml
+   deferred_list.mli
+   deferred_map.ml
+   deferred_map.mli
+   deferred_memo.ml
+   deferred_memo.mli
+   deferred_memo_intf.ml
+   deferred_option.ml
+   deferred_option.mli
+   deferred_or_error.ml
+   deferred_or_error.mli
+   deferred_queue.ml
+   deferred_queue.mli
+   deferred_result.ml
+   deferred_result.mli
+   deferred_sequence.ml
+   deferred_sequence.mli
+   deferred_set.ml
+   deferred_set.mli
+   deferred_std.ml
+   dune-package
+   eager_deferred/eager_deferred.a
+   eager_deferred/eager_deferred.cma
+   eager_deferred/eager_deferred.cmi
+   eager_deferred/eager_deferred.cmt
+   eager_deferred/eager_deferred.cmti
+   eager_deferred/eager_deferred.cmx
+   eager_deferred/eager_deferred.cmxa
+   eager_deferred/eager_deferred.ml
+   eager_deferred/eager_deferred.mli
+   eager_deferred/eager_deferred0.ml
+   eager_deferred/eager_deferred1.ml
+   eager_deferred/eager_deferred1.mli
+   eager_deferred/eager_deferred__.cmi
+   eager_deferred/eager_deferred__.cmt
+   eager_deferred/eager_deferred__.cmx
+   eager_deferred/eager_deferred__.ml
+   eager_deferred/eager_deferred__Eager_deferred0.cmi
+   eager_deferred/eager_deferred__Eager_deferred0.cmt
+   eager_deferred/eager_deferred__Eager_deferred0.cmx
+   eager_deferred/eager_deferred__Eager_deferred1.cmi
+   eager_deferred/eager_deferred__Eager_deferred1.cmt
+   eager_deferred/eager_deferred__Eager_deferred1.cmti
+   eager_deferred/eager_deferred__Eager_deferred1.cmx
+   eager_deferred/eager_deferred__Eager_deferred_intf.cmi
+   eager_deferred/eager_deferred__Eager_deferred_intf.cmt
+   eager_deferred/eager_deferred__Eager_deferred_intf.cmx
+   eager_deferred/eager_deferred__Eager_deferred_list.cmi
+   eager_deferred/eager_deferred__Eager_deferred_list.cmt
+   eager_deferred/eager_deferred__Eager_deferred_list.cmx
+   eager_deferred/eager_deferred__Eager_deferred_memo.cmi
+   eager_deferred/eager_deferred__Eager_deferred_memo.cmt
+   eager_deferred/eager_deferred__Eager_deferred_memo.cmti
+   eager_deferred/eager_deferred__Eager_deferred_memo.cmx
+   eager_deferred/eager_deferred__Eager_deferred_or_error.cmi
+   eager_deferred/eager_deferred__Eager_deferred_or_error.cmt
+   eager_deferred/eager_deferred__Eager_deferred_or_error.cmti
+   eager_deferred/eager_deferred__Eager_deferred_or_error.cmx
+   eager_deferred/eager_deferred__Eager_deferred_queue.cmi
+   eager_deferred/eager_deferred__Eager_deferred_queue.cmt
+   eager_deferred/eager_deferred__Eager_deferred_queue.cmx
+   eager_deferred/eager_deferred__Eager_deferred_result.cmi
+   eager_deferred/eager_deferred__Eager_deferred_result.cmt
+   eager_deferred/eager_deferred__Eager_deferred_result.cmx
+   eager_deferred/eager_deferred__Import.cmi
+   eager_deferred/eager_deferred__Import.cmt
+   eager_deferred/eager_deferred__Import.cmx
+   eager_deferred/eager_deferred_intf.ml
+   eager_deferred/eager_deferred_list.ml
+   eager_deferred/eager_deferred_memo.ml
+   eager_deferred/eager_deferred_memo.mli
+   eager_deferred/eager_deferred_or_error.ml
+   eager_deferred/eager_deferred_or_error.mli
+   eager_deferred/eager_deferred_queue.ml
+   eager_deferred/eager_deferred_result.ml
+   eager_deferred/import.ml
+   execution_context.ml
+   execution_context.mli
+   external_job.ml
+   external_job.mli
+   import.ml
+   ivar.ml
+   ivar.mli
+   ivar0.ml
+   ivar0.mli
+   ivar_filler.ml
+   ivar_filler.mli
+   job.ml
+   job.mli
+   job_or_event.ml
+   job_or_event.mli
+   job_or_event_intf.ml
+   job_pool.ml
+   job_pool.mli
+   job_queue.ml
+   job_queue.mli
+   laziness_preserving_deferred/laziness_preserving_deferred.a
+   laziness_preserving_deferred/laziness_preserving_deferred.cma
+   laziness_preserving_deferred/laziness_preserving_deferred.cmi
+   laziness_preserving_deferred/laziness_preserving_deferred.cmt
+   laziness_preserving_deferred/laziness_preserving_deferred.cmti
+   laziness_preserving_deferred/laziness_preserving_deferred.cmx
+   laziness_preserving_deferred/laziness_preserving_deferred.cmxa
+   laziness_preserving_deferred/laziness_preserving_deferred.ml
+   laziness_preserving_deferred/laziness_preserving_deferred.mli
+   lazy_deferred.ml
+   lazy_deferred.mli
+   limiter_async/limiter_async.a
+   limiter_async/limiter_async.cma
+   limiter_async/limiter_async.cmi
+   limiter_async/limiter_async.cmt
+   limiter_async/limiter_async.cmti
+   limiter_async/limiter_async.cmx
+   limiter_async/limiter_async.cmxa
+   limiter_async/limiter_async.ml
+   limiter_async/limiter_async.mli
+   monad_sequence.ml
+   monitor.ml
+   monitor.mli
+   monitor0.ml
+   mvar.ml
+   mvar.mli
+   opam
+   persistent_connection_kernel/event.ml
+   persistent_connection_kernel/event.mli
+   persistent_connection_kernel/persistent_connection_kernel.a
+   persistent_connection_kernel/persistent_connection_kernel.cma
+   persistent_connection_kernel/persistent_connection_kernel.cmi
+   persistent_connection_kernel/persistent_connection_kernel.cmt
+   persistent_connection_kernel/persistent_connection_kernel.cmti
+   persistent_connection_kernel/persistent_connection_kernel.cmx
+   persistent_connection_kernel/persistent_connection_kernel.cmxa
+   persistent_connection_kernel/persistent_connection_kernel.ml
+   persistent_connection_kernel/persistent_connection_kernel.mli
+   persistent_connection_kernel/persistent_connection_kernel__.cmi
+   persistent_connection_kernel/persistent_connection_kernel__.cmt
+   persistent_connection_kernel/persistent_connection_kernel__.cmx
+   persistent_connection_kernel/persistent_connection_kernel__.ml
+   persistent_connection_kernel/persistent_connection_kernel__Event.cmi
+   persistent_connection_kernel/persistent_connection_kernel__Event.cmt
+   persistent_connection_kernel/persistent_connection_kernel__Event.cmti
+   persistent_connection_kernel/persistent_connection_kernel__Event.cmx
+   persistent_connection_kernel/persistent_connection_kernel__Persistent_connection_kernel_intf.cmi
+   persistent_connection_kernel/persistent_connection_kernel__Persistent_connection_kernel_intf.cmt
+   persistent_connection_kernel/persistent_connection_kernel__Persistent_connection_kernel_intf.cmx
+   persistent_connection_kernel/persistent_connection_kernel_intf.ml
+   pipe.ml
+   pipe.mli
+   priority.ml
+   priority.mli
+   read_write_pair/read_write_pair.a
+   read_write_pair/read_write_pair.cma
+   read_write_pair/read_write_pair.cmi
+   read_write_pair/read_write_pair.cmt
+   read_write_pair/read_write_pair.cmti
+   read_write_pair/read_write_pair.cmx
+   read_write_pair/read_write_pair.cmxa
+   read_write_pair/read_write_pair.ml
+   read_write_pair/read_write_pair.mli
+   require_explicit_time_source.ml
+   require_explicit_time_source.mli
+   scheduler.ml
+   scheduler.mli
+   scheduler0.ml
+   scheduler1.ml
+   stack_or_counter.ml
+   stack_or_counter.mli
+   synchronous_time_source.ml
+   synchronous_time_source.mli
+   synchronous_time_source0.ml
+   tail.ml
+   tail.mli
+   throttle.ml
+   throttle.mli
+   throttled.ml
+   throttled.mli
+   time_ns.ml
+   time_source.ml
+   time_source.mli
+   time_source_intf.ml
+   types.ml
+   weak_hashtbl_async/import.ml
+   weak_hashtbl_async/weak_hashtbl_async.a
+   weak_hashtbl_async/weak_hashtbl_async.cma
+   weak_hashtbl_async/weak_hashtbl_async.cmi
+   weak_hashtbl_async/weak_hashtbl_async.cmt
+   weak_hashtbl_async/weak_hashtbl_async.cmti
+   weak_hashtbl_async/weak_hashtbl_async.cmx
+   weak_hashtbl_async/weak_hashtbl_async.cmxa
+   weak_hashtbl_async/weak_hashtbl_async.ml
+   weak_hashtbl_async/weak_hashtbl_async.mli
+   weak_hashtbl_async/weak_hashtbl_async__.cmi
+   weak_hashtbl_async/weak_hashtbl_async__.cmt
+   weak_hashtbl_async/weak_hashtbl_async__.cmx
+   weak_hashtbl_async/weak_hashtbl_async__.ml
+   weak_hashtbl_async/weak_hashtbl_async__Import.cmi
+   weak_hashtbl_async/weak_hashtbl_async__Import.cmt
+   weak_hashtbl_async/weak_hashtbl_async__Import.cmx))
+ (libexec
+  (async_kernel.cmxs
+   config/async_kernel_config.cmxs
+   eager_deferred/eager_deferred.cmxs
+   laziness_preserving_deferred/laziness_preserving_deferred.cmxs
+   limiter_async/limiter_async.cmxs
+   persistent_connection_kernel/persistent_connection_kernel.cmxs
+   read_write_pair/read_write_pair.cmxs
+   weak_hashtbl_async/weak_hashtbl_async.cmxs))
+ (doc (CHANGES.md LICENSE.md README.md)))
+(library
+ (name async_kernel)
+ (kind normal)
+ (archives (byte async_kernel.cma) (native async_kernel.cmxa))
+ (plugins (byte async_kernel.cma) (native async_kernel.cmxs))
+ (native_archives async_kernel.a)
+ (requires
+  async_kernel.config
+  core
+  core_kernel.moption
+  core_kernel.pairing_heap
+  core_kernel.sexp_hidden_in_test
+  core_kernel.thread_pool_cpu_affinity
+  core_kernel.thread_safe_queue
+  core_kernel.timing_wheel
+  core_kernel.tuple_pool
+  ppx_sexp_conv.runtime-lib
+  sexplib0
+  ppx_compare.runtime-lib
+  ppx_enumerate.runtime-lib
+  ppx_hash.runtime-lib
+  ppx_here.runtime-lib
+  ppx_assert.runtime-lib
+  ppx_bench.runtime-lib
+  bin_prot
+  fieldslib
+  ppx_inline_test.config
+  ppx_inline_test.runtime-lib
+  ppx_module_timer.runtime
+  ppx_stable_witness.runtime
+  ppx_string.runtime
+  base
+  typerep
+  variantslib
+  ppx_expect.runtime
+  ppx_expect.config
+  ppx_log.types
+  ppx_log.syntax
+  base_quickcheck.ppx_quickcheck.runtime
+  base_quickcheck)
+ (main_module_name Async_kernel)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name async_kernel__)
+     (visibility public)
+     (kind alias)
+     (source (path Async_kernel__) (impl (path async_kernel__.ml-gen))))
+    (name Async_kernel)
+    (modules
+     (module
+      (obj_name async_kernel__Async_condition)
+      (visibility public)
+      (source
+       (path Async_condition)
+       (intf (path async_condition.mli))
+       (impl (path async_condition.ml))))
+     (module
+      (obj_name async_kernel__Async_gc)
+      (visibility public)
+      (source
+       (path Async_gc)
+       (intf (path async_gc.mli))
+       (impl (path async_gc.ml))))
+     (module
+      (obj_name async_kernel__Async_invariant)
+      (visibility public)
+      (source
+       (path Async_invariant)
+       (intf (path async_invariant.mli))
+       (impl (path async_invariant.ml))))
+     (module
+      (obj_name async_kernel__Async_invariant_intf)
+      (visibility public)
+      (source
+       (path Async_invariant_intf)
+       (impl (path async_invariant_intf.ml))))
+     (module
+      (obj_name async_kernel)
+      (visibility public)
+      (source (path Async_kernel) (impl (path async_kernel.ml))))
+     (module
+      (obj_name async_kernel__Async_kernel_scheduler)
+      (visibility public)
+      (source
+       (path Async_kernel_scheduler)
+       (intf (path async_kernel_scheduler.mli))
+       (impl (path async_kernel_scheduler.ml))))
+     (module
+      (obj_name async_kernel__Async_stream)
+      (visibility public)
+      (source
+       (path Async_stream)
+       (intf (path async_stream.mli))
+       (impl (path async_stream.ml))))
+     (module
+      (obj_name async_kernel__Bvar)
+      (visibility public)
+      (source (path Bvar) (intf (path bvar.mli)) (impl (path bvar.ml))))
+     (module
+      (obj_name async_kernel__Clock_intf)
+      (visibility public)
+      (source (path Clock_intf) (impl (path clock_intf.ml))))
+     (module
+      (obj_name async_kernel__Clock_ns)
+      (visibility public)
+      (source
+       (path Clock_ns)
+       (intf (path clock_ns.mli))
+       (impl (path clock_ns.ml))))
+     (module
+      (obj_name async_kernel__Cycle_hook)
+      (visibility public)
+      (source
+       (path Cycle_hook)
+       (intf (path cycle_hook.mli))
+       (impl (path cycle_hook.ml))))
+     (module
+      (obj_name async_kernel__Debug)
+      (visibility public)
+      (source (path Debug) (intf (path debug.mli)) (impl (path debug.ml))))
+     (module
+      (obj_name async_kernel__Deferred)
+      (visibility public)
+      (source
+       (path Deferred)
+       (intf (path deferred.mli))
+       (impl (path deferred.ml))))
+     (module
+      (obj_name async_kernel__Deferred0)
+      (visibility public)
+      (source
+       (path Deferred0)
+       (intf (path deferred0.mli))
+       (impl (path deferred0.ml))))
+     (module
+      (obj_name async_kernel__Deferred1)
+      (visibility public)
+      (source (path Deferred1) (impl (path deferred1.ml))))
+     (module
+      (obj_name async_kernel__Deferred_array)
+      (visibility public)
+      (source
+       (path Deferred_array)
+       (intf (path deferred_array.mli))
+       (impl (path deferred_array.ml))))
+     (module
+      (obj_name async_kernel__Deferred_list)
+      (visibility public)
+      (source
+       (path Deferred_list)
+       (intf (path deferred_list.mli))
+       (impl (path deferred_list.ml))))
+     (module
+      (obj_name async_kernel__Deferred_map)
+      (visibility public)
+      (source
+       (path Deferred_map)
+       (intf (path deferred_map.mli))
+       (impl (path deferred_map.ml))))
+     (module
+      (obj_name async_kernel__Deferred_memo)
+      (visibility public)
+      (source
+       (path Deferred_memo)
+       (intf (path deferred_memo.mli))
+       (impl (path deferred_memo.ml))))
+     (module
+      (obj_name async_kernel__Deferred_memo_intf)
+      (visibility public)
+      (source (path Deferred_memo_intf) (impl (path deferred_memo_intf.ml))))
+     (module
+      (obj_name async_kernel__Deferred_option)
+      (visibility public)
+      (source
+       (path Deferred_option)
+       (intf (path deferred_option.mli))
+       (impl (path deferred_option.ml))))
+     (module
+      (obj_name async_kernel__Deferred_or_error)
+      (visibility public)
+      (source
+       (path Deferred_or_error)
+       (intf (path deferred_or_error.mli))
+       (impl (path deferred_or_error.ml))))
+     (module
+      (obj_name async_kernel__Deferred_queue)
+      (visibility public)
+      (source
+       (path Deferred_queue)
+       (intf (path deferred_queue.mli))
+       (impl (path deferred_queue.ml))))
+     (module
+      (obj_name async_kernel__Deferred_result)
+      (visibility public)
+      (source
+       (path Deferred_result)
+       (intf (path deferred_result.mli))
+       (impl (path deferred_result.ml))))
+     (module
+      (obj_name async_kernel__Deferred_sequence)
+      (visibility public)
+      (source
+       (path Deferred_sequence)
+       (intf (path deferred_sequence.mli))
+       (impl (path deferred_sequence.ml))))
+     (module
+      (obj_name async_kernel__Deferred_set)
+      (visibility public)
+      (source
+       (path Deferred_set)
+       (intf (path deferred_set.mli))
+       (impl (path deferred_set.ml))))
+     (module
+      (obj_name async_kernel__Deferred_std)
+      (visibility public)
+      (source (path Deferred_std) (impl (path deferred_std.ml))))
+     (module
+      (obj_name async_kernel__Execution_context)
+      (visibility public)
+      (source
+       (path Execution_context)
+       (intf (path execution_context.mli))
+       (impl (path execution_context.ml))))
+     (module
+      (obj_name async_kernel__External_job)
+      (visibility public)
+      (source
+       (path External_job)
+       (intf (path external_job.mli))
+       (impl (path external_job.ml))))
+     (module
+      (obj_name async_kernel__Import)
+      (visibility public)
+      (source (path Import) (impl (path import.ml))))
+     (module
+      (obj_name async_kernel__Ivar)
+      (visibility public)
+      (source (path Ivar) (intf (path ivar.mli)) (impl (path ivar.ml))))
+     (module
+      (obj_name async_kernel__Ivar0)
+      (visibility public)
+      (source (path Ivar0) (intf (path ivar0.mli)) (impl (path ivar0.ml))))
+     (module
+      (obj_name async_kernel__Ivar_filler)
+      (visibility public)
+      (source
+       (path Ivar_filler)
+       (intf (path ivar_filler.mli))
+       (impl (path ivar_filler.ml))))
+     (module
+      (obj_name async_kernel__Job)
+      (visibility public)
+      (source (path Job) (intf (path job.mli)) (impl (path job.ml))))
+     (module
+      (obj_name async_kernel__Job_or_event)
+      (visibility public)
+      (source
+       (path Job_or_event)
+       (intf (path job_or_event.mli))
+       (impl (path job_or_event.ml))))
+     (module
+      (obj_name async_kernel__Job_or_event_intf)
+      (visibility public)
+      (source (path Job_or_event_intf) (impl (path job_or_event_intf.ml))))
+     (module
+      (obj_name async_kernel__Job_pool)
+      (visibility public)
+      (source
+       (path Job_pool)
+       (intf (path job_pool.mli))
+       (impl (path job_pool.ml))))
+     (module
+      (obj_name async_kernel__Job_queue)
+      (visibility public)
+      (source
+       (path Job_queue)
+       (intf (path job_queue.mli))
+       (impl (path job_queue.ml))))
+     (module
+      (obj_name async_kernel__Lazy_deferred)
+      (visibility public)
+      (source
+       (path Lazy_deferred)
+       (intf (path lazy_deferred.mli))
+       (impl (path lazy_deferred.ml))))
+     (module
+      (obj_name async_kernel__Monad_sequence)
+      (visibility public)
+      (source (path Monad_sequence) (impl (path monad_sequence.ml))))
+     (module
+      (obj_name async_kernel__Monitor)
+      (visibility public)
+      (source
+       (path Monitor)
+       (intf (path monitor.mli))
+       (impl (path monitor.ml))))
+     (module
+      (obj_name async_kernel__Monitor0)
+      (visibility public)
+      (source (path Monitor0) (impl (path monitor0.ml))))
+     (module
+      (obj_name async_kernel__Mvar)
+      (visibility public)
+      (source (path Mvar) (intf (path mvar.mli)) (impl (path mvar.ml))))
+     (module
+      (obj_name async_kernel__Pipe)
+      (visibility public)
+      (source (path Pipe) (intf (path pipe.mli)) (impl (path pipe.ml))))
+     (module
+      (obj_name async_kernel__Priority)
+      (visibility public)
+      (source
+       (path Priority)
+       (intf (path priority.mli))
+       (impl (path priority.ml))))
+     (module
+      (obj_name async_kernel__Require_explicit_time_source)
+      (visibility public)
+      (source
+       (path Require_explicit_time_source)
+       (intf (path require_explicit_time_source.mli))
+       (impl (path require_explicit_time_source.ml))))
+     (module
+      (obj_name async_kernel__Scheduler)
+      (visibility public)
+      (source
+       (path Scheduler)
+       (intf (path scheduler.mli))
+       (impl (path scheduler.ml))))
+     (module
+      (obj_name async_kernel__Scheduler0)
+      (visibility public)
+      (source (path Scheduler0) (impl (path scheduler0.ml))))
+     (module
+      (obj_name async_kernel__Scheduler1)
+      (visibility public)
+      (source (path Scheduler1) (impl (path scheduler1.ml))))
+     (module
+      (obj_name async_kernel__Stack_or_counter)
+      (visibility public)
+      (source
+       (path Stack_or_counter)
+       (intf (path stack_or_counter.mli))
+       (impl (path stack_or_counter.ml))))
+     (module
+      (obj_name async_kernel__Synchronous_time_source)
+      (visibility public)
+      (source
+       (path Synchronous_time_source)
+       (intf (path synchronous_time_source.mli))
+       (impl (path synchronous_time_source.ml))))
+     (module
+      (obj_name async_kernel__Synchronous_time_source0)
+      (visibility public)
+      (source
+       (path Synchronous_time_source0)
+       (impl (path synchronous_time_source0.ml))))
+     (module
+      (obj_name async_kernel__Tail)
+      (visibility public)
+      (source (path Tail) (intf (path tail.mli)) (impl (path tail.ml))))
+     (module
+      (obj_name async_kernel__Throttle)
+      (visibility public)
+      (source
+       (path Throttle)
+       (intf (path throttle.mli))
+       (impl (path throttle.ml))))
+     (module
+      (obj_name async_kernel__Throttled)
+      (visibility public)
+      (source
+       (path Throttled)
+       (intf (path throttled.mli))
+       (impl (path throttled.ml))))
+     (module
+      (obj_name async_kernel__Time_ns)
+      (visibility public)
+      (source (path Time_ns) (impl (path time_ns.ml))))
+     (module
+      (obj_name async_kernel__Time_source)
+      (visibility public)
+      (source
+       (path Time_source)
+       (intf (path time_source.mli))
+       (impl (path time_source.ml))))
+     (module
+      (obj_name async_kernel__Time_source_intf)
+      (visibility public)
+      (source (path Time_source_intf) (impl (path time_source_intf.ml))))
+     (module
+      (obj_name async_kernel__Types)
+      (visibility public)
+      (source (path Types) (impl (path types.ml))))))
+   (wrapped true))))
+(library
+ (name async_kernel.config)
+ (kind normal)
+ (archives
+  (byte config/async_kernel_config.cma)
+  (native config/async_kernel_config.cmxa))
+ (plugins
+  (byte config/async_kernel_config.cma)
+  (native config/async_kernel_config.cmxs))
+ (native_archives config/async_kernel_config.a)
+ (requires
+  core
+  core_kernel.thread_pool_cpu_affinity
+  core_kernel.timing_wheel
+  ppx_sexp_conv.runtime-lib
+  sexplib0
+  ppx_compare.runtime-lib
+  ppx_enumerate.runtime-lib
+  ppx_hash.runtime-lib
+  ppx_here.runtime-lib
+  ppx_assert.runtime-lib
+  ppx_bench.runtime-lib
+  bin_prot
+  fieldslib
+  ppx_inline_test.config
+  ppx_inline_test.runtime-lib
+  ppx_module_timer.runtime
+  ppx_stable_witness.runtime
+  ppx_string.runtime
+  base
+  typerep
+  variantslib
+  ppx_expect.runtime
+  ppx_expect.config
+  ppx_log.types
+  ppx_log.syntax
+  base_quickcheck.ppx_quickcheck.runtime
+  base_quickcheck)
+ (main_module_name Async_kernel_config)
+ (modes byte native)
+ (modules
+  (singleton
+   (obj_name async_kernel_config)
+   (visibility public)
+   (source
+    (path Async_kernel_config)
+    (intf (path config/async_kernel_config.mli))
+    (impl (path config/async_kernel_config.ml))))))
+(library
+ (name async_kernel.eager_deferred)
+ (kind normal)
+ (archives
+  (byte eager_deferred/eager_deferred.cma)
+  (native eager_deferred/eager_deferred.cmxa))
+ (plugins
+  (byte eager_deferred/eager_deferred.cma)
+  (native eager_deferred/eager_deferred.cmxs))
+ (native_archives eager_deferred/eager_deferred.a)
+ (requires
+  async_kernel
+  core
+  ppx_sexp_conv.runtime-lib
+  sexplib0
+  ppx_compare.runtime-lib
+  ppx_enumerate.runtime-lib
+  ppx_hash.runtime-lib
+  ppx_here.runtime-lib
+  ppx_assert.runtime-lib
+  ppx_bench.runtime-lib
+  bin_prot
+  fieldslib
+  ppx_inline_test.config
+  ppx_inline_test.runtime-lib
+  ppx_module_timer.runtime
+  ppx_stable_witness.runtime
+  ppx_string.runtime
+  base
+  typerep
+  variantslib
+  ppx_expect.runtime
+  ppx_expect.config
+  ppx_log.types
+  ppx_log.syntax
+  base_quickcheck.ppx_quickcheck.runtime
+  base_quickcheck)
+ (main_module_name Eager_deferred)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name eager_deferred__)
+     (visibility public)
+     (kind alias)
+     (source
+      (path Eager_deferred__)
+      (impl (path eager_deferred/eager_deferred__.ml-gen))))
+    (name Eager_deferred)
+    (modules
+     (module
+      (obj_name eager_deferred)
+      (visibility public)
+      (source
+       (path Eager_deferred)
+       (intf (path eager_deferred/eager_deferred.mli))
+       (impl (path eager_deferred/eager_deferred.ml))))
+     (module
+      (obj_name eager_deferred__Eager_deferred0)
+      (visibility public)
+      (source
+       (path Eager_deferred0)
+       (impl (path eager_deferred/eager_deferred0.ml))))
+     (module
+      (obj_name eager_deferred__Eager_deferred1)
+      (visibility public)
+      (source
+       (path Eager_deferred1)
+       (intf (path eager_deferred/eager_deferred1.mli))
+       (impl (path eager_deferred/eager_deferred1.ml))))
+     (module
+      (obj_name eager_deferred__Eager_deferred_intf)
+      (visibility public)
+      (source
+       (path Eager_deferred_intf)
+       (impl (path eager_deferred/eager_deferred_intf.ml))))
+     (module
+      (obj_name eager_deferred__Eager_deferred_list)
+      (visibility public)
+      (source
+       (path Eager_deferred_list)
+       (impl (path eager_deferred/eager_deferred_list.ml))))
+     (module
+      (obj_name eager_deferred__Eager_deferred_memo)
+      (visibility public)
+      (source
+       (path Eager_deferred_memo)
+       (intf (path eager_deferred/eager_deferred_memo.mli))
+       (impl (path eager_deferred/eager_deferred_memo.ml))))
+     (module
+      (obj_name eager_deferred__Eager_deferred_or_error)
+      (visibility public)
+      (source
+       (path Eager_deferred_or_error)
+       (intf (path eager_deferred/eager_deferred_or_error.mli))
+       (impl (path eager_deferred/eager_deferred_or_error.ml))))
+     (module
+      (obj_name eager_deferred__Eager_deferred_queue)
+      (visibility public)
+      (source
+       (path Eager_deferred_queue)
+       (impl (path eager_deferred/eager_deferred_queue.ml))))
+     (module
+      (obj_name eager_deferred__Eager_deferred_result)
+      (visibility public)
+      (source
+       (path Eager_deferred_result)
+       (impl (path eager_deferred/eager_deferred_result.ml))))
+     (module
+      (obj_name eager_deferred__Import)
+      (visibility public)
+      (source (path Import) (impl (path eager_deferred/import.ml))))))
+   (wrapped true))))
+(library
+ (name async_kernel.laziness_preserving_deferred)
+ (kind normal)
+ (archives
+  (byte laziness_preserving_deferred/laziness_preserving_deferred.cma)
+  (native laziness_preserving_deferred/laziness_preserving_deferred.cmxa))
+ (plugins
+  (byte laziness_preserving_deferred/laziness_preserving_deferred.cma)
+  (native laziness_preserving_deferred/laziness_preserving_deferred.cmxs))
+ (native_archives laziness_preserving_deferred/laziness_preserving_deferred.a)
+ (requires
+  async_kernel
+  core
+  ppx_sexp_conv.runtime-lib
+  sexplib0
+  ppx_compare.runtime-lib
+  ppx_enumerate.runtime-lib
+  ppx_hash.runtime-lib
+  ppx_here.runtime-lib
+  ppx_assert.runtime-lib
+  ppx_bench.runtime-lib
+  bin_prot
+  fieldslib
+  ppx_inline_test.config
+  ppx_inline_test.runtime-lib
+  ppx_module_timer.runtime
+  ppx_stable_witness.runtime
+  ppx_string.runtime
+  base
+  typerep
+  variantslib
+  ppx_expect.runtime
+  ppx_expect.config
+  ppx_log.types
+  ppx_log.syntax
+  base_quickcheck.ppx_quickcheck.runtime
+  base_quickcheck)
+ (main_module_name Laziness_preserving_deferred)
+ (modes byte native)
+ (modules
+  (singleton
+   (obj_name laziness_preserving_deferred)
+   (visibility public)
+   (source
+    (path Laziness_preserving_deferred)
+    (intf
+     (path laziness_preserving_deferred/laziness_preserving_deferred.mli))
+    (impl (path laziness_preserving_deferred/laziness_preserving_deferred.ml))))))
+(library
+ (name async_kernel.limiter_async)
+ (kind normal)
+ (archives
+  (byte limiter_async/limiter_async.cma)
+  (native limiter_async/limiter_async.cmxa))
+ (plugins
+  (byte limiter_async/limiter_async.cma)
+  (native limiter_async/limiter_async.cmxs))
+ (native_archives limiter_async/limiter_async.a)
+ (requires
+  async_kernel
+  core
+  core_kernel.limiter
+  ppx_sexp_conv.runtime-lib
+  sexplib0
+  ppx_compare.runtime-lib
+  ppx_enumerate.runtime-lib
+  ppx_hash.runtime-lib
+  ppx_here.runtime-lib
+  ppx_assert.runtime-lib
+  ppx_bench.runtime-lib
+  bin_prot
+  fieldslib
+  ppx_inline_test.config
+  ppx_inline_test.runtime-lib
+  ppx_module_timer.runtime
+  ppx_stable_witness.runtime
+  ppx_string.runtime
+  base
+  typerep
+  variantslib
+  ppx_expect.runtime
+  ppx_expect.config
+  ppx_log.types
+  ppx_log.syntax
+  base_quickcheck.ppx_quickcheck.runtime
+  base_quickcheck)
+ (main_module_name Limiter_async)
+ (modes byte native)
+ (modules
+  (singleton
+   (obj_name limiter_async)
+   (visibility public)
+   (source
+    (path Limiter_async)
+    (intf (path limiter_async/limiter_async.mli))
+    (impl (path limiter_async/limiter_async.ml))))))
+(library
+ (name async_kernel.persistent_connection_kernel)
+ (kind normal)
+ (archives
+  (byte persistent_connection_kernel/persistent_connection_kernel.cma)
+  (native persistent_connection_kernel/persistent_connection_kernel.cmxa))
+ (plugins
+  (byte persistent_connection_kernel/persistent_connection_kernel.cma)
+  (native persistent_connection_kernel/persistent_connection_kernel.cmxs))
+ (native_archives persistent_connection_kernel/persistent_connection_kernel.a)
+ (requires
+  async_kernel
+  core_kernel.bus
+  ppx_sexp_conv.runtime-lib
+  sexplib0
+  ppx_compare.runtime-lib
+  ppx_enumerate.runtime-lib
+  ppx_hash.runtime-lib
+  ppx_here.runtime-lib
+  ppx_assert.runtime-lib
+  ppx_bench.runtime-lib
+  bin_prot
+  fieldslib
+  ppx_inline_test.config
+  ppx_inline_test.runtime-lib
+  ppx_module_timer.runtime
+  ppx_stable_witness.runtime
+  ppx_string.runtime
+  base
+  typerep
+  variantslib
+  ppx_expect.runtime
+  ppx_expect.config
+  ppx_log.types
+  ppx_log.syntax
+  base_quickcheck.ppx_quickcheck.runtime
+  base_quickcheck)
+ (main_module_name Persistent_connection_kernel)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name persistent_connection_kernel__)
+     (visibility public)
+     (kind alias)
+     (source
+      (path Persistent_connection_kernel__)
+      (impl
+       (path
+        persistent_connection_kernel/persistent_connection_kernel__.ml-gen))))
+    (name Persistent_connection_kernel)
+    (modules
+     (module
+      (obj_name persistent_connection_kernel__Event)
+      (visibility public)
+      (source
+       (path Event)
+       (intf (path persistent_connection_kernel/event.mli))
+       (impl (path persistent_connection_kernel/event.ml))))
+     (module
+      (obj_name persistent_connection_kernel)
+      (visibility public)
+      (source
+       (path Persistent_connection_kernel)
+       (intf
+        (path persistent_connection_kernel/persistent_connection_kernel.mli))
+       (impl
+        (path persistent_connection_kernel/persistent_connection_kernel.ml))))
+     (module
+      (obj_name
+       persistent_connection_kernel__Persistent_connection_kernel_intf)
+      (visibility public)
+      (source
+       (path Persistent_connection_kernel_intf)
+       (impl
+        (path
+         persistent_connection_kernel/persistent_connection_kernel_intf.ml))))))
+   (wrapped true))))
+(library
+ (name async_kernel.read_write_pair)
+ (kind normal)
+ (archives
+  (byte read_write_pair/read_write_pair.cma)
+  (native read_write_pair/read_write_pair.cmxa))
+ (plugins
+  (byte read_write_pair/read_write_pair.cma)
+  (native read_write_pair/read_write_pair.cmxs))
+ (native_archives read_write_pair/read_write_pair.a)
+ (requires
+  core
+  ppx_sexp_conv.runtime-lib
+  sexplib0
+  ppx_compare.runtime-lib
+  ppx_enumerate.runtime-lib
+  ppx_hash.runtime-lib
+  ppx_here.runtime-lib
+  ppx_assert.runtime-lib
+  ppx_bench.runtime-lib
+  bin_prot
+  fieldslib
+  ppx_inline_test.config
+  ppx_inline_test.runtime-lib
+  ppx_module_timer.runtime
+  ppx_stable_witness.runtime
+  ppx_string.runtime
+  base
+  typerep
+  variantslib
+  ppx_expect.runtime
+  ppx_expect.config
+  ppx_log.types
+  ppx_log.syntax
+  base_quickcheck.ppx_quickcheck.runtime
+  base_quickcheck)
+ (main_module_name Read_write_pair)
+ (modes byte native)
+ (modules
+  (singleton
+   (obj_name read_write_pair)
+   (visibility public)
+   (source
+    (path Read_write_pair)
+    (intf (path read_write_pair/read_write_pair.mli))
+    (impl (path read_write_pair/read_write_pair.ml))))))
+(library
+ (name async_kernel.weak_hashtbl_async)
+ (kind normal)
+ (archives
+  (byte weak_hashtbl_async/weak_hashtbl_async.cma)
+  (native weak_hashtbl_async/weak_hashtbl_async.cmxa))
+ (plugins
+  (byte weak_hashtbl_async/weak_hashtbl_async.cma)
+  (native weak_hashtbl_async/weak_hashtbl_async.cmxs))
+ (native_archives weak_hashtbl_async/weak_hashtbl_async.a)
+ (requires
+  async_kernel
+  core_kernel.weak_hashtbl
+  ppx_sexp_conv.runtime-lib
+  sexplib0
+  ppx_compare.runtime-lib
+  ppx_enumerate.runtime-lib
+  ppx_hash.runtime-lib
+  ppx_here.runtime-lib
+  ppx_assert.runtime-lib
+  ppx_bench.runtime-lib
+  bin_prot
+  fieldslib
+  ppx_inline_test.config
+  ppx_inline_test.runtime-lib
+  ppx_module_timer.runtime
+  ppx_stable_witness.runtime
+  ppx_string.runtime
+  base
+  typerep
+  variantslib
+  ppx_expect.runtime
+  ppx_expect.config
+  ppx_log.types
+  ppx_log.syntax
+  base_quickcheck.ppx_quickcheck.runtime
+  base_quickcheck)
+ (main_module_name Weak_hashtbl_async)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name weak_hashtbl_async__)
+     (visibility public)
+     (kind alias)
+     (source
+      (path Weak_hashtbl_async__)
+      (impl (path weak_hashtbl_async/weak_hashtbl_async__.ml-gen))))
+    (name Weak_hashtbl_async)
+    (modules
+     (module
+      (obj_name weak_hashtbl_async__Import)
+      (visibility public)
+      (source (path Import) (impl (path weak_hashtbl_async/import.ml))))
+     (module
+      (obj_name weak_hashtbl_async)
+      (visibility public)
+      (source
+       (path Weak_hashtbl_async)
+       (intf (path weak_hashtbl_async/weak_hashtbl_async.mli))
+       (impl (path weak_hashtbl_async/weak_hashtbl_async.ml))))))
+   (wrapped true))))

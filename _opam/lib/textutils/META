@@ -1,0 +1,111 @@
+package "ascii_table" (
+  directory = "ascii_table"
+  version = "v0.17.0"
+  description = ""
+  requires =
+  "base
+   base_quickcheck
+   base_quickcheck.ppx_quickcheck.runtime
+   bin_prot
+   core
+   fieldslib
+   ppx_assert.runtime-lib
+   ppx_bench.runtime-lib
+   ppx_compare.runtime-lib
+   ppx_enumerate.runtime-lib
+   ppx_expect.config
+   ppx_expect.runtime
+   ppx_hash.runtime-lib
+   ppx_here.runtime-lib
+   ppx_inline_test.config
+   ppx_inline_test.runtime-lib
+   ppx_log.syntax
+   ppx_log.types
+   ppx_module_timer.runtime
+   ppx_sexp_conv.runtime-lib
+   ppx_stable_witness.runtime
+   ppx_string.runtime
+   sexplib0
+   textutils.ascii_table_kernel
+   textutils.console
+   typerep
+   variantslib"
+  archive(byte) = "ascii_table.cma"
+  archive(native) = "ascii_table.cmxa"
+  plugin(byte) = "ascii_table.cma"
+  plugin(native) = "ascii_table.cmxs"
+)
+package "ascii_table_kernel" (
+  directory = "ascii_table_kernel"
+  version = "v0.17.0"
+  description = ""
+  requires =
+  "base
+   base_quickcheck
+   base_quickcheck.ppx_quickcheck.runtime
+   bin_prot
+   core
+   core_kernel.ansi_kernel
+   fieldslib
+   ppx_assert.runtime-lib
+   ppx_bench.runtime-lib
+   ppx_compare.runtime-lib
+   ppx_enumerate.runtime-lib
+   ppx_expect.config
+   ppx_expect.runtime
+   ppx_hash.runtime-lib
+   ppx_here.runtime-lib
+   ppx_inline_test.config
+   ppx_inline_test.runtime-lib
+   ppx_log.syntax
+   ppx_log.types
+   ppx_module_timer.runtime
+   ppx_sexp_conv.runtime-lib
+   ppx_stable_witness.runtime
+   ppx_string.runtime
+   sexplib0
+   typerep
+   uutf
+   variantslib"
+  archive(byte) = "ascii_table_kernel.cma"
+  archive(native) = "ascii_table_kernel.cmxa"
+  plugin(byte) = "ascii_table_kernel.cma"
+  plugin(native) = "ascii_table_kernel.cmxs"
+)
+package "console" (
+  directory = "console"
+  version = "v0.17.0"
+  description = ""
+  requires =
+  "base
+   base_quickcheck
+   base_quickcheck.ppx_quickcheck.runtime
+   bin_prot
+   core
+   core_kernel.ansi_kernel
+   core_unix.linux_ext
+   fieldslib
+   ppx_assert.runtime-lib
+   ppx_bench.runtime-lib
+   ppx_compare.runtime-lib
+   ppx_enumerate.runtime-lib
+   ppx_expect.config
+   ppx_expect.runtime
+   ppx_hash.runtime-lib
+   ppx_here.runtime-lib
+   ppx_inline_test.config
+   ppx_inline_test.runtime-lib
+   ppx_log.syntax
+   ppx_log.types
+   ppx_module_timer.runtime
+   ppx_sexp_conv.runtime-lib
+   ppx_stable_witness.runtime
+   ppx_string.runtime
+   sexplib0
+   typerep
+   variantslib"
+  archive(byte) = "console.cma"
+  archive(native) = "console.cmxa"
+  plugin(byte) = "console.cma"
+  plugin(native) = "console.cmxs"
+)

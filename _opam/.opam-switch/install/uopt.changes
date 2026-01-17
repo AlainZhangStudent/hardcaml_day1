@@ -1,0 +1,19 @@
+opam-version: "2.0"
+added: [
+  "doc/uopt" {"D"}
+  "doc/uopt/LICENSE.md" {"F:S1126T1768614577.41"}
+  "lib/uopt" {"D"}
+  "lib/uopt/META" {"F:S643T1768614577.4"}
+  "lib/uopt/dune-package" {"F:S1155T1768614577.4"}
+  "lib/uopt/opam" {"F:S947T1768614577.4"}
+  "lib/uopt/uopt.a" {"F:S17664T1768614577.4"}
+  "lib/uopt/uopt.cma" {"F:S15445T1768614577.4"}
+  "lib/uopt/uopt.cmi" {"F:S5750T1768614577.41"}
+  "lib/uopt/uopt.cmt" {"F:S26674T1768614577.41"}
+  "lib/uopt/uopt.cmti" {"F:S17117T1768614577.41"}
+  "lib/uopt/uopt.cmx" {"F:S8494T1768614577.41"}
+  "lib/uopt/uopt.cmxa" {"F:S5727T1768614577.41"}
+  "lib/uopt/uopt.cmxs" {"F:S55608T1768614577.41"}
+  "lib/uopt/uopt.ml" {"F:S3044T1768614577.41"}
+  "lib/uopt/uopt.mli" {"F:S2812T1768614577.41"}
+]

@@ -1,0 +1,20 @@
+opam-version: "2.0"
+added: [
+  "doc/capitalization" {"D"}
+  "doc/capitalization/LICENSE.md" {"F:S1120T1768614566.86"}
+  "doc/capitalization/README.md" {"F:S1251T1768614566.86"}
+  "lib/capitalization" {"D"}
+  "lib/capitalization/META" {"F:S317T1768614566.86"}
+  "lib/capitalization/capitalization.a" {"F:S30296T1768614566.86"}
+  "lib/capitalization/capitalization.cma" {"F:S19720T1768614566.86"}
+  "lib/capitalization/capitalization.cmi" {"F:S5538T1768614566.86"}
+  "lib/capitalization/capitalization.cmt" {"F:S37212T1768614566.86"}
+  "lib/capitalization/capitalization.cmti" {"F:S13504T1768614566.86"}
+  "lib/capitalization/capitalization.cmx" {"F:S6487T1768614566.86"}
+  "lib/capitalization/capitalization.cmxa" {"F:S4927T1768614566.86"}
+  "lib/capitalization/capitalization.cmxs" {"F:S59824T1768614566.86"}
+  "lib/capitalization/capitalization.ml" {"F:S6670T1768614566.86"}
+  "lib/capitalization/capitalization.mli" {"F:S1453T1768614566.86"}
+  "lib/capitalization/dune-package" {"F:S1023T1768614566.86"}
+  "lib/capitalization/opam" {"F:S746T1768614566.86"}
+]

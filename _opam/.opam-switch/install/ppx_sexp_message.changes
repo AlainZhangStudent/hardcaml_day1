@@ -1,0 +1,43 @@
+opam-version: "2.0"
+added: [
+  "doc/ppx_sexp_message" {"D"}
+  "doc/ppx_sexp_message/CHANGES.md" {"F:S403T1768614564.68"}
+  "doc/ppx_sexp_message/LICENSE.md" {"F:S1126T1768614564.68"}
+  "doc/ppx_sexp_message/README.md" {"F:S5679T1768614564.68"}
+  "lib/ppx_sexp_message" {"D"}
+  "lib/ppx_sexp_message/META" {"F:S1161T1768614564.67"}
+  "lib/ppx_sexp_message/dune-package" {"F:S2214T1768614564.67"}
+  "lib/ppx_sexp_message/expander" {"D"}
+  "lib/ppx_sexp_message/expander/ppx_sexp_message_expander.a"
+    {"F:S37192T1768614564.67"}
+  "lib/ppx_sexp_message/expander/ppx_sexp_message_expander.cma"
+    {"F:S28745T1768614564.67"}
+  "lib/ppx_sexp_message/expander/ppx_sexp_message_expander.cmi"
+    {"F:S7398T1768614564.67"}
+  "lib/ppx_sexp_message/expander/ppx_sexp_message_expander.cmt"
+    {"F:S44220T1768614564.67"}
+  "lib/ppx_sexp_message/expander/ppx_sexp_message_expander.cmti"
+    {"F:S15265T1768614564.67"}
+  "lib/ppx_sexp_message/expander/ppx_sexp_message_expander.cmx"
+    {"F:S9536T1768614564.67"}
+  "lib/ppx_sexp_message/expander/ppx_sexp_message_expander.cmxa"
+    {"F:S7773T1768614564.67"}
+  "lib/ppx_sexp_message/expander/ppx_sexp_message_expander.cmxs"
+    {"F:S76176T1768614564.67"}
+  "lib/ppx_sexp_message/expander/ppx_sexp_message_expander.ml"
+    {"F:S6436T1768614564.67"}
+  "lib/ppx_sexp_message/expander/ppx_sexp_message_expander.mli"
+    {"F:S310T1768614564.67"}
+  "lib/ppx_sexp_message/opam" {"F:S876T1768614564.67"}
+  "lib/ppx_sexp_message/ppx.exe" {"F:S18604968T1768614564.68"}
+  "lib/ppx_sexp_message/ppx_sexp_message.a" {"F:S7256T1768614564.67"}
+  "lib/ppx_sexp_message/ppx_sexp_message.cma" {"F:S10665T1768614564.67"}
+  "lib/ppx_sexp_message/ppx_sexp_message.cmi" {"F:S204T1768614564.67"}
+  "lib/ppx_sexp_message/ppx_sexp_message.cmt" {"F:S13302T1768614564.67"}
+  "lib/ppx_sexp_message/ppx_sexp_message.cmti" {"F:S2002T1768614564.67"}
+  "lib/ppx_sexp_message/ppx_sexp_message.cmx" {"F:S7484T1768614564.67"}
+  "lib/ppx_sexp_message/ppx_sexp_message.cmxa" {"F:S7348T1768614564.67"}
+  "lib/ppx_sexp_message/ppx_sexp_message.cmxs" {"F:S53576T1768614564.68"}
+  "lib/ppx_sexp_message/ppx_sexp_message.ml" {"F:S842T1768614564.67"}
+  "lib/ppx_sexp_message/ppx_sexp_message.mli" {"F:S0T1768614564.67"}
+]

@@ -1,0 +1,53 @@
+opam-version: "2.0"
+added: [
+  "doc/ppx_string" {"D"}
+  "doc/ppx_string/CHANGES.md" {"F:S88T1768614567.89"}
+  "doc/ppx_string/LICENSE.md" {"F:S1126T1768614567.89"}
+  "doc/ppx_string/README.org" {"F:S2127T1768614567.89"}
+  "lib/ppx_string" {"D"}
+  "lib/ppx_string/META" {"F:S1206T1768614567.88"}
+  "lib/ppx_string/dune-package" {"F:S3423T1768614567.88"}
+  "lib/ppx_string/opam" {"F:S769T1768614567.88"}
+  "lib/ppx_string/ppx.exe" {"F:S16693816T1768614567.89"}
+  "lib/ppx_string/ppx_string.a" {"F:S56456T1768614567.88"}
+  "lib/ppx_string/ppx_string.cma" {"F:S52114T1768614567.88"}
+  "lib/ppx_string/ppx_string.cmi" {"F:S7754T1768614567.88"}
+  "lib/ppx_string/ppx_string.cmt" {"F:S64597T1768614567.88"}
+  "lib/ppx_string/ppx_string.cmti" {"F:S15264T1768614567.88"}
+  "lib/ppx_string/ppx_string.cmx" {"F:S10825T1768614567.88"}
+  "lib/ppx_string/ppx_string.cmxa" {"F:S15188T1768614567.88"}
+  "lib/ppx_string/ppx_string.cmxs" {"F:S100704T1768614567.89"}
+  "lib/ppx_string/ppx_string.ml" {"F:S8350T1768614567.88"}
+  "lib/ppx_string/ppx_string.mli" {"F:S35T1768614567.88"}
+  "lib/ppx_string/ppx_string__.cmi" {"F:S337T1768614567.88"}
+  "lib/ppx_string/ppx_string__.cmt" {"F:S1866T1768614567.88"}
+  "lib/ppx_string/ppx_string__.cmx" {"F:S171T1768614567.88"}
+  "lib/ppx_string/ppx_string__.ml" {"F:S198T1768614567.88"}
+  "lib/ppx_string/ppx_string__Ppx_string_intf.cmi" {"F:S8443T1768614567.88"}
+  "lib/ppx_string/ppx_string__Ppx_string_intf.cmt" {"F:S20985T1768614567.88"}
+  "lib/ppx_string/ppx_string__Ppx_string_intf.cmx" {"F:S7259T1768614567.88"}
+  "lib/ppx_string/ppx_string_intf.ml" {"F:S2616T1768614567.88"}
+  "lib/ppx_string/runtime" {"D"}
+  "lib/ppx_string/runtime/ppx_string_runtime.a" {"F:S8880T1768614567.88"}
+  "lib/ppx_string/runtime/ppx_string_runtime.cma" {"F:S6717T1768614567.88"}
+  "lib/ppx_string/runtime/ppx_string_runtime.cmi" {"F:S670T1768614567.88"}
+  "lib/ppx_string/runtime/ppx_string_runtime.cmt" {"F:S4326T1768614567.88"}
+  "lib/ppx_string/runtime/ppx_string_runtime.cmti" {"F:S2324T1768614567.88"}
+  "lib/ppx_string/runtime/ppx_string_runtime.cmx" {"F:S984T1768614567.88"}
+  "lib/ppx_string/runtime/ppx_string_runtime.cmxa" {"F:S972T1768614567.88"}
+  "lib/ppx_string/runtime/ppx_string_runtime.cmxs" {"F:S53400T1768614567.89"}
+  "lib/ppx_string/runtime/ppx_string_runtime.ml" {"F:S376T1768614567.88"}
+  "lib/ppx_string/runtime/ppx_string_runtime.mli" {"F:S51T1768614567.88"}
+  "lib/ppx_string/runtime/ppx_string_runtime__.cmi" {"F:S376T1768614567.88"}
+  "lib/ppx_string/runtime/ppx_string_runtime__.cmt" {"F:S1920T1768614567.88"}
+  "lib/ppx_string/runtime/ppx_string_runtime__.cmx" {"F:S212T1768614567.88"}
+  "lib/ppx_string/runtime/ppx_string_runtime__.ml" {"F:S246T1768614567.88"}
+  "lib/ppx_string/runtime/ppx_string_runtime__Ppx_string_runtime_intf.cmi"
+    {"F:S954T1768614567.88"}
+  "lib/ppx_string/runtime/ppx_string_runtime__Ppx_string_runtime_intf.cmt"
+    {"F:S5220T1768614567.88"}
+  "lib/ppx_string/runtime/ppx_string_runtime__Ppx_string_runtime_intf.cmx"
+    {"F:S292T1768614567.88"}
+  "lib/ppx_string/runtime/ppx_string_runtime_intf.ml"
+    {"F:S1489T1768614567.88"}
+]

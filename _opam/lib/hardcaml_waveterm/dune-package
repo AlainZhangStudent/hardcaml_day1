@@ -1,0 +1,685 @@
+(lang dune 3.21)
+(name hardcaml_waveterm)
+(version v0.17.0)
+(sections
+ (lib .)
+ (libexec .)
+ (bin ../../bin)
+ (doc ../../doc/hardcaml_waveterm))
+(files
+ (lib
+  (META
+   crypto.ml
+   cyclesim/hardcaml_waveterm_cyclesim.a
+   cyclesim/hardcaml_waveterm_cyclesim.cma
+   cyclesim/hardcaml_waveterm_cyclesim.cmi
+   cyclesim/hardcaml_waveterm_cyclesim.cmt
+   cyclesim/hardcaml_waveterm_cyclesim.cmti
+   cyclesim/hardcaml_waveterm_cyclesim.cmx
+   cyclesim/hardcaml_waveterm_cyclesim.cmxa
+   cyclesim/hardcaml_waveterm_cyclesim.ml
+   cyclesim/hardcaml_waveterm_cyclesim.mli
+   dune-package
+   event_store/bits_store.ml
+   event_store/bits_store.mli
+   event_store/event_store.ml
+   event_store/event_store.mli
+   event_store/event_store_intf.ml
+   event_store/hardcaml_waveterm_event_store.a
+   event_store/hardcaml_waveterm_event_store.cma
+   event_store/hardcaml_waveterm_event_store.cmi
+   event_store/hardcaml_waveterm_event_store.cmt
+   event_store/hardcaml_waveterm_event_store.cmx
+   event_store/hardcaml_waveterm_event_store.cmxa
+   event_store/hardcaml_waveterm_event_store.ml
+   event_store/hardcaml_waveterm_event_store__Bits_store.cmi
+   event_store/hardcaml_waveterm_event_store__Bits_store.cmt
+   event_store/hardcaml_waveterm_event_store__Bits_store.cmti
+   event_store/hardcaml_waveterm_event_store__Bits_store.cmx
+   event_store/hardcaml_waveterm_event_store__Event_store.cmi
+   event_store/hardcaml_waveterm_event_store__Event_store.cmt
+   event_store/hardcaml_waveterm_event_store__Event_store.cmti
+   event_store/hardcaml_waveterm_event_store__Event_store.cmx
+   event_store/hardcaml_waveterm_event_store__Event_store_intf.cmi
+   event_store/hardcaml_waveterm_event_store__Event_store_intf.cmt
+   event_store/hardcaml_waveterm_event_store__Event_store_intf.cmx
+   expect.ml
+   expect.mli
+   expect_intf.ml
+   hardcaml_waveterm.a
+   hardcaml_waveterm.cma
+   hardcaml_waveterm.cmi
+   hardcaml_waveterm.cmt
+   hardcaml_waveterm.cmx
+   hardcaml_waveterm.cmxa
+   hardcaml_waveterm.ml
+   hardcaml_waveterm__.cmi
+   hardcaml_waveterm__.cmt
+   hardcaml_waveterm__.cmx
+   hardcaml_waveterm__.ml
+   hardcaml_waveterm__Crypto.cmi
+   hardcaml_waveterm__Crypto.cmt
+   hardcaml_waveterm__Crypto.cmx
+   hardcaml_waveterm__Expect.cmi
+   hardcaml_waveterm__Expect.cmt
+   hardcaml_waveterm__Expect.cmti
+   hardcaml_waveterm__Expect.cmx
+   hardcaml_waveterm__Expect_intf.cmi
+   hardcaml_waveterm__Expect_intf.cmt
+   hardcaml_waveterm__Expect_intf.cmx
+   hardcaml_waveterm__Serialize_waveform.cmi
+   hardcaml_waveterm__Serialize_waveform.cmt
+   hardcaml_waveterm__Serialize_waveform.cmti
+   hardcaml_waveterm__Serialize_waveform.cmx
+   hardcaml_waveterm__Serialize_waveform_intf.cmi
+   hardcaml_waveterm__Serialize_waveform_intf.cmt
+   hardcaml_waveterm__Serialize_waveform_intf.cmx
+   hardcaml_waveterm__Waveform_digest.cmi
+   hardcaml_waveterm__Waveform_digest.cmt
+   hardcaml_waveterm__Waveform_digest.cmti
+   hardcaml_waveterm__Waveform_digest.cmx
+   hardcaml_waveterm__Waveform_digest_intf.cmi
+   hardcaml_waveterm__Waveform_digest_intf.cmt
+   hardcaml_waveterm__Waveform_digest_intf.cmx
+   interactive/draw_notty.ml
+   interactive/draw_notty.mli
+   interactive/hardcaml_waveterm_interactive.a
+   interactive/hardcaml_waveterm_interactive.cma
+   interactive/hardcaml_waveterm_interactive.cmi
+   interactive/hardcaml_waveterm_interactive.cmt
+   interactive/hardcaml_waveterm_interactive.cmx
+   interactive/hardcaml_waveterm_interactive.cmxa
+   interactive/hardcaml_waveterm_interactive.ml
+   interactive/hardcaml_waveterm_interactive__.cmi
+   interactive/hardcaml_waveterm_interactive__.cmt
+   interactive/hardcaml_waveterm_interactive__.cmx
+   interactive/hardcaml_waveterm_interactive__.ml
+   interactive/hardcaml_waveterm_interactive__Draw_notty.cmi
+   interactive/hardcaml_waveterm_interactive__Draw_notty.cmt
+   interactive/hardcaml_waveterm_interactive__Draw_notty.cmti
+   interactive/hardcaml_waveterm_interactive__Draw_notty.cmx
+   interactive/hardcaml_waveterm_interactive__Scroll.cmi
+   interactive/hardcaml_waveterm_interactive__Scroll.cmt
+   interactive/hardcaml_waveterm_interactive__Scroll.cmti
+   interactive/hardcaml_waveterm_interactive__Scroll.cmx
+   interactive/hardcaml_waveterm_interactive__Widget.cmi
+   interactive/hardcaml_waveterm_interactive__Widget.cmt
+   interactive/hardcaml_waveterm_interactive__Widget.cmti
+   interactive/hardcaml_waveterm_interactive__Widget.cmx
+   interactive/scroll.ml
+   interactive/scroll.mli
+   interactive/widget.ml
+   interactive/widget.mli
+   kernel/data.ml
+   kernel/data.mli
+   kernel/data_intf.ml
+   kernel/display_rule.ml
+   kernel/display_rule.mli
+   kernel/display_rules.ml
+   kernel/display_rules.mli
+   kernel/draw.ml
+   kernel/draw.mli
+   kernel/hardcaml_waveterm_kernel.a
+   kernel/hardcaml_waveterm_kernel.cma
+   kernel/hardcaml_waveterm_kernel.cmi
+   kernel/hardcaml_waveterm_kernel.cmt
+   kernel/hardcaml_waveterm_kernel.cmx
+   kernel/hardcaml_waveterm_kernel.cmxa
+   kernel/hardcaml_waveterm_kernel.ml
+   kernel/hardcaml_waveterm_kernel__.cmi
+   kernel/hardcaml_waveterm_kernel__.cmt
+   kernel/hardcaml_waveterm_kernel__.cmx
+   kernel/hardcaml_waveterm_kernel__.ml
+   kernel/hardcaml_waveterm_kernel__Data.cmi
+   kernel/hardcaml_waveterm_kernel__Data.cmt
+   kernel/hardcaml_waveterm_kernel__Data.cmti
+   kernel/hardcaml_waveterm_kernel__Data.cmx
+   kernel/hardcaml_waveterm_kernel__Data_intf.cmi
+   kernel/hardcaml_waveterm_kernel__Data_intf.cmt
+   kernel/hardcaml_waveterm_kernel__Data_intf.cmx
+   kernel/hardcaml_waveterm_kernel__Display_rule.cmi
+   kernel/hardcaml_waveterm_kernel__Display_rule.cmt
+   kernel/hardcaml_waveterm_kernel__Display_rule.cmti
+   kernel/hardcaml_waveterm_kernel__Display_rule.cmx
+   kernel/hardcaml_waveterm_kernel__Display_rules.cmi
+   kernel/hardcaml_waveterm_kernel__Display_rules.cmt
+   kernel/hardcaml_waveterm_kernel__Display_rules.cmti
+   kernel/hardcaml_waveterm_kernel__Display_rules.cmx
+   kernel/hardcaml_waveterm_kernel__Draw.cmi
+   kernel/hardcaml_waveterm_kernel__Draw.cmt
+   kernel/hardcaml_waveterm_kernel__Draw.cmti
+   kernel/hardcaml_waveterm_kernel__Draw.cmx
+   kernel/hardcaml_waveterm_kernel__Port.cmi
+   kernel/hardcaml_waveterm_kernel__Port.cmt
+   kernel/hardcaml_waveterm_kernel__Port.cmti
+   kernel/hardcaml_waveterm_kernel__Port.cmx
+   kernel/hardcaml_waveterm_kernel__Port_name.cmi
+   kernel/hardcaml_waveterm_kernel__Port_name.cmt
+   kernel/hardcaml_waveterm_kernel__Port_name.cmti
+   kernel/hardcaml_waveterm_kernel__Port_name.cmx
+   kernel/hardcaml_waveterm_kernel__Render.cmi
+   kernel/hardcaml_waveterm_kernel__Render.cmt
+   kernel/hardcaml_waveterm_kernel__Render.cmti
+   kernel/hardcaml_waveterm_kernel__Render.cmx
+   kernel/hardcaml_waveterm_kernel__Render_intf.cmi
+   kernel/hardcaml_waveterm_kernel__Render_intf.cmt
+   kernel/hardcaml_waveterm_kernel__Render_intf.cmx
+   kernel/hardcaml_waveterm_kernel__Text_alignment.cmi
+   kernel/hardcaml_waveterm_kernel__Text_alignment.cmt
+   kernel/hardcaml_waveterm_kernel__Text_alignment.cmti
+   kernel/hardcaml_waveterm_kernel__Text_alignment.cmx
+   kernel/hardcaml_waveterm_kernel__Wave.cmi
+   kernel/hardcaml_waveterm_kernel__Wave.cmt
+   kernel/hardcaml_waveterm_kernel__Wave.cmti
+   kernel/hardcaml_waveterm_kernel__Wave.cmx
+   kernel/hardcaml_waveterm_kernel__Wave_intf.cmi
+   kernel/hardcaml_waveterm_kernel__Wave_intf.cmt
+   kernel/hardcaml_waveterm_kernel__Wave_intf.cmx
+   kernel/hardcaml_waveterm_kernel__Waveform.cmi
+   kernel/hardcaml_waveterm_kernel__Waveform.cmt
+   kernel/hardcaml_waveterm_kernel__Waveform.cmti
+   kernel/hardcaml_waveterm_kernel__Waveform.cmx
+   kernel/hardcaml_waveterm_kernel__Waveform_intf.cmi
+   kernel/hardcaml_waveterm_kernel__Waveform_intf.cmt
+   kernel/hardcaml_waveterm_kernel__Waveform_intf.cmx
+   kernel/hardcaml_waveterm_kernel__Waves.cmi
+   kernel/hardcaml_waveterm_kernel__Waves.cmt
+   kernel/hardcaml_waveterm_kernel__Waves.cmti
+   kernel/hardcaml_waveterm_kernel__Waves.cmx
+   kernel/hardcaml_waveterm_kernel__Waves_intf.cmi
+   kernel/hardcaml_waveterm_kernel__Waves_intf.cmt
+   kernel/hardcaml_waveterm_kernel__Waves_intf.cmx
+   kernel/hardcaml_waveterm_kernel__Write.cmi
+   kernel/hardcaml_waveterm_kernel__Write.cmt
+   kernel/hardcaml_waveterm_kernel__Write.cmti
+   kernel/hardcaml_waveterm_kernel__Write.cmx
+   kernel/port.ml
+   kernel/port.mli
+   kernel/port_name.ml
+   kernel/port_name.mli
+   kernel/render.ml
+   kernel/render.mli
+   kernel/render_intf.ml
+   kernel/text_alignment.ml
+   kernel/text_alignment.mli
+   kernel/wave.ml
+   kernel/wave.mli
+   kernel/wave_intf.ml
+   kernel/waveform.ml
+   kernel/waveform.mli
+   kernel/waveform_intf.ml
+   kernel/waves.ml
+   kernel/waves.mli
+   kernel/waves_intf.ml
+   kernel/write.ml
+   kernel/write.mli
+   opam
+   serialize_waveform.ml
+   serialize_waveform.mli
+   serialize_waveform_intf.ml
+   waveform_digest.ml
+   waveform_digest.mli
+   waveform_digest_intf.ml))
+ (libexec
+  (cyclesim/hardcaml_waveterm_cyclesim.cmxs
+   event_store/hardcaml_waveterm_event_store.cmxs
+   hardcaml_waveterm.cmxs
+   interactive/hardcaml_waveterm_interactive.cmxs
+   kernel/hardcaml_waveterm_kernel.cmxs))
+ (bin (hardcaml-waveform-viewer))
+ (doc (CHANGES.md LICENSE.md README.md)))
+(library
+ (name hardcaml_waveterm)
+ (kind normal)
+ (archives (byte hardcaml_waveterm.cma) (native hardcaml_waveterm.cmxa))
+ (plugins (byte hardcaml_waveterm.cma) (native hardcaml_waveterm.cmxs))
+ (native_archives hardcaml_waveterm.a)
+ (requires
+  hardcaml_waveterm.kernel
+  hardcaml_waveterm.cyclesim
+  cryptokit
+  unix
+  ppx_sexp_conv.runtime-lib
+  sexplib0
+  ppx_compare.runtime-lib
+  ppx_enumerate.runtime-lib
+  ppx_hash.runtime-lib
+  ppx_here.runtime-lib
+  ppx_assert.runtime-lib
+  ppx_bench.runtime-lib
+  bin_prot
+  fieldslib
+  ppx_inline_test.config
+  ppx_inline_test.runtime-lib
+  ppx_module_timer.runtime
+  ppx_stable_witness.runtime
+  ppx_string.runtime
+  base
+  typerep
+  variantslib
+  ppx_expect.runtime
+  ppx_expect.config
+  ppx_log.types
+  ppx_log.syntax
+  base_quickcheck.ppx_quickcheck.runtime
+  base_quickcheck)
+ (main_module_name Hardcaml_waveterm)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name hardcaml_waveterm__)
+     (visibility public)
+     (kind alias)
+     (source
+      (path Hardcaml_waveterm__)
+      (impl (path hardcaml_waveterm__.ml-gen))))
+    (name Hardcaml_waveterm)
+    (modules
+     (module
+      (obj_name hardcaml_waveterm__Crypto)
+      (visibility public)
+      (source (path Crypto) (impl (path crypto.ml))))
+     (module
+      (obj_name hardcaml_waveterm__Expect)
+      (visibility public)
+      (source (path Expect) (intf (path expect.mli)) (impl (path expect.ml))))
+     (module
+      (obj_name hardcaml_waveterm__Expect_intf)
+      (visibility public)
+      (source (path Expect_intf) (impl (path expect_intf.ml))))
+     (module
+      (obj_name hardcaml_waveterm)
+      (visibility public)
+      (source (path Hardcaml_waveterm) (impl (path hardcaml_waveterm.ml))))
+     (module
+      (obj_name hardcaml_waveterm__Serialize_waveform)
+      (visibility public)
+      (source
+       (path Serialize_waveform)
+       (intf (path serialize_waveform.mli))
+       (impl (path serialize_waveform.ml))))
+     (module
+      (obj_name hardcaml_waveterm__Serialize_waveform_intf)
+      (visibility public)
+      (source
+       (path Serialize_waveform_intf)
+       (impl (path serialize_waveform_intf.ml))))
+     (module
+      (obj_name hardcaml_waveterm__Waveform_digest)
+      (visibility public)
+      (source
+       (path Waveform_digest)
+       (intf (path waveform_digest.mli))
+       (impl (path waveform_digest.ml))))
+     (module
+      (obj_name hardcaml_waveterm__Waveform_digest_intf)
+      (visibility public)
+      (source
+       (path Waveform_digest_intf)
+       (impl (path waveform_digest_intf.ml))))))
+   (wrapped true))))
+(library
+ (name hardcaml_waveterm.cyclesim)
+ (kind normal)
+ (archives
+  (byte cyclesim/hardcaml_waveterm_cyclesim.cma)
+  (native cyclesim/hardcaml_waveterm_cyclesim.cmxa))
+ (plugins
+  (byte cyclesim/hardcaml_waveterm_cyclesim.cma)
+  (native cyclesim/hardcaml_waveterm_cyclesim.cmxs))
+ (native_archives cyclesim/hardcaml_waveterm_cyclesim.a)
+ (requires
+  hardcaml_waveterm.kernel
+  ppx_sexp_conv.runtime-lib
+  sexplib0
+  ppx_compare.runtime-lib
+  ppx_enumerate.runtime-lib
+  ppx_hash.runtime-lib
+  ppx_here.runtime-lib
+  ppx_assert.runtime-lib
+  ppx_bench.runtime-lib
+  bin_prot
+  fieldslib
+  ppx_inline_test.config
+  ppx_inline_test.runtime-lib
+  ppx_module_timer.runtime
+  ppx_stable_witness.runtime
+  ppx_string.runtime
+  base
+  typerep
+  variantslib
+  ppx_expect.runtime
+  ppx_expect.config
+  ppx_log.types
+  ppx_log.syntax
+  base_quickcheck.ppx_quickcheck.runtime
+  base_quickcheck)
+ (main_module_name Hardcaml_waveterm_cyclesim)
+ (modes byte native)
+ (modules
+  (singleton
+   (obj_name hardcaml_waveterm_cyclesim)
+   (visibility public)
+   (source
+    (path Hardcaml_waveterm_cyclesim)
+    (intf (path cyclesim/hardcaml_waveterm_cyclesim.mli))
+    (impl (path cyclesim/hardcaml_waveterm_cyclesim.ml))))))
+(library
+ (name hardcaml_waveterm.event_store)
+ (kind normal)
+ (archives
+  (byte event_store/hardcaml_waveterm_event_store.cma)
+  (native event_store/hardcaml_waveterm_event_store.cmxa))
+ (plugins
+  (byte event_store/hardcaml_waveterm_event_store.cma)
+  (native event_store/hardcaml_waveterm_event_store.cmxs))
+ (native_archives event_store/hardcaml_waveterm_event_store.a)
+ (requires
+  base
+  hardcaml
+  ppx_sexp_conv.runtime-lib
+  sexplib0
+  ppx_compare.runtime-lib
+  ppx_enumerate.runtime-lib
+  ppx_hash.runtime-lib
+  ppx_here.runtime-lib
+  ppx_assert.runtime-lib
+  ppx_bench.runtime-lib
+  bin_prot
+  fieldslib
+  ppx_inline_test.config
+  ppx_inline_test.runtime-lib
+  ppx_module_timer.runtime
+  ppx_stable_witness.runtime
+  ppx_string.runtime
+  typerep
+  variantslib
+  ppx_expect.runtime
+  ppx_expect.config
+  ppx_log.types
+  ppx_log.syntax
+  base_quickcheck.ppx_quickcheck.runtime
+  base_quickcheck)
+ (main_module_name Hardcaml_waveterm_event_store)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name hardcaml_waveterm_event_store)
+     (visibility public)
+     (kind alias)
+     (source
+      (path Hardcaml_waveterm_event_store)
+      (impl (path event_store/hardcaml_waveterm_event_store.ml-gen))))
+    (name Hardcaml_waveterm_event_store)
+    (modules
+     (module
+      (obj_name hardcaml_waveterm_event_store__Bits_store)
+      (visibility public)
+      (source
+       (path Bits_store)
+       (intf (path event_store/bits_store.mli))
+       (impl (path event_store/bits_store.ml))))
+     (module
+      (obj_name hardcaml_waveterm_event_store__Event_store)
+      (visibility public)
+      (source
+       (path Event_store)
+       (intf (path event_store/event_store.mli))
+       (impl (path event_store/event_store.ml))))
+     (module
+      (obj_name hardcaml_waveterm_event_store__Event_store_intf)
+      (visibility public)
+      (source
+       (path Event_store_intf)
+       (impl (path event_store/event_store_intf.ml))))))
+   (wrapped true))))
+(library
+ (name hardcaml_waveterm.interactive)
+ (kind normal)
+ (archives
+  (byte interactive/hardcaml_waveterm_interactive.cma)
+  (native interactive/hardcaml_waveterm_interactive.cmxa))
+ (plugins
+  (byte interactive/hardcaml_waveterm_interactive.cma)
+  (native interactive/hardcaml_waveterm_interactive.cmxs))
+ (native_archives interactive/hardcaml_waveterm_interactive.a)
+ (requires
+  base
+  hardcaml_waveterm.kernel
+  hardcaml_waveterm.cyclesim
+  notty
+  notty_async
+  stdio
+  ppx_sexp_conv.runtime-lib
+  sexplib0
+  ppx_compare.runtime-lib
+  ppx_enumerate.runtime-lib
+  ppx_hash.runtime-lib
+  ppx_here.runtime-lib
+  ppx_assert.runtime-lib
+  ppx_bench.runtime-lib
+  bin_prot
+  fieldslib
+  ppx_inline_test.config
+  ppx_inline_test.runtime-lib
+  ppx_module_timer.runtime
+  ppx_stable_witness.runtime
+  ppx_string.runtime
+  typerep
+  variantslib
+  ppx_expect.runtime
+  ppx_expect.config
+  ppx_log.types
+  ppx_log.syntax
+  base_quickcheck.ppx_quickcheck.runtime
+  base_quickcheck)
+ (main_module_name Hardcaml_waveterm_interactive)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name hardcaml_waveterm_interactive__)
+     (visibility public)
+     (kind alias)
+     (source
+      (path Hardcaml_waveterm_interactive__)
+      (impl (path interactive/hardcaml_waveterm_interactive__.ml-gen))))
+    (name Hardcaml_waveterm_interactive)
+    (modules
+     (module
+      (obj_name hardcaml_waveterm_interactive__Draw_notty)
+      (visibility public)
+      (source
+       (path Draw_notty)
+       (intf (path interactive/draw_notty.mli))
+       (impl (path interactive/draw_notty.ml))))
+     (module
+      (obj_name hardcaml_waveterm_interactive)
+      (visibility public)
+      (source
+       (path Hardcaml_waveterm_interactive)
+       (impl (path interactive/hardcaml_waveterm_interactive.ml))))
+     (module
+      (obj_name hardcaml_waveterm_interactive__Scroll)
+      (visibility public)
+      (source
+       (path Scroll)
+       (intf (path interactive/scroll.mli))
+       (impl (path interactive/scroll.ml))))
+     (module
+      (obj_name hardcaml_waveterm_interactive__Widget)
+      (visibility public)
+      (source
+       (path Widget)
+       (intf (path interactive/widget.mli))
+       (impl (path interactive/widget.ml))))))
+   (wrapped true))))
+(library
+ (name hardcaml_waveterm.kernel)
+ (kind normal)
+ (archives
+  (byte kernel/hardcaml_waveterm_kernel.cma)
+  (native kernel/hardcaml_waveterm_kernel.cmxa))
+ (plugins
+  (byte kernel/hardcaml_waveterm_kernel.cma)
+  (native kernel/hardcaml_waveterm_kernel.cmxs))
+ (native_archives kernel/hardcaml_waveterm_kernel.a)
+ (requires
+  base
+  hardcaml
+  num
+  re
+  stdio
+  ppx_sexp_conv.runtime-lib
+  sexplib0
+  ppx_compare.runtime-lib
+  ppx_enumerate.runtime-lib
+  ppx_hash.runtime-lib
+  ppx_here.runtime-lib
+  ppx_assert.runtime-lib
+  ppx_bench.runtime-lib
+  bin_prot
+  fieldslib
+  ppx_inline_test.config
+  ppx_inline_test.runtime-lib
+  ppx_module_timer.runtime
+  ppx_stable_witness.runtime
+  ppx_string.runtime
+  typerep
+  variantslib
+  ppx_expect.runtime
+  ppx_expect.config
+  ppx_log.types
+  ppx_log.syntax
+  base_quickcheck.ppx_quickcheck.runtime
+  base_quickcheck)
+ (main_module_name Hardcaml_waveterm_kernel)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name hardcaml_waveterm_kernel__)
+     (visibility public)
+     (kind alias)
+     (source
+      (path Hardcaml_waveterm_kernel__)
+      (impl (path kernel/hardcaml_waveterm_kernel__.ml-gen))))
+    (name Hardcaml_waveterm_kernel)
+    (modules
+     (module
+      (obj_name hardcaml_waveterm_kernel__Data)
+      (visibility public)
+      (source
+       (path Data)
+       (intf (path kernel/data.mli))
+       (impl (path kernel/data.ml))))
+     (module
+      (obj_name hardcaml_waveterm_kernel__Data_intf)
+      (visibility public)
+      (source (path Data_intf) (impl (path kernel/data_intf.ml))))
+     (module
+      (obj_name hardcaml_waveterm_kernel__Display_rule)
+      (visibility public)
+      (source
+       (path Display_rule)
+       (intf (path kernel/display_rule.mli))
+       (impl (path kernel/display_rule.ml))))
+     (module
+      (obj_name hardcaml_waveterm_kernel__Display_rules)
+      (visibility public)
+      (source
+       (path Display_rules)
+       (intf (path kernel/display_rules.mli))
+       (impl (path kernel/display_rules.ml))))
+     (module
+      (obj_name hardcaml_waveterm_kernel__Draw)
+      (visibility public)
+      (source
+       (path Draw)
+       (intf (path kernel/draw.mli))
+       (impl (path kernel/draw.ml))))
+     (module
+      (obj_name hardcaml_waveterm_kernel)
+      (visibility public)
+      (source
+       (path Hardcaml_waveterm_kernel)
+       (impl (path kernel/hardcaml_waveterm_kernel.ml))))
+     (module
+      (obj_name hardcaml_waveterm_kernel__Port)
+      (visibility public)
+      (source
+       (path Port)
+       (intf (path kernel/port.mli))
+       (impl (path kernel/port.ml))))
+     (module
+      (obj_name hardcaml_waveterm_kernel__Port_name)
+      (visibility public)
+      (source
+       (path Port_name)
+       (intf (path kernel/port_name.mli))
+       (impl (path kernel/port_name.ml))))
+     (module
+      (obj_name hardcaml_waveterm_kernel__Render)
+      (visibility public)
+      (source
+       (path Render)
+       (intf (path kernel/render.mli))
+       (impl (path kernel/render.ml))))
+     (module
+      (obj_name hardcaml_waveterm_kernel__Render_intf)
+      (visibility public)
+      (source (path Render_intf) (impl (path kernel/render_intf.ml))))
+     (module
+      (obj_name hardcaml_waveterm_kernel__Text_alignment)
+      (visibility public)
+      (source
+       (path Text_alignment)
+       (intf (path kernel/text_alignment.mli))
+       (impl (path kernel/text_alignment.ml))))
+     (module
+      (obj_name hardcaml_waveterm_kernel__Wave)
+      (visibility public)
+      (source
+       (path Wave)
+       (intf (path kernel/wave.mli))
+       (impl (path kernel/wave.ml))))
+     (module
+      (obj_name hardcaml_waveterm_kernel__Wave_intf)
+      (visibility public)
+      (source (path Wave_intf) (impl (path kernel/wave_intf.ml))))
+     (module
+      (obj_name hardcaml_waveterm_kernel__Waveform)
+      (visibility public)
+      (source
+       (path Waveform)
+       (intf (path kernel/waveform.mli))
+       (impl (path kernel/waveform.ml))))
+     (module
+      (obj_name hardcaml_waveterm_kernel__Waveform_intf)
+      (visibility public)
+      (source (path Waveform_intf) (impl (path kernel/waveform_intf.ml))))
+     (module
+      (obj_name hardcaml_waveterm_kernel__Waves)
+      (visibility public)
+      (source
+       (path Waves)
+       (intf (path kernel/waves.mli))
+       (impl (path kernel/waves.ml))))
+     (module
+      (obj_name hardcaml_waveterm_kernel__Waves_intf)
+      (visibility public)
+      (source (path Waves_intf) (impl (path kernel/waves_intf.ml))))
+     (module
+      (obj_name hardcaml_waveterm_kernel__Write)
+      (visibility public)
+      (source
+       (path Write)
+       (intf (path kernel/write.mli))
+       (impl (path kernel/write.ml))))))
+   (wrapped true))))

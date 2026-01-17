@@ -1,0 +1,21 @@
+opam-version: "2.0"
+added: [
+  "doc/splittable_random" {"D"}
+  "doc/splittable_random/CHANGES.md" {"F:S300T1768614572.41"}
+  "doc/splittable_random/LICENSE.md" {"F:S1126T1768614572.41"}
+  "doc/splittable_random/README.md" {"F:S439T1768614572.41"}
+  "lib/splittable_random" {"D"}
+  "lib/splittable_random/META" {"F:S402T1768614572.41"}
+  "lib/splittable_random/dune-package" {"F:S1179T1768614572.41"}
+  "lib/splittable_random/opam" {"F:S1299T1768614572.41"}
+  "lib/splittable_random/splittable_random.a" {"F:S69432T1768614572.41"}
+  "lib/splittable_random/splittable_random.cma" {"F:S65568T1768614572.41"}
+  "lib/splittable_random/splittable_random.cmi" {"F:S5787T1768614572.41"}
+  "lib/splittable_random/splittable_random.cmt" {"F:S92305T1768614572.41"}
+  "lib/splittable_random/splittable_random.cmti" {"F:S17465T1768614572.41"}
+  "lib/splittable_random/splittable_random.cmx" {"F:S10285T1768614572.41"}
+  "lib/splittable_random/splittable_random.cmxa" {"F:S5056T1768614572.41"}
+  "lib/splittable_random/splittable_random.cmxs" {"F:S85032T1768614572.41"}
+  "lib/splittable_random/splittable_random.ml" {"F:S11958T1768614572.41"}
+  "lib/splittable_random/splittable_random.mli" {"F:S3966T1768614572.41"}
+]

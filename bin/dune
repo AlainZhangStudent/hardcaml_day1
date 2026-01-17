@@ -1,0 +1,4 @@
+(executable
+ (name main)
+ (public_name run_ptr)
+ (libraries hardcaml hardcaml_lib core))

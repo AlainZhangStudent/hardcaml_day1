@@ -1,0 +1,58 @@
+(lang dune 3.21)
+(name gel)
+(version v0.17.0)
+(sections (lib .) (libexec .) (doc ../../doc/gel))
+(files
+ (lib
+  (META
+   dune-package
+   gel.a
+   gel.cma
+   gel.cmi
+   gel.cmt
+   gel.cmti
+   gel.cmx
+   gel.cmxa
+   gel.ml
+   gel.mli
+   opam))
+ (libexec (gel.cmxs))
+ (doc (LICENSE.md)))
+(library
+ (name gel)
+ (kind normal)
+ (archives (byte gel.cma) (native gel.cmxa))
+ (plugins (byte gel.cma) (native gel.cmxs))
+ (native_archives gel.a)
+ (requires
+  base
+  ppx_sexp_conv.runtime-lib
+  sexplib0
+  ppx_compare.runtime-lib
+  ppx_enumerate.runtime-lib
+  ppx_hash.runtime-lib
+  ppx_here.runtime-lib
+  ppx_assert.runtime-lib
+  ppx_bench.runtime-lib
+  bin_prot
+  fieldslib
+  ppx_inline_test.config
+  ppx_inline_test.runtime-lib
+  ppx_module_timer.runtime
+  ppx_stable_witness.runtime
+  ppx_string.runtime
+  typerep
+  variantslib
+  ppx_expect.runtime
+  ppx_expect.config
+  ppx_log.types
+  ppx_log.syntax
+  base_quickcheck.ppx_quickcheck.runtime
+  base_quickcheck)
+ (main_module_name Gel)
+ (modes byte native)
+ (modules
+  (singleton
+   (obj_name gel)
+   (visibility public)
+   (source (path Gel) (intf (path gel.mli)) (impl (path gel.ml))))))

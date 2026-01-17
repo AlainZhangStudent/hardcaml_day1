@@ -1,0 +1,6 @@
+description = ""
+requires = "unix zarith"
+archive(byte) = "cryptokit.cma"
+archive(native) = "cryptokit.cmxa"
+plugin(byte) = "cryptokit.cma"
+plugin(native) = "cryptokit.cmxs"

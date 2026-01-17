@@ -1,0 +1,53 @@
+opam-version: "2.0"
+added: [
+  "doc/ppx_bench" {"D"}
+  "doc/ppx_bench/CHANGES.md" {"F:S632T1768614571.58"}
+  "doc/ppx_bench/LICENSE.md" {"F:S1126T1768614571.58"}
+  "doc/ppx_bench/README.md" {"F:S347T1768614571.58"}
+  "lib/ppx_bench" {"D"}
+  "lib/ppx_bench/META" {"F:S925T1768614571.57"}
+  "lib/ppx_bench/dune-package" {"F:S2752T1768614571.57"}
+  "lib/ppx_bench/opam" {"F:S778T1768614571.57"}
+  "lib/ppx_bench/ppx.exe" {"F:S15600392T1768614571.58"}
+  "lib/ppx_bench/ppx_bench.a" {"F:S47424T1768614571.57"}
+  "lib/ppx_bench/ppx_bench.cma" {"F:S29824T1768614571.57"}
+  "lib/ppx_bench/ppx_bench.cmi" {"F:S190T1768614571.57"}
+  "lib/ppx_bench/ppx_bench.cmt" {"F:S52503T1768614571.57"}
+  "lib/ppx_bench/ppx_bench.cmti" {"F:S1839T1768614571.57"}
+  "lib/ppx_bench/ppx_bench.cmx" {"F:S5256T1768614571.57"}
+  "lib/ppx_bench/ppx_bench.cmxa" {"F:S4191T1768614571.57"}
+  "lib/ppx_bench/ppx_bench.cmxs" {"F:S80688T1768614571.58"}
+  "lib/ppx_bench/ppx_bench.ml" {"F:S8426T1768614571.57"}
+  "lib/ppx_bench/ppx_bench.mli" {"F:S0T1768614571.57"}
+  "lib/ppx_bench/runtime-lib" {"D"}
+  "lib/ppx_bench/runtime-lib/benchmark_accumulator.ml"
+    {"F:S4070T1768614571.57"}
+  "lib/ppx_bench/runtime-lib/benchmark_accumulator.mli"
+    {"F:S2450T1768614571.57"}
+  "lib/ppx_bench/runtime-lib/export.ml" {"F:S40T1768614571.57"}
+  "lib/ppx_bench/runtime-lib/export.mli" {"F:S260T1768614571.57"}
+  "lib/ppx_bench/runtime-lib/ppx_bench_lib.a" {"F:S21472T1768614571.57"}
+  "lib/ppx_bench/runtime-lib/ppx_bench_lib.cma" {"F:S12255T1768614571.57"}
+  "lib/ppx_bench/runtime-lib/ppx_bench_lib.cmi" {"F:S330T1768614571.57"}
+  "lib/ppx_bench/runtime-lib/ppx_bench_lib.cmt" {"F:S1894T1768614571.58"}
+  "lib/ppx_bench/runtime-lib/ppx_bench_lib.cmx" {"F:S183T1768614571.58"}
+  "lib/ppx_bench/runtime-lib/ppx_bench_lib.cmxa" {"F:S1033T1768614571.58"}
+  "lib/ppx_bench/runtime-lib/ppx_bench_lib.cmxs" {"F:S57344T1768614571.58"}
+  "lib/ppx_bench/runtime-lib/ppx_bench_lib.ml" {"F:S225T1768614571.58"}
+  "lib/ppx_bench/runtime-lib/ppx_bench_lib__Benchmark_accumulator.cmi"
+    {"F:S1667T1768614571.58"}
+  "lib/ppx_bench/runtime-lib/ppx_bench_lib__Benchmark_accumulator.cmt"
+    {"F:S19539T1768614571.58"}
+  "lib/ppx_bench/runtime-lib/ppx_bench_lib__Benchmark_accumulator.cmti"
+    {"F:S8046T1768614571.58"}
+  "lib/ppx_bench/runtime-lib/ppx_bench_lib__Benchmark_accumulator.cmx"
+    {"F:S3210T1768614571.58"}
+  "lib/ppx_bench/runtime-lib/ppx_bench_lib__Export.cmi"
+    {"F:S358T1768614571.58"}
+  "lib/ppx_bench/runtime-lib/ppx_bench_lib__Export.cmt"
+    {"F:S1417T1768614571.58"}
+  "lib/ppx_bench/runtime-lib/ppx_bench_lib__Export.cmti"
+    {"F:S1890T1768614571.58"}
+  "lib/ppx_bench/runtime-lib/ppx_bench_lib__Export.cmx"
+    {"F:S239T1768614571.58"}
+]

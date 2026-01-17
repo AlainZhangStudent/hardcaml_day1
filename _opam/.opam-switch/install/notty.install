@@ -1,0 +1,90 @@
+opam-version: "2.0"
+lib: [
+  "_build/install/default/lib/notty/.private/notty_grapheme_cluster.cmi"
+    {".private/notty_grapheme_cluster.cmi"}
+  "_build/install/default/lib/notty/.private/notty_grapheme_cluster.cmt"
+    {".private/notty_grapheme_cluster.cmt"}
+  "_build/install/default/lib/notty/.private/notty_grapheme_cluster.cmti"
+    {".private/notty_grapheme_cluster.cmti"}
+  "_build/install/default/lib/notty/.private/notty_uucp.cmi"
+    {".private/notty_uucp.cmi"}
+  "_build/install/default/lib/notty/.private/notty_uucp.cmt"
+    {".private/notty_uucp.cmt"}
+  "_build/install/default/lib/notty/.private/notty_uucp.cmti"
+    {".private/notty_uucp.cmti"}
+  "_build/install/default/lib/notty/.private/notty_uucp_data.cmi"
+    {".private/notty_uucp_data.cmi"}
+  "_build/install/default/lib/notty/.private/notty_uucp_data.cmt"
+    {".private/notty_uucp_data.cmt"}
+  "_build/install/default/lib/notty/.private/notty_uucp_data.cmti"
+    {".private/notty_uucp_data.cmti"}
+  "_build/install/default/lib/notty/META"
+  "_build/install/default/lib/notty/dune-package"
+  "_build/install/default/lib/notty/no-uucp/notty_grapheme_cluster.ml"
+    {"no-uucp/notty_grapheme_cluster.ml"}
+  "_build/install/default/lib/notty/no-uucp/notty_grapheme_cluster.mli"
+    {"no-uucp/notty_grapheme_cluster.mli"}
+  "_build/install/default/lib/notty/no-uucp/notty_uucp.ml"
+    {"no-uucp/notty_uucp.ml"}
+  "_build/install/default/lib/notty/no-uucp/notty_uucp.mli"
+    {"no-uucp/notty_uucp.mli"}
+  "_build/install/default/lib/notty/no-uucp/notty_uucp_data.ml"
+    {"no-uucp/notty_uucp_data.ml"}
+  "_build/install/default/lib/notty/no-uucp/notty_uucp_data.mli"
+    {"no-uucp/notty_uucp_data.mli"}
+  "_build/install/default/lib/notty/notty.a"
+  "_build/install/default/lib/notty/notty.cma"
+  "_build/install/default/lib/notty/notty.cmi"
+  "_build/install/default/lib/notty/notty.cmt"
+  "_build/install/default/lib/notty/notty.cmti"
+  "_build/install/default/lib/notty/notty.cmx"
+  "_build/install/default/lib/notty/notty.cmxa"
+  "_build/install/default/lib/notty/notty.ml"
+  "_build/install/default/lib/notty/notty.mli"
+  "_build/install/default/lib/notty/notty_grapheme_cluster.cmx"
+  "_build/install/default/lib/notty/notty_uucp.cmx"
+  "_build/install/default/lib/notty/notty_uucp_data.cmx"
+  "_build/install/default/lib/notty/opam"
+  "_build/install/default/lib/notty/top/notty_top.a" {"top/notty_top.a"}
+  "_build/install/default/lib/notty/top/notty_top.cma" {"top/notty_top.cma"}
+  "_build/install/default/lib/notty/top/notty_top.cmi" {"top/notty_top.cmi"}
+  "_build/install/default/lib/notty/top/notty_top.cmt" {"top/notty_top.cmt"}
+  "_build/install/default/lib/notty/top/notty_top.cmx" {"top/notty_top.cmx"}
+  "_build/install/default/lib/notty/top/notty_top.cmxa"
+    {"top/notty_top.cmxa"}
+  "_build/install/default/lib/notty/top/notty_top.ml" {"top/notty_top.ml"}
+  "_build/install/default/lib/notty/top/notty_top_init.ml"
+    {"top/notty_top_init.ml"}
+  "_build/install/default/lib/notty/unix/libnotty_unix_stubs.a"
+    {"unix/libnotty_unix_stubs.a"}
+  "_build/install/default/lib/notty/unix/notty_unix.a" {"unix/notty_unix.a"}
+  "_build/install/default/lib/notty/unix/notty_unix.cma"
+    {"unix/notty_unix.cma"}
+  "_build/install/default/lib/notty/unix/notty_unix.cmi"
+    {"unix/notty_unix.cmi"}
+  "_build/install/default/lib/notty/unix/notty_unix.cmt"
+    {"unix/notty_unix.cmt"}
+  "_build/install/default/lib/notty/unix/notty_unix.cmti"
+    {"unix/notty_unix.cmti"}
+  "_build/install/default/lib/notty/unix/notty_unix.cmx"
+    {"unix/notty_unix.cmx"}
+  "_build/install/default/lib/notty/unix/notty_unix.cmxa"
+    {"unix/notty_unix.cmxa"}
+  "_build/install/default/lib/notty/unix/notty_unix.ml"
+    {"unix/notty_unix.ml"}
+  "_build/install/default/lib/notty/unix/notty_unix.mli"
+    {"unix/notty_unix.mli"}
+]
+stublibs: "_build/install/default/lib/stublibs/dllnotty_unix_stubs.so"
+doc: [
+  "_build/install/default/doc/notty/CHANGES.md"
+  "_build/install/default/doc/notty/LICENSE.md"
+  "_build/install/default/doc/notty/README.md"
+]
+libexec: [
+  "_build/install/default/lib/notty/notty.cmxs"
+  "_build/install/default/lib/notty/top/notty_top.cmxs"
+    {"top/notty_top.cmxs"}
+  "_build/install/default/lib/notty/unix/notty_unix.cmxs"
+    {"unix/notty_unix.cmxs"}
+]

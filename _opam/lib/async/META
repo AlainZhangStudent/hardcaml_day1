@@ -1,0 +1,298 @@
+version = "v0.17.0"
+description = ""
+requires =
+"async.async_command
+ async.async_quickcheck
+ async.async_rpc
+ async_kernel
+ async_log
+ async_unix
+ base
+ base_quickcheck
+ base_quickcheck.ppx_quickcheck.runtime
+ bin_prot
+ core
+ fieldslib
+ ppx_assert.runtime-lib
+ ppx_bench.runtime-lib
+ ppx_compare.runtime-lib
+ ppx_enumerate.runtime-lib
+ ppx_expect.config
+ ppx_expect.runtime
+ ppx_hash.runtime-lib
+ ppx_here.runtime-lib
+ ppx_inline_test.config
+ ppx_inline_test.runtime-lib
+ ppx_log.syntax
+ ppx_log.types
+ ppx_module_timer.runtime
+ ppx_sexp_conv.runtime-lib
+ ppx_stable_witness.runtime
+ ppx_string.runtime
+ sexplib0
+ typerep
+ variantslib"
+archive(byte) = "async.cma"
+archive(native) = "async.cmxa"
+plugin(byte) = "async.cma"
+plugin(native) = "async.cmxs"
+package "async_command" (
+  directory = "async_command"
+  version = "v0.17.0"
+  description = ""
+  requires =
+  "async_kernel
+   async_unix
+   base
+   base_quickcheck
+   base_quickcheck.ppx_quickcheck.runtime
+   bin_prot
+   core
+   core_unix.command_unix
+   fieldslib
+   ppx_assert.runtime-lib
+   ppx_bench.runtime-lib
+   ppx_compare.runtime-lib
+   ppx_enumerate.runtime-lib
+   ppx_expect.config
+   ppx_expect.runtime
+   ppx_hash.runtime-lib
+   ppx_here.runtime-lib
+   ppx_inline_test.config
+   ppx_inline_test.runtime-lib
+   ppx_log.syntax
+   ppx_log.types
+   ppx_module_timer.runtime
+   ppx_sexp_conv.runtime-lib
+   ppx_stable_witness.runtime
+   ppx_string.runtime
+   sexplib0
+   typerep
+   variantslib"
+  archive(byte) = "async_command.cma"
+  archive(native) = "async_command.cmxa"
+  plugin(byte) = "async_command.cma"
+  plugin(native) = "async_command.cmxs"
+)
+package "async_quickcheck" (
+  directory = "async_quickcheck"
+  version = "v0.17.0"
+  description = ""
+  requires =
+  "async_kernel
+   base
+   base_quickcheck
+   base_quickcheck.ppx_quickcheck.runtime
+   bin_prot
+   fieldslib
+   ppx_assert.runtime-lib
+   ppx_bench.runtime-lib
+   ppx_compare.runtime-lib
+   ppx_enumerate.runtime-lib
+   ppx_expect.config
+   ppx_expect.runtime
+   ppx_hash.runtime-lib
+   ppx_here.runtime-lib
+   ppx_inline_test.config
+   ppx_inline_test.runtime-lib
+   ppx_log.syntax
+   ppx_log.types
+   ppx_module_timer.runtime
+   ppx_sexp_conv.runtime-lib
+   ppx_stable_witness.runtime
+   ppx_string.runtime
+   sexplib0
+   typerep
+   variantslib"
+  archive(byte) = "async_quickcheck.cma"
+  archive(native) = "async_quickcheck.cmxa"
+  plugin(byte) = "async_quickcheck.cma"
+  plugin(native) = "async_quickcheck.cmxs"
+)
+package "async_rpc" (
+  directory = "async_rpc"
+  version = "v0.17.0"
+  description = ""
+  requires =
+  "async_kernel
+   async_log
+   async_rpc_kernel
+   async_unix
+   base
+   base_quickcheck
+   base_quickcheck.ppx_quickcheck.runtime
+   bin_prot
+   core
+   fieldslib
+   ppx_assert.runtime-lib
+   ppx_bench.runtime-lib
+   ppx_compare.runtime-lib
+   ppx_enumerate.runtime-lib
+   ppx_expect.config
+   ppx_expect.runtime
+   ppx_hash.runtime-lib
+   ppx_here.runtime-lib
+   ppx_inline_test.config
+   ppx_inline_test.runtime-lib
+   ppx_log.syntax
+   ppx_log.types
+   ppx_module_timer.runtime
+   ppx_sexp_conv.runtime-lib
+   ppx_stable_witness.runtime
+   ppx_string.runtime
+   sexplib0
+   typerep
+   variantslib"
+  archive(byte) = "async_rpc.cma"
+  archive(native) = "async_rpc.cmxa"
+  plugin(byte) = "async_rpc.cma"
+  plugin(native) = "async_rpc.cmxs"
+)
+package "lock_file_async" (
+  directory = "lock_file_async"
+  version = "v0.17.0"
+  description = ""
+  requires =
+  "async
+   base
+   base_quickcheck
+   base_quickcheck.ppx_quickcheck.runtime
+   bin_prot
+   core
+   core_unix.lock_file_blocking
+   fieldslib
+   ppx_assert.runtime-lib
+   ppx_bench.runtime-lib
+   ppx_compare.runtime-lib
+   ppx_enumerate.runtime-lib
+   ppx_expect.config
+   ppx_expect.runtime
+   ppx_hash.runtime-lib
+   ppx_here.runtime-lib
+   ppx_inline_test.config
+   ppx_inline_test.runtime-lib
+   ppx_log.syntax
+   ppx_log.types
+   ppx_module_timer.runtime
+   ppx_sexp_conv.runtime-lib
+   ppx_stable_witness.runtime
+   ppx_string.runtime
+   sexplib0
+   typerep
+   variantslib"
+  archive(byte) = "lock_file_async.cma"
+  archive(native) = "lock_file_async.cmxa"
+  plugin(byte) = "lock_file_async.cma"
+  plugin(native) = "lock_file_async.cmxs"
+)
+package "log_extended" (
+  directory = "log_extended"
+  version = "v0.17.0"
+  description = ""
+  requires =
+  "async
+   base
+   base_quickcheck
+   base_quickcheck.ppx_quickcheck.runtime
+   bin_prot
+   core_unix.filename_unix
+   core_unix.syslog
+   fieldslib
+   ppx_assert.runtime-lib
+   ppx_bench.runtime-lib
+   ppx_compare.runtime-lib
+   ppx_enumerate.runtime-lib
+   ppx_expect.config
+   ppx_expect.runtime
+   ppx_hash.runtime-lib
+   ppx_here.runtime-lib
+   ppx_inline_test.config
+   ppx_inline_test.runtime-lib
+   ppx_log.syntax
+   ppx_log.types
+   ppx_module_timer.runtime
+   ppx_sexp_conv.runtime-lib
+   ppx_stable_witness.runtime
+   ppx_string.runtime
+   sexplib0
+   textutils.console
+   typerep
+   variantslib"
+  archive(byte) = "log_extended.cma"
+  archive(native) = "log_extended.cmxa"
+  plugin(byte) = "log_extended.cma"
+  plugin(native) = "log_extended.cmxs"
+)
+package "persistent_connection" (
+  directory = "persistent_connection"
+  version = "v0.17.0"
+  description = ""
+  requires =
+  "async
+   async_kernel.persistent_connection_kernel
+   base
+   base_quickcheck
+   base_quickcheck.ppx_quickcheck.runtime
+   bin_prot
+   fieldslib
+   ppx_assert.runtime-lib
+   ppx_bench.runtime-lib
+   ppx_compare.runtime-lib
+   ppx_enumerate.runtime-lib
+   ppx_expect.config
+   ppx_expect.runtime
+   ppx_hash.runtime-lib
+   ppx_here.runtime-lib
+   ppx_inline_test.config
+   ppx_inline_test.runtime-lib
+   ppx_log.syntax
+   ppx_log.types
+   ppx_module_timer.runtime
+   ppx_sexp_conv.runtime-lib
+   ppx_stable_witness.runtime
+   ppx_string.runtime
+   sexplib0
+   typerep
+   variantslib"
+  archive(byte) = "persistent_connection.cma"
+  archive(native) = "persistent_connection.cmxa"
+  plugin(byte) = "persistent_connection.cma"
+  plugin(native) = "persistent_connection.cmxs"
+)
+package "unpack_sequence" (
+  directory = "unpack_sequence"
+  version = "v0.17.0"
+  description = ""
+  requires =
+  "async
+   async_kernel.eager_deferred
+   base
+   base_quickcheck
+   base_quickcheck.ppx_quickcheck.runtime
+   bin_prot
+   core_kernel.unpack_buffer
+   fieldslib
+   ppx_assert.runtime-lib
+   ppx_bench.runtime-lib
+   ppx_compare.runtime-lib
+   ppx_enumerate.runtime-lib
+   ppx_expect.config
+   ppx_expect.runtime
+   ppx_hash.runtime-lib
+   ppx_here.runtime-lib
+   ppx_inline_test.config
+   ppx_inline_test.runtime-lib
+   ppx_log.syntax
+   ppx_log.types
+   ppx_module_timer.runtime
+   ppx_sexp_conv.runtime-lib
+   ppx_stable_witness.runtime
+   ppx_string.runtime
+   sexplib0
+   typerep
+   variantslib"
+  archive(byte) = "unpack_sequence.cma"
+  archive(native) = "unpack_sequence.cmxa"
+  plugin(byte) = "unpack_sequence.cma"
+  plugin(native) = "unpack_sequence.cmxs"
+)

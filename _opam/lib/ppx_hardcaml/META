@@ -1,0 +1,55 @@
+version = "v0.17.0"
+description = ""
+requires(ppx_driver) = "compiler-libs.common
+                        hardcaml.ppx_hardcaml0
+                        ppxlib.ast"
+archive(ppx_driver,byte) = "ppx_hardcaml.cma"
+archive(ppx_driver,native) = "ppx_hardcaml.cmxa"
+plugin(ppx_driver,byte) = "ppx_hardcaml.cma"
+plugin(ppx_driver,native) = "ppx_hardcaml.cmxs"
+# This is what dune uses to find out the runtime dependencies of
+# a preprocessor
+ppx_runtime_deps = "ppx_hardcaml.runtime"
+# This line makes things transparent for people mixing preprocessors
+# and normal dependencies
+requires(-ppx_driver) = "ppx_hardcaml.runtime
+                         ppx_sexp_conv.runtime-lib
+                         sexplib0"
+requires(-ppx_driver,-custom_ppx) += "ppx_deriving"
+ppxopt(-ppx_driver,-custom_ppx) = "ppx_deriving,package:ppx_hardcaml"
+library_kind = "ppx_deriver"
+package "runtime" (
+  directory = "runtime"
+  version = "v0.17.0"
+  description = ""
+  requires =
+  "base
+   base_quickcheck
+   base_quickcheck.ppx_quickcheck.runtime
+   bin_prot
+   fieldslib
+   hardcaml
+   ppx_assert.runtime-lib
+   ppx_bench.runtime-lib
+   ppx_compare.runtime-lib
+   ppx_enumerate.runtime-lib
+   ppx_expect.config
+   ppx_expect.runtime
+   ppx_hash.runtime-lib
+   ppx_here.runtime-lib
+   ppx_inline_test.config
+   ppx_inline_test.runtime-lib
+   ppx_log.syntax
+   ppx_log.types
+   ppx_module_timer.runtime
+   ppx_sexp_conv.runtime-lib
+   ppx_stable_witness.runtime
+   ppx_string.runtime
+   sexplib0
+   typerep
+   variantslib"
+  archive(byte) = "ppx_hardcaml_runtime.cma"
+  archive(native) = "ppx_hardcaml_runtime.cmxa"
+  plugin(byte) = "ppx_hardcaml_runtime.cma"
+  plugin(native) = "ppx_hardcaml_runtime.cmxs"
+)

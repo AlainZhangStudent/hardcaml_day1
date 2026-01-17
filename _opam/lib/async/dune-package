@@ -1,0 +1,690 @@
+(lang dune 3.21)
+(name async)
+(version v0.17.0)
+(sections (lib .) (libexec .) (doc ../../doc/async) (stublibs ../stublibs))
+(files
+ (lib
+  (META
+   async.a
+   async.cma
+   async.cmi
+   async.cmt
+   async.cmx
+   async.cmxa
+   async.ml
+   async__.cmi
+   async__.cmt
+   async__.cmx
+   async__.ml
+   async__Deferred_or_error_expect_test_config.cmi
+   async__Deferred_or_error_expect_test_config.cmt
+   async__Deferred_or_error_expect_test_config.cmti
+   async__Deferred_or_error_expect_test_config.cmx
+   async__Expect_test_config.cmi
+   async__Expect_test_config.cmt
+   async__Expect_test_config.cmti
+   async__Expect_test_config.cmx
+   async__Expect_test_config_or_error.cmi
+   async__Expect_test_config_or_error.cmt
+   async__Expect_test_config_or_error.cmti
+   async__Expect_test_config_or_error.cmx
+   async_command/async_command.a
+   async_command/async_command.cma
+   async_command/async_command.cmi
+   async_command/async_command.cmt
+   async_command/async_command.cmti
+   async_command/async_command.cmx
+   async_command/async_command.cmxa
+   async_command/async_command.ml
+   async_command/async_command.mli
+   async_command/async_command__.cmi
+   async_command/async_command__.cmt
+   async_command/async_command__.cmx
+   async_command/async_command__.ml
+   async_command/async_command__Import.cmi
+   async_command/async_command__Import.cmt
+   async_command/async_command__Import.cmx
+   async_command/import.ml
+   async_quickcheck/async_quickcheck.a
+   async_quickcheck/async_quickcheck.cma
+   async_quickcheck/async_quickcheck.cmi
+   async_quickcheck/async_quickcheck.cmt
+   async_quickcheck/async_quickcheck.cmti
+   async_quickcheck/async_quickcheck.cmx
+   async_quickcheck/async_quickcheck.cmxa
+   async_quickcheck/async_quickcheck.ml
+   async_quickcheck/async_quickcheck.mli
+   async_quickcheck/async_quickcheck__.cmi
+   async_quickcheck/async_quickcheck__.cmt
+   async_quickcheck/async_quickcheck__.cmx
+   async_quickcheck/async_quickcheck__.ml
+   async_quickcheck/async_quickcheck__Async_quickcheck_intf.cmi
+   async_quickcheck/async_quickcheck__Async_quickcheck_intf.cmt
+   async_quickcheck/async_quickcheck__Async_quickcheck_intf.cmx
+   async_quickcheck/async_quickcheck_intf.ml
+   async_rpc/async_rpc.a
+   async_rpc/async_rpc.cma
+   async_rpc/async_rpc.cmi
+   async_rpc/async_rpc.cmt
+   async_rpc/async_rpc.cmx
+   async_rpc/async_rpc.cmxa
+   async_rpc/async_rpc.ml
+   async_rpc/async_rpc__.cmi
+   async_rpc/async_rpc__.cmt
+   async_rpc/async_rpc__.cmx
+   async_rpc/async_rpc__.ml
+   async_rpc/async_rpc__Import.cmi
+   async_rpc/async_rpc__Import.cmt
+   async_rpc/async_rpc__Import.cmx
+   async_rpc/async_rpc__Rpc.cmi
+   async_rpc/async_rpc__Rpc.cmt
+   async_rpc/async_rpc__Rpc.cmti
+   async_rpc/async_rpc__Rpc.cmx
+   async_rpc/async_rpc__Rpc_transport.cmi
+   async_rpc/async_rpc__Rpc_transport.cmt
+   async_rpc/async_rpc__Rpc_transport.cmti
+   async_rpc/async_rpc__Rpc_transport.cmx
+   async_rpc/async_rpc__Rpc_transport_low_latency.cmi
+   async_rpc/async_rpc__Rpc_transport_low_latency.cmt
+   async_rpc/async_rpc__Rpc_transport_low_latency.cmti
+   async_rpc/async_rpc__Rpc_transport_low_latency.cmx
+   async_rpc/import.ml
+   async_rpc/libasync_rpc_stubs.a
+   async_rpc/rpc.ml
+   async_rpc/rpc.mli
+   async_rpc/rpc_transport.ml
+   async_rpc/rpc_transport.mli
+   async_rpc/rpc_transport_low_latency.ml
+   async_rpc/rpc_transport_low_latency.mli
+   deferred_or_error_expect_test_config.ml
+   deferred_or_error_expect_test_config.mli
+   dune-package
+   expect_test_config.ml
+   expect_test_config.mli
+   expect_test_config_or_error.ml
+   expect_test_config_or_error.mli
+   lock_file_async/lock_file_async.a
+   lock_file_async/lock_file_async.cma
+   lock_file_async/lock_file_async.cmi
+   lock_file_async/lock_file_async.cmt
+   lock_file_async/lock_file_async.cmti
+   lock_file_async/lock_file_async.cmx
+   lock_file_async/lock_file_async.cmxa
+   lock_file_async/lock_file_async.ml
+   lock_file_async/lock_file_async.mli
+   log_extended/log_extended.a
+   log_extended/log_extended.cma
+   log_extended/log_extended.cmi
+   log_extended/log_extended.cmt
+   log_extended/log_extended.cmti
+   log_extended/log_extended.cmx
+   log_extended/log_extended.cmxa
+   log_extended/log_extended.ml
+   log_extended/log_extended.mli
+   opam
+   persistent_connection/import.ml
+   persistent_connection/persistent_connection.a
+   persistent_connection/persistent_connection.cma
+   persistent_connection/persistent_connection.cmi
+   persistent_connection/persistent_connection.cmt
+   persistent_connection/persistent_connection.cmti
+   persistent_connection/persistent_connection.cmx
+   persistent_connection/persistent_connection.cmxa
+   persistent_connection/persistent_connection.ml
+   persistent_connection/persistent_connection.mli
+   persistent_connection/persistent_connection__.cmi
+   persistent_connection/persistent_connection__.cmt
+   persistent_connection/persistent_connection__.cmx
+   persistent_connection/persistent_connection__.ml
+   persistent_connection/persistent_connection__Import.cmi
+   persistent_connection/persistent_connection__Import.cmt
+   persistent_connection/persistent_connection__Import.cmx
+   persistent_connection/persistent_connection__Persistent_connection_intf.cmi
+   persistent_connection/persistent_connection__Persistent_connection_intf.cmt
+   persistent_connection/persistent_connection__Persistent_connection_intf.cmx
+   persistent_connection/persistent_connection_intf.ml
+   unpack_sequence/import.ml
+   unpack_sequence/unpack_sequence.a
+   unpack_sequence/unpack_sequence.cma
+   unpack_sequence/unpack_sequence.cmi
+   unpack_sequence/unpack_sequence.cmt
+   unpack_sequence/unpack_sequence.cmti
+   unpack_sequence/unpack_sequence.cmx
+   unpack_sequence/unpack_sequence.cmxa
+   unpack_sequence/unpack_sequence.ml
+   unpack_sequence/unpack_sequence.mli
+   unpack_sequence/unpack_sequence__.cmi
+   unpack_sequence/unpack_sequence__.cmt
+   unpack_sequence/unpack_sequence__.cmx
+   unpack_sequence/unpack_sequence__.ml
+   unpack_sequence/unpack_sequence__Import.cmi
+   unpack_sequence/unpack_sequence__Import.cmt
+   unpack_sequence/unpack_sequence__Import.cmx))
+ (libexec
+  (async.cmxs
+   async_command/async_command.cmxs
+   async_quickcheck/async_quickcheck.cmxs
+   async_rpc/async_rpc.cmxs
+   lock_file_async/lock_file_async.cmxs
+   log_extended/log_extended.cmxs
+   persistent_connection/persistent_connection.cmxs
+   unpack_sequence/unpack_sequence.cmxs))
+ (doc (CHANGES.md LICENSE.md README.md odoc-pages/index.mld))
+ (stublibs (dllasync_rpc_stubs.so)))
+(library
+ (name async)
+ (kind normal)
+ (archives (byte async.cma) (native async.cmxa))
+ (plugins (byte async.cma) (native async.cmxs))
+ (native_archives async.a)
+ (requires
+  async.async_command
+  async_kernel
+  async_log
+  async.async_quickcheck
+  async.async_rpc
+  async_unix
+  core
+  ppx_sexp_conv.runtime-lib
+  sexplib0
+  ppx_compare.runtime-lib
+  ppx_enumerate.runtime-lib
+  ppx_hash.runtime-lib
+  ppx_here.runtime-lib
+  ppx_assert.runtime-lib
+  ppx_bench.runtime-lib
+  bin_prot
+  fieldslib
+  ppx_inline_test.config
+  ppx_inline_test.runtime-lib
+  ppx_module_timer.runtime
+  ppx_stable_witness.runtime
+  ppx_string.runtime
+  base
+  typerep
+  variantslib
+  ppx_expect.runtime
+  ppx_expect.config
+  ppx_log.types
+  ppx_log.syntax
+  base_quickcheck.ppx_quickcheck.runtime
+  base_quickcheck)
+ (main_module_name Async)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name async__)
+     (visibility public)
+     (kind alias)
+     (source (path Async__) (impl (path async__.ml-gen))))
+    (name Async)
+    (modules
+     (module
+      (obj_name async)
+      (visibility public)
+      (source (path Async) (impl (path async.ml))))
+     (module
+      (obj_name async__Deferred_or_error_expect_test_config)
+      (visibility public)
+      (source
+       (path Deferred_or_error_expect_test_config)
+       (intf (path deferred_or_error_expect_test_config.mli))
+       (impl (path deferred_or_error_expect_test_config.ml))))
+     (module
+      (obj_name async__Expect_test_config)
+      (visibility public)
+      (source
+       (path Expect_test_config)
+       (intf (path expect_test_config.mli))
+       (impl (path expect_test_config.ml))))
+     (module
+      (obj_name async__Expect_test_config_or_error)
+      (visibility public)
+      (source
+       (path Expect_test_config_or_error)
+       (intf (path expect_test_config_or_error.mli))
+       (impl (path expect_test_config_or_error.ml))))))
+   (wrapped true))))
+(library
+ (name async.async_command)
+ (kind normal)
+ (archives
+  (byte async_command/async_command.cma)
+  (native async_command/async_command.cmxa))
+ (plugins
+  (byte async_command/async_command.cma)
+  (native async_command/async_command.cmxs))
+ (native_archives async_command/async_command.a)
+ (requires
+  async_kernel
+  async_unix
+  core_unix.command_unix
+  core
+  ppx_sexp_conv.runtime-lib
+  sexplib0
+  ppx_compare.runtime-lib
+  ppx_enumerate.runtime-lib
+  ppx_hash.runtime-lib
+  ppx_here.runtime-lib
+  ppx_assert.runtime-lib
+  ppx_bench.runtime-lib
+  bin_prot
+  fieldslib
+  ppx_inline_test.config
+  ppx_inline_test.runtime-lib
+  ppx_module_timer.runtime
+  ppx_stable_witness.runtime
+  ppx_string.runtime
+  base
+  typerep
+  variantslib
+  ppx_expect.runtime
+  ppx_expect.config
+  ppx_log.types
+  ppx_log.syntax
+  base_quickcheck.ppx_quickcheck.runtime
+  base_quickcheck)
+ (main_module_name Async_command)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name async_command__)
+     (visibility public)
+     (kind alias)
+     (source
+      (path Async_command__)
+      (impl (path async_command/async_command__.ml-gen))))
+    (name Async_command)
+    (modules
+     (module
+      (obj_name async_command)
+      (visibility public)
+      (source
+       (path Async_command)
+       (intf (path async_command/async_command.mli))
+       (impl (path async_command/async_command.ml))))
+     (module
+      (obj_name async_command__Import)
+      (visibility public)
+      (source (path Import) (impl (path async_command/import.ml))))))
+   (wrapped true))))
+(library
+ (name async.async_quickcheck)
+ (kind normal)
+ (archives
+  (byte async_quickcheck/async_quickcheck.cma)
+  (native async_quickcheck/async_quickcheck.cmxa))
+ (plugins
+  (byte async_quickcheck/async_quickcheck.cma)
+  (native async_quickcheck/async_quickcheck.cmxs))
+ (native_archives async_quickcheck/async_quickcheck.a)
+ (requires
+  async_kernel
+  ppx_sexp_conv.runtime-lib
+  sexplib0
+  ppx_compare.runtime-lib
+  ppx_enumerate.runtime-lib
+  ppx_hash.runtime-lib
+  ppx_here.runtime-lib
+  ppx_assert.runtime-lib
+  ppx_bench.runtime-lib
+  bin_prot
+  fieldslib
+  ppx_inline_test.config
+  ppx_inline_test.runtime-lib
+  ppx_module_timer.runtime
+  ppx_stable_witness.runtime
+  ppx_string.runtime
+  base
+  typerep
+  variantslib
+  ppx_expect.runtime
+  ppx_expect.config
+  ppx_log.types
+  ppx_log.syntax
+  base_quickcheck.ppx_quickcheck.runtime
+  base_quickcheck)
+ (main_module_name Async_quickcheck)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name async_quickcheck__)
+     (visibility public)
+     (kind alias)
+     (source
+      (path Async_quickcheck__)
+      (impl (path async_quickcheck/async_quickcheck__.ml-gen))))
+    (name Async_quickcheck)
+    (modules
+     (module
+      (obj_name async_quickcheck)
+      (visibility public)
+      (source
+       (path Async_quickcheck)
+       (intf (path async_quickcheck/async_quickcheck.mli))
+       (impl (path async_quickcheck/async_quickcheck.ml))))
+     (module
+      (obj_name async_quickcheck__Async_quickcheck_intf)
+      (visibility public)
+      (source
+       (path Async_quickcheck_intf)
+       (impl (path async_quickcheck/async_quickcheck_intf.ml))))))
+   (wrapped true))))
+(library
+ (name async.async_rpc)
+ (kind normal)
+ (archives (byte async_rpc/async_rpc.cma) (native async_rpc/async_rpc.cmxa))
+ (plugins (byte async_rpc/async_rpc.cma) (native async_rpc/async_rpc.cmxs))
+ (foreign_objects async_rpc/rpc_transport_low_latency_stubs.o)
+ (foreign_archives
+  (archives (for all) (files async_rpc/libasync_rpc_stubs.a)))
+ (foreign_dll_files ../stublibs/dllasync_rpc_stubs.so)
+ (native_archives async_rpc/async_rpc.a)
+ (requires
+  async_kernel
+  async_log
+  async_rpc_kernel
+  async_unix
+  core
+  ppx_sexp_conv.runtime-lib
+  sexplib0
+  ppx_compare.runtime-lib
+  ppx_enumerate.runtime-lib
+  ppx_hash.runtime-lib
+  ppx_here.runtime-lib
+  ppx_assert.runtime-lib
+  ppx_bench.runtime-lib
+  bin_prot
+  fieldslib
+  ppx_inline_test.config
+  ppx_inline_test.runtime-lib
+  ppx_module_timer.runtime
+  ppx_stable_witness.runtime
+  ppx_string.runtime
+  base
+  typerep
+  variantslib
+  ppx_expect.runtime
+  ppx_expect.config
+  ppx_log.types
+  ppx_log.syntax
+  base_quickcheck.ppx_quickcheck.runtime
+  base_quickcheck)
+ (main_module_name Async_rpc)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name async_rpc__)
+     (visibility public)
+     (kind alias)
+     (source (path Async_rpc__) (impl (path async_rpc/async_rpc__.ml-gen))))
+    (name Async_rpc)
+    (modules
+     (module
+      (obj_name async_rpc)
+      (visibility public)
+      (source (path Async_rpc) (impl (path async_rpc/async_rpc.ml))))
+     (module
+      (obj_name async_rpc__Import)
+      (visibility public)
+      (source (path Import) (impl (path async_rpc/import.ml))))
+     (module
+      (obj_name async_rpc__Rpc)
+      (visibility public)
+      (source
+       (path Rpc)
+       (intf (path async_rpc/rpc.mli))
+       (impl (path async_rpc/rpc.ml))))
+     (module
+      (obj_name async_rpc__Rpc_transport)
+      (visibility public)
+      (source
+       (path Rpc_transport)
+       (intf (path async_rpc/rpc_transport.mli))
+       (impl (path async_rpc/rpc_transport.ml))))
+     (module
+      (obj_name async_rpc__Rpc_transport_low_latency)
+      (visibility public)
+      (source
+       (path Rpc_transport_low_latency)
+       (intf (path async_rpc/rpc_transport_low_latency.mli))
+       (impl (path async_rpc/rpc_transport_low_latency.ml))))))
+   (wrapped true))))
+(library
+ (name async.lock_file_async)
+ (kind normal)
+ (archives
+  (byte lock_file_async/lock_file_async.cma)
+  (native lock_file_async/lock_file_async.cmxa))
+ (plugins
+  (byte lock_file_async/lock_file_async.cma)
+  (native lock_file_async/lock_file_async.cmxs))
+ (native_archives lock_file_async/lock_file_async.a)
+ (requires
+  async
+  core
+  core_unix.lock_file_blocking
+  ppx_sexp_conv.runtime-lib
+  sexplib0
+  ppx_compare.runtime-lib
+  ppx_enumerate.runtime-lib
+  ppx_hash.runtime-lib
+  ppx_here.runtime-lib
+  ppx_assert.runtime-lib
+  ppx_bench.runtime-lib
+  bin_prot
+  fieldslib
+  ppx_inline_test.config
+  ppx_inline_test.runtime-lib
+  ppx_module_timer.runtime
+  ppx_stable_witness.runtime
+  ppx_string.runtime
+  base
+  typerep
+  variantslib
+  ppx_expect.runtime
+  ppx_expect.config
+  ppx_log.types
+  ppx_log.syntax
+  base_quickcheck.ppx_quickcheck.runtime
+  base_quickcheck)
+ (main_module_name Lock_file_async)
+ (modes byte native)
+ (modules
+  (singleton
+   (obj_name lock_file_async)
+   (visibility public)
+   (source
+    (path Lock_file_async)
+    (intf (path lock_file_async/lock_file_async.mli))
+    (impl (path lock_file_async/lock_file_async.ml))))))
+(library
+ (name async.log_extended)
+ (kind normal)
+ (archives
+  (byte log_extended/log_extended.cma)
+  (native log_extended/log_extended.cmxa))
+ (plugins
+  (byte log_extended/log_extended.cma)
+  (native log_extended/log_extended.cmxs))
+ (native_archives log_extended/log_extended.a)
+ (requires
+  async
+  textutils.console
+  core_unix.filename_unix
+  core_unix.syslog
+  ppx_sexp_conv.runtime-lib
+  sexplib0
+  ppx_compare.runtime-lib
+  ppx_enumerate.runtime-lib
+  ppx_hash.runtime-lib
+  ppx_here.runtime-lib
+  ppx_assert.runtime-lib
+  ppx_bench.runtime-lib
+  bin_prot
+  fieldslib
+  ppx_inline_test.config
+  ppx_inline_test.runtime-lib
+  ppx_module_timer.runtime
+  ppx_stable_witness.runtime
+  ppx_string.runtime
+  base
+  typerep
+  variantslib
+  ppx_expect.runtime
+  ppx_expect.config
+  ppx_log.types
+  ppx_log.syntax
+  base_quickcheck.ppx_quickcheck.runtime
+  base_quickcheck)
+ (main_module_name Log_extended)
+ (modes byte native)
+ (modules
+  (singleton
+   (obj_name log_extended)
+   (visibility public)
+   (source
+    (path Log_extended)
+    (intf (path log_extended/log_extended.mli))
+    (impl (path log_extended/log_extended.ml))))))
+(library
+ (name async.persistent_connection)
+ (kind normal)
+ (archives
+  (byte persistent_connection/persistent_connection.cma)
+  (native persistent_connection/persistent_connection.cmxa))
+ (plugins
+  (byte persistent_connection/persistent_connection.cma)
+  (native persistent_connection/persistent_connection.cmxs))
+ (native_archives persistent_connection/persistent_connection.a)
+ (requires
+  async
+  async_kernel.persistent_connection_kernel
+  ppx_sexp_conv.runtime-lib
+  sexplib0
+  ppx_compare.runtime-lib
+  ppx_enumerate.runtime-lib
+  ppx_hash.runtime-lib
+  ppx_here.runtime-lib
+  ppx_assert.runtime-lib
+  ppx_bench.runtime-lib
+  bin_prot
+  fieldslib
+  ppx_inline_test.config
+  ppx_inline_test.runtime-lib
+  ppx_module_timer.runtime
+  ppx_stable_witness.runtime
+  ppx_string.runtime
+  base
+  typerep
+  variantslib
+  ppx_expect.runtime
+  ppx_expect.config
+  ppx_log.types
+  ppx_log.syntax
+  base_quickcheck.ppx_quickcheck.runtime
+  base_quickcheck)
+ (main_module_name Persistent_connection)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name persistent_connection__)
+     (visibility public)
+     (kind alias)
+     (source
+      (path Persistent_connection__)
+      (impl (path persistent_connection/persistent_connection__.ml-gen))))
+    (name Persistent_connection)
+    (modules
+     (module
+      (obj_name persistent_connection__Import)
+      (visibility public)
+      (source (path Import) (impl (path persistent_connection/import.ml))))
+     (module
+      (obj_name persistent_connection)
+      (visibility public)
+      (source
+       (path Persistent_connection)
+       (intf (path persistent_connection/persistent_connection.mli))
+       (impl (path persistent_connection/persistent_connection.ml))))
+     (module
+      (obj_name persistent_connection__Persistent_connection_intf)
+      (visibility public)
+      (source
+       (path Persistent_connection_intf)
+       (impl (path persistent_connection/persistent_connection_intf.ml))))))
+   (wrapped true))))
+(library
+ (name async.unpack_sequence)
+ (kind normal)
+ (archives
+  (byte unpack_sequence/unpack_sequence.cma)
+  (native unpack_sequence/unpack_sequence.cmxa))
+ (plugins
+  (byte unpack_sequence/unpack_sequence.cma)
+  (native unpack_sequence/unpack_sequence.cmxs))
+ (native_archives unpack_sequence/unpack_sequence.a)
+ (requires
+  async
+  async_kernel.eager_deferred
+  core_kernel.unpack_buffer
+  ppx_sexp_conv.runtime-lib
+  sexplib0
+  ppx_compare.runtime-lib
+  ppx_enumerate.runtime-lib
+  ppx_hash.runtime-lib
+  ppx_here.runtime-lib
+  ppx_assert.runtime-lib
+  ppx_bench.runtime-lib
+  bin_prot
+  fieldslib
+  ppx_inline_test.config
+  ppx_inline_test.runtime-lib
+  ppx_module_timer.runtime
+  ppx_stable_witness.runtime
+  ppx_string.runtime
+  base
+  typerep
+  variantslib
+  ppx_expect.runtime
+  ppx_expect.config
+  ppx_log.types
+  ppx_log.syntax
+  base_quickcheck.ppx_quickcheck.runtime
+  base_quickcheck)
+ (main_module_name Unpack_sequence)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name unpack_sequence__)
+     (visibility public)
+     (kind alias)
+     (source
+      (path Unpack_sequence__)
+      (impl (path unpack_sequence/unpack_sequence__.ml-gen))))
+    (name Unpack_sequence)
+    (modules
+     (module
+      (obj_name unpack_sequence__Import)
+      (visibility public)
+      (source (path Import) (impl (path unpack_sequence/import.ml))))
+     (module
+      (obj_name unpack_sequence)
+      (visibility public)
+      (source
+       (path Unpack_sequence)
+       (intf (path unpack_sequence/unpack_sequence.mli))
+       (impl (path unpack_sequence/unpack_sequence.ml))))))
+   (wrapped true))))

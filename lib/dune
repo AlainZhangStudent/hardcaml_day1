@@ -1,0 +1,5 @@
+(library
+ (name hardcaml_lib)
+ (public_name my_hardcaml_project)
+ (preprocess (pps ppx_hardcaml ppx_jane))
+ (libraries hardcaml core))
