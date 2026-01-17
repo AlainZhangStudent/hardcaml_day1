@@ -39,7 +39,8 @@ let create (scope : Scope.t) (i : Signal.t I.t) =
       pointer <--. 50;
       zero_count <--. 0;
       steps_remaining <--. 0;
-    ] [
+    ] 
+    [
       if_ (steps_remaining.value ==:. 0) [
         if_ i.en [
           steps_remaining <-- i.number;
