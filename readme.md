@@ -1,4 +1,4 @@
-# My Hardcaml Project: Pointer Zero-Tracker
+# --- Day 1: Secret Entrance ---
 
 ## Approach
 This project implements a hardware-based pointer tracker that monitors a circular buffer of 100 slots (0-99). The design is written in **Hardcaml**, an OCaml-based library for generating synthesizable RTL.
