@@ -28,7 +28,6 @@ let create (scope : Scope.t) (i : Signal.t I.t) =
   let zero_count = Always.Variable.reg spec ~enable:vdd ~width:16 in
   let steps_remaining = Always.Variable.reg spec ~enable:vdd ~width:8 in
 
-  (* 1. Calculate next_ptr combinational logic OUTSIDE compile for clarity *)
   let next_ptr = 
     mux2 (i.direction ==:. 1)
       (mux2 (pointer.value ==:. 99) (of_int ~width:7 0) (pointer.value +:. 1))
@@ -45,8 +44,8 @@ let create (scope : Scope.t) (i : Signal.t I.t) =
         if_ i.en [
           steps_remaining <-- i.number;
         ] []
-      ] [
-        (* We group multiple assignments in a list [ ] to avoid the unit warning *)
+      ] 
+      [
         steps_remaining <-- steps_remaining.value -:. 1;
         
         pointer <-- next_ptr;
